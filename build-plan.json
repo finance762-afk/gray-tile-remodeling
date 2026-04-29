@@ -1,0 +1,807 @@
+{
+  "seo": {
+    "target_radius": 50,
+    "primary_keyword": "home remodeling bowdon ga",
+    "secondary_keywords": [
+      "kitchen remodeling bowdon ga",
+      "bathroom remodeling bowdon ga",
+      "tile installation bowdon ga",
+      "home renovation bowdon ga",
+      "remodeling contractor bowdon ga",
+      "basement finishing bowdon ga",
+      "custom tile showers bowdon ga",
+      "flooring installation bowdon ga",
+      "home additions bowdon ga",
+      "remodeling services near me",
+      "tile contractor bowdon georgia",
+      "design build remodeling bowdon ga"
+    ]
+  },
+  "tier": "standard",
+  "email": "",
+  "pages": [
+    {
+      "slug": "remodeling-services",
+      "type": "service_group",
+      "title": "Remodeling Services in Bowdon, GA",
+      "sections": "hero, service_cards_grid, individual_service_details, process, cta",
+      "services": [
+        "Kitchen Remodeling",
+        "Bathroom Remodeling",
+        "Basement Finishing",
+        "Basement Kitchen Remodeling",
+        "Attic Remodeling",
+        "Room Additions",
+        "Full Home Remodel",
+        "Custom Remodeling",
+        "Structural Renovation",
+        "Eco-Friendly Remodeling",
+        "Home Additions"
+      ],
+      "primary_keyword": "basement kitchen remodeling Bowdon GA"
+    },
+    {
+      "slug": "seasonal-services",
+      "type": "service_group",
+      "title": "Seasonal Services in Bowdon, GA",
+      "sections": "hero, service_cards_grid, individual_service_details, process, cta",
+      "services": [
+        "Plumbing Services",
+        "Electrical Services",
+        "HVAC Services"
+      ],
+      "primary_keyword": "electrical services Bowdon GA"
+    },
+    {
+      "slug": "flooring-services",
+      "type": "service_group",
+      "title": "Flooring Services in Bowdon, GA",
+      "sections": "hero, service_cards_grid, individual_service_details, process, cta",
+      "services": [
+        "Open Floor Plan Remodeling",
+        "Custom Tile Showers",
+        "Flooring Installation",
+        "Sanded Finish Flooring",
+        "LVP Flooring",
+        "Subfloor Replacement"
+      ],
+      "primary_keyword": "open floor plan remodeling Bowdon GA"
+    },
+    {
+      "slug": "design-build-remodeling",
+      "type": "service",
+      "title": "Design-Build Remodeling in Bowdon, GA",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "Design-Build Remodeling"
+      ],
+      "primary_keyword": "design-build remodeling Bowdon GA"
+    },
+    {
+      "slug": "home-restoration",
+      "type": "service",
+      "title": "Home Restoration in Bowdon, GA",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "Home Restoration"
+      ],
+      "primary_keyword": "home restoration Bowdon GA"
+    },
+    {
+      "slug": "garage-conversion",
+      "type": "service",
+      "title": "Garage Conversion in Bowdon, GA",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "Garage Conversion"
+      ],
+      "primary_keyword": "garage conversion Bowdon GA"
+    },
+    {
+      "slug": "home-upgrades",
+      "type": "service",
+      "title": "Home Upgrades in Bowdon, GA",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "Home Upgrades"
+      ],
+      "primary_keyword": "home upgrades Bowdon GA"
+    },
+    {
+      "slug": "framing-contractor",
+      "type": "service",
+      "title": "Framing Contractor in Bowdon, GA",
+      "sections": "hero, service_details, process, testimonials, cta",
+      "services": [
+        "Framing Contractor"
+      ],
+      "primary_keyword": "framing contractor Bowdon GA"
+    }
+  ],
+  "phone": "",
+  "assets": {
+    "logo": {
+      "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/logo/1777502577007-x0wqro-grey_tile_logo.jpg",
+      "storage_path": "gray-tile-remodeling/logo/1777502577007-x0wqro-grey_tile_logo.jpg"
+    },
+    "images": [
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/gallery/1777502893596-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/gallery/1777502893596-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/gallery/1777502895455-e0d16062-bac4-4f4d-abe3-8ed2677a9609.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/gallery/1777502895455-e0d16062-bac4-4f4d-abe3-8ed2677a9609.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/gallery/1777502896486-f5c363da-5a68-4502-9d66-3b07364ced3e.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/gallery/1777502896486-f5c363da-5a68-4502-9d66-3b07364ced3e.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/gallery/1777502897463-cd964894-8675-458e-8593-8ddfff96d576.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/gallery/1777502897463-cd964894-8675-458e-8593-8ddfff96d576.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/logo/1777502577007-x0wqro-grey_tile_logo.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "logo",
+        "storage_path": "gray-tile-remodeling/logo/1777502577007-x0wqro-grey_tile_logo.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502658606-ba0wdv-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502658606-ba0wdv-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502659744-9sf0ka-e0d16062-bac4-4f4d-abe3-8ed2677a9609.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502659744-9sf0ka-e0d16062-bac4-4f4d-abe3-8ed2677a9609.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502660546-5tv01m-f5c363da-5a68-4502-9d66-3b07364ced3e.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502660546-5tv01m-f5c363da-5a68-4502-9d66-3b07364ced3e.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502661301-x354j6-cd964894-8675-458e-8593-8ddfff96d576.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502661301-x354j6-cd964894-8675-458e-8593-8ddfff96d576.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502662130-10k6sr-c6f9aa95-11c0-4a17-8b7c-1649db5db363.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502662130-10k6sr-c6f9aa95-11c0-4a17-8b7c-1649db5db363.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502662924-8klbnf-c7da939c-61e3-487d-a025-1c778f88d951.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502662924-8klbnf-c7da939c-61e3-487d-a025-1c778f88d951.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502663900-1avp26-d3ab0e48-7fd4-4b3f-ac55-76cc02f03dfd.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502663900-1avp26-d3ab0e48-7fd4-4b3f-ac55-76cc02f03dfd.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502664960-it2cqa-9e5df7d8-551b-47e2-a520-cea8b6b318df.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502664960-it2cqa-9e5df7d8-551b-47e2-a520-cea8b6b318df.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502666040-0axxar-a8109cf3-d111-423a-8187-27dbd3c0fe85.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502666040-0axxar-a8109cf3-d111-423a-8187-27dbd3c0fe85.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502666780-0c1lb5-6baca883-28b1-450f-8618-0bb1e6a2c69b.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502666780-0c1lb5-6baca883-28b1-450f-8618-0bb1e6a2c69b.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502667550-e73ktf-c73de1e7-fac8-4450-89af-fdef3145cf75.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502667550-e73ktf-c73de1e7-fac8-4450-89af-fdef3145cf75.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502668290-i6rgb9-295362e2-bc93-43f3-bacd-98cf90a01674.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502668290-i6rgb9-295362e2-bc93-43f3-bacd-98cf90a01674.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502669520-szchcm-097b270c-06ac-4ac5-9dd3-3b7fb1549789.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502669520-szchcm-097b270c-06ac-4ac5-9dd3-3b7fb1549789.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502670300-nod4ze-89ce741b-f095-4115-a763-22fdf50a649c.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502670300-nod4ze-89ce741b-f095-4115-a763-22fdf50a649c.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502671390-1sw8f5-8c9a3f42-e142-4e90-b98f-e3bfd92f5634.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502671390-1sw8f5-8c9a3f42-e142-4e90-b98f-e3bfd92f5634.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502672198-b93pyk-0c9d4bad-e283-4857-82fd-7c6eb5f46060.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502672198-b93pyk-0c9d4bad-e283-4857-82fd-7c6eb5f46060.jpg",
+        "quality_score": null
+      },
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502672941-k1rl61-e96199bb-ccb2-457e-b615-588bafff4bcd.jpg",
+        "page": "any",
+        "caption": "",
+        "context": "other",
+        "storage_path": "gray-tile-remodeling/photos/1777502672941-k1rl61-e96199bb-ccb2-457e-b615-588bafff4bcd.jpg",
+        "quality_score": null
+      }
+    ],
+    "recommended_hero_image": {
+      "alt": "",
+      "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/gallery/1777502893596-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg",
+      "context": "other",
+      "quality_score": null
+    }
+  },
+  "design": {
+    "fonts": {},
+    "notes": "",
+    "style": "modern",
+    "colors": {
+      "accent": "#06b6d4",
+      "primary": "#1a2b3c",
+      "secondary": "#4d5e6f",
+      "extracted_from_logo": true
+    },
+    "logo_analysis": {}
+  },
+  "domain": "gray-tile-remodeling",
+  "phases": [
+    {
+      "name": "scaffold",
+      "phase": 1,
+      "status": "pending"
+    },
+    {
+      "name": "nav_footer_head",
+      "phase": 2,
+      "status": "pending"
+    },
+    {
+      "name": "homepage",
+      "phase": 3,
+      "status": "pending"
+    },
+    {
+      "name": "inner_pages",
+      "phase": 4,
+      "status": "pending"
+    },
+    {
+      "name": "seo_aeo_deploy",
+      "phase": 5,
+      "status": "pending"
+    }
+  ],
+  "address": {
+    "zip": "30108",
+    "city": "Bowdon",
+    "state": "GA",
+    "street": "220 Fowler Dr"
+  },
+  "content": {
+    "usps": [],
+    "years": 25,
+    "insurance": "",
+    "description": "At Gray Tile & Remodeling, beautiful and functional design begins with expert craftsmanship and an unwavering commitment to quality. Based in Bowden, Georgia, our experienced team brings years of passion and expertise to every tile installation and remodeling project we undertake. We specialize in transforming kitchens, bathrooms, and living spaces through meticulous tile work, with skilled craftsmen who focus on exquisite installations and exceptional attention to detail.\n\nOur customer-centric approach ensures that we deliver stunning results on time and within budget, helping clients bring their unique visions to life. We offer custom tile solutions tailored to meet the specific needs of each project, whether you're upgrading your kitchen, enhancing your bathroom, or refreshing any living space. At Gray Tile & Remodeling, we're dedicated to transforming your space one tile at a time, combining quality craftsmanship with reliable service to exceed your expectations.",
+    "certifications": []
+  },
+  "reviews": [],
+  "tagline": "Quality Tiles, Expert Remodeling, Exceptional Results",
+  "industry": "tile",
+  "services": [
+    {
+      "name": "Kitchen Remodeling",
+      "keywords": [
+        "kitchen remodeling Bowdon GA",
+        "kitchen renovation Bowdon",
+        "custom kitchen design Georgia",
+        "kitchen contractors Bowdon",
+        "full kitchen remodel"
+      ],
+      "description": "Transform your kitchen with Gray Tile & Remodeling's complete kitchen renovation services in Bowdon, GA. Our expert team handles everything from design to installation for your dream kitchen."
+    },
+    {
+      "name": "Bathroom Remodeling",
+      "keywords": [
+        "bathroom remodeling Bowdon GA",
+        "bathroom renovation Georgia",
+        "bath remodel Bowdon",
+        "bathroom contractors Bowdon",
+        "custom bathroom design"
+      ],
+      "description": "Create your perfect bathroom with professional remodeling services from Gray Tile & Remodeling. We specialize in complete bathroom renovations throughout Bowdon and surrounding areas."
+    },
+    {
+      "name": "Plumbing Services",
+      "keywords": [
+        "plumbing services Bowdon GA",
+        "plumber Bowdon",
+        "remodeling plumbing Georgia",
+        "plumbing installation Bowdon",
+        "bathroom plumbing"
+      ],
+      "description": "Professional plumbing installation and repair services for all your remodeling projects. Gray Tile & Remodeling provides reliable plumbing solutions in Bowdon, GA."
+    },
+    {
+      "name": "Basement Finishing",
+      "keywords": [
+        "basement finishing Bowdon GA",
+        "basement remodeling Georgia",
+        "finished basement Bowdon",
+        "basement contractors Bowdon",
+        "basement renovation"
+      ],
+      "description": "Maximize your home's potential with professional basement finishing services in Bowdon, GA. Transform your unfinished basement into beautiful, functional living space."
+    },
+    {
+      "name": "Basement Kitchen Remodeling",
+      "keywords": [
+        "basement kitchen Bowdon GA",
+        "lower level kitchen Georgia",
+        "basement kitchen installation",
+        "basement remodeling kitchen",
+        "secondary kitchen Bowdon"
+      ],
+      "description": "Add value and functionality to your basement with a custom kitchen installation. Gray Tile & Remodeling specializes in basement kitchen projects throughout Georgia."
+    },
+    {
+      "name": "Garage Conversion",
+      "keywords": [
+        "garage conversion Bowdon GA",
+        "garage remodel Georgia",
+        "garage to living space Bowdon",
+        "garage renovation Bowdon",
+        "home addition garage"
+      ],
+      "description": "Convert your garage into valuable living space with Gray Tile & Remodeling's professional conversion services. Create additional rooms, offices, or living areas in Bowdon, GA."
+    },
+    {
+      "name": "Attic Remodeling",
+      "keywords": [
+        "attic remodeling Bowdon GA",
+        "attic conversion Georgia",
+        "attic renovation Bowdon",
+        "attic finishing Bowdon",
+        "attic contractors Georgia"
+      ],
+      "description": "Transform your attic into functional living space with expert remodeling services. Gray Tile & Remodeling creates beautiful attic conversions throughout Bowdon and surrounding areas."
+    },
+    {
+      "name": "Room Additions",
+      "keywords": [
+        "room additions Bowdon GA",
+        "home additions Georgia",
+        "house addition Bowdon",
+        "room addition contractors",
+        "home expansion Bowdon"
+      ],
+      "description": "Expand your home with professional room addition services from Gray Tile & Remodeling. Add bedrooms, bathrooms, or living spaces to your Bowdon, GA home."
+    },
+    {
+      "name": "Open Floor Plan Remodeling",
+      "keywords": [
+        "open floor plan Bowdon GA",
+        "wall removal Georgia",
+        "open concept remodeling",
+        "floor plan renovation Bowdon",
+        "home layout redesign"
+      ],
+      "description": "Create modern, spacious living with open floor plan remodeling services. Gray Tile & Remodeling specializes in removing walls and creating flowing layouts in Bowdon homes."
+    },
+    {
+      "name": "Full Home Remodel",
+      "keywords": [
+        "full home remodel Bowdon GA",
+        "whole house renovation Georgia",
+        "complete home remodeling",
+        "house renovation Bowdon",
+        "full house remodel"
+      ],
+      "description": "Complete home transformation services from Gray Tile & Remodeling in Bowdon, GA. We handle every aspect of your whole house renovation project from start to finish."
+    },
+    {
+      "name": "Custom Remodeling",
+      "keywords": [
+        "custom remodeling Bowdon GA",
+        "custom home renovation",
+        "personalized remodeling Georgia",
+        "bespoke home improvements",
+        "custom contractors Bowdon"
+      ],
+      "description": "Personalized remodeling solutions tailored to your unique vision and needs. Gray Tile & Remodeling creates custom spaces throughout Bowdon, GA with attention to detail."
+    },
+    {
+      "name": "Design-Build Remodeling",
+      "keywords": [
+        "design-build Bowdon GA",
+        "design build remodeling",
+        "one-stop remodeling Georgia",
+        "design build contractors",
+        "integrated remodeling services"
+      ],
+      "description": "Streamlined remodeling process with design-build services from Gray Tile & Remodeling. We handle both design and construction for seamless project delivery in Bowdon, GA."
+    },
+    {
+      "name": "Structural Renovation",
+      "keywords": [
+        "structural renovation Bowdon GA",
+        "structural remodeling Georgia",
+        "load bearing walls Bowdon",
+        "structural contractors",
+        "home structural work"
+      ],
+      "description": "Professional structural renovation services for major home improvements and safety updates. Gray Tile & Remodeling handles complex structural work throughout Bowdon and Georgia."
+    },
+    {
+      "name": "Home Upgrades",
+      "keywords": [
+        "home upgrades Bowdon GA",
+        "home improvements Georgia",
+        "house upgrades Bowdon",
+        "home enhancement services",
+        "property improvements Bowdon"
+      ],
+      "description": "Enhance your home's value and functionality with professional upgrade services. Gray Tile & Remodeling provides comprehensive home improvement solutions in Bowdon, GA."
+    },
+    {
+      "name": "Home Restoration",
+      "keywords": [
+        "home restoration Bowdon GA",
+        "house restoration Georgia",
+        "historic home renovation",
+        "property restoration Bowdon",
+        "home revival services"
+      ],
+      "description": "Restore your home's beauty and functionality with expert restoration services from Gray Tile & Remodeling. We specialize in bringing older homes back to life in Bowdon, GA."
+    },
+    {
+      "name": "Eco-Friendly Remodeling",
+      "keywords": [
+        "eco-friendly remodeling Bowdon GA",
+        "green remodeling Georgia",
+        "sustainable renovation Bowdon",
+        "energy efficient remodeling",
+        "environmentally friendly contractors"
+      ],
+      "description": "Sustainable remodeling solutions that are environmentally conscious and energy-efficient. Gray Tile & Remodeling offers green building practices for Bowdon, GA homeowners."
+    },
+    {
+      "name": "Custom Tile Showers",
+      "keywords": [
+        "custom tile showers Bowdon GA",
+        "tile shower installation",
+        "bathroom tile work Georgia",
+        "shower remodel Bowdon",
+        "luxury shower design"
+      ],
+      "description": "Beautiful custom tile shower installations that transform your bathroom into a luxury spa experience. Gray Tile & Remodeling creates stunning tile work throughout Bowdon, GA."
+    },
+    {
+      "name": "Flooring Installation",
+      "keywords": [
+        "flooring installation Bowdon GA",
+        "flooring contractors Georgia",
+        "floor installation Bowdon",
+        "new flooring services",
+        "professional flooring Bowdon"
+      ],
+      "description": "Professional flooring installation services for all types of flooring materials. Gray Tile & Remodeling provides expert flooring solutions for homes in Bowdon, GA."
+    },
+    {
+      "name": "Sanded Finish Flooring",
+      "keywords": [
+        "floor sanding Bowdon GA",
+        "hardwood refinishing Georgia",
+        "floor finishing Bowdon",
+        "wood floor restoration",
+        "floor refinishing services"
+      ],
+      "description": "Expert hardwood floor sanding and finishing services to restore and protect your floors. Gray Tile & Remodeling provides professional floor refinishing in Bowdon, GA."
+    },
+    {
+      "name": "LVP Flooring",
+      "keywords": [
+        "LVP flooring Bowdon GA",
+        "luxury vinyl plank Georgia",
+        "vinyl flooring installation",
+        "LVP contractors Bowdon",
+        "vinyl plank flooring"
+      ],
+      "description": "Luxury vinyl plank flooring installation for durable, beautiful, and affordable flooring solutions. Gray Tile & Remodeling specializes in LVP installation throughout Bowdon, GA."
+    },
+    {
+      "name": "Subfloor Replacement",
+      "keywords": [
+        "subfloor replacement Bowdon GA",
+        "subfloor repair Georgia",
+        "floor foundation work",
+        "structural flooring Bowdon",
+        "subfloor contractors"
+      ],
+      "description": "Professional subfloor replacement and repair services to ensure a solid foundation for your new flooring. Gray Tile & Remodeling provides structural flooring solutions in Bowdon, GA."
+    },
+    {
+      "name": "Framing Contractor",
+      "keywords": [
+        "framing contractor Bowdon GA",
+        "framing services Georgia",
+        "residential framing Bowdon",
+        "construction framing",
+        "home framing contractors"
+      ],
+      "description": "Expert framing services for new construction, additions, and remodeling projects. Gray Tile & Remodeling provides professional framing solutions throughout Bowdon, GA."
+    },
+    {
+      "name": "Home Additions",
+      "keywords": [
+        "home additions Bowdon GA",
+        "house additions Georgia",
+        "residential additions Bowdon",
+        "home expansion services",
+        "addition contractors Bowdon"
+      ],
+      "description": "Expand your living space with professional home addition services from Gray Tile & Remodeling. We create seamless additions that blend perfectly with your existing home in Bowdon, GA."
+    },
+    {
+      "name": "Electrical Services",
+      "keywords": [
+        "electrical services Bowdon GA",
+        "electrician Bowdon",
+        "remodeling electrical Georgia",
+        "electrical installation Bowdon",
+        "home electrical work"
+      ],
+      "description": "Professional electrical installation and repair services for all your remodeling needs. Gray Tile & Remodeling provides reliable electrical solutions in Bowdon, GA."
+    },
+    {
+      "name": "HVAC Services",
+      "keywords": [
+        "HVAC services Bowdon GA",
+        "heating cooling Bowdon",
+        "HVAC installation Georgia",
+        "HVAC contractors Bowdon",
+        "air conditioning installation"
+      ],
+      "description": "Heating, ventilation, and air conditioning services for new construction and remodeling projects. Gray Tile & Remodeling provides comprehensive HVAC solutions in Bowdon, GA."
+    }
+  ],
+  "owner_name": "",
+  "client_slug": "gray-tile-remodeling",
+  "form_action": "https://design.pageone.cloud/api/leads/gray-tile-remodeling",
+  "github_repo": "",
+  "company_name": "gray-tile-remodeling",
+  "service_areas": [
+    {
+      "zip": "30108",
+      "city": "Bowdon",
+      "state": "GA",
+      "primary": true
+    }
+  ],
+  "image_curation": null,
+  "research_brief": {
+    "gbp": null,
+    "brief": {
+      "faqs": [
+        {
+          "a": "We work with ceramic, porcelain, natural stone, glass, and specialty tiles for kitchens, bathrooms, floors, showers, and accent walls. We can help you select the right material for your space and budget.",
+          "q": "What types of tile do you install?"
+        },
+        {
+          "a": "Project timelines vary based on scope and complexity. A bathroom remodel typically takes 2-4 weeks, while larger projects may take longer. We'll provide a detailed timeline during your consultation.",
+          "q": "How long does a typical tile remodeling project take?"
+        },
+        {
+          "a": "Yes, we manage complete tile removal and disposal as part of our remodeling service, including surface preparation to ensure proper installation of new tile.",
+          "q": "Do you handle removal of old tile?"
+        },
+        {
+          "a": "Absolutely. Our design consultation service helps you choose the right tiles, colors, and layouts for your space. We consider durability, style, maintenance, and your budget.",
+          "q": "Can you help with tile selection and design?"
+        },
+        {
+          "a": "We use proper waterproofing, quality grout, and moisture barriers appropriate for Georgia's climate. Our installation methods prevent mold, mildew, and water damage for long-lasting results.",
+          "q": "How do you ensure tile installations last in Georgia's humid climate?"
+        }
+      ],
+      "about_angle": "Position Gray Tile Remodeling as the dedicated tile expert with deep roots in Georgia. Emphasize specialized focus (not a jack-of-all-trades contractor), years of experience with diverse tile styles, understanding of Georgia's climate and moisture considerations, and commitment to personalized design consultation. Highlight the team's passion for craftsmanship and their ability to bring homeowner visions to life through quality materials and expert installation.",
+      "hero_headline": "Expert Tile Remodeling for Georgia Homes",
+      "differentiators": [
+        "Specialized expertise in tile remodeling as a focused service (not general contracting)",
+        "Local Georgia market knowledge and understanding of regional design preferences",
+        "Ability to position as the dedicated tile expert vs. general contractors",
+        "Opportunity to highlight custom design consultation and visualization services",
+        "Potential for showcasing before/after transformations specific to GA homes",
+        "Local service reliability and quick turnaround times",
+        "Understanding of moisture/humidity challenges in Georgia climate for tile installations"
+      ],
+      "hero_subheadline": "Transform your kitchen, bathroom, and floors with custom tile designs from Gray Tile Remodeling—specialized craftsmanship you can trust.",
+      "tone_recommendation": "Professional yet approachable—position as knowledgeable experts who are easy to work with. Use confident language about expertise while maintaining warmth and accessibility. Avoid overly technical jargon; explain tile choices and processes in terms homeowners understand. Friendly enough to feel personable, but authoritative enough to inspire confidence in the specialized craft."
+    },
+    "competitors": [],
+    "generated_at": "2026-04-29T22:54:10.860Z",
+    "existing_site": null
+  },
+  "competitor_urls": [],
+  "phone_secondary": "",
+  "service_grouping": {
+    "cap": 8,
+    "tier": "standard",
+    "groups": [
+      {
+        "page": "Remodeling Services",
+        "services": [
+          "Kitchen Remodeling",
+          "Bathroom Remodeling",
+          "Basement Finishing",
+          "Basement Kitchen Remodeling",
+          "Attic Remodeling",
+          "Room Additions",
+          "Full Home Remodel",
+          "Custom Remodeling",
+          "Structural Renovation",
+          "Eco-Friendly Remodeling",
+          "Home Additions"
+        ]
+      },
+      {
+        "page": "Seasonal Services",
+        "services": [
+          "Plumbing Services",
+          "Electrical Services",
+          "HVAC Services"
+        ]
+      },
+      {
+        "page": "Flooring Services",
+        "services": [
+          "Open Floor Plan Remodeling",
+          "Custom Tile Showers",
+          "Flooring Installation",
+          "Sanded Finish Flooring",
+          "LVP Flooring",
+          "Subfloor Replacement"
+        ]
+      },
+      {
+        "page": "Design-Build Remodeling",
+        "solo": true,
+        "services": [
+          "Design-Build Remodeling"
+        ]
+      },
+      {
+        "page": "Home Restoration",
+        "solo": true,
+        "services": [
+          "Home Restoration"
+        ]
+      },
+      {
+        "page": "Garage Conversion",
+        "solo": true,
+        "services": [
+          "Garage Conversion"
+        ]
+      },
+      {
+        "page": "Home Upgrades",
+        "solo": true,
+        "services": [
+          "Home Upgrades"
+        ]
+      },
+      {
+        "page": "Framing Contractor",
+        "solo": true,
+        "services": [
+          "Framing Contractor"
+        ]
+      }
+    ],
+    "grouped_count": 8,
+    "original_count": 25
+  },
+  "lead_notification_email": "",
+  "lead_notification_phone": "",
+  "google_business_profile_url": ""
+}
