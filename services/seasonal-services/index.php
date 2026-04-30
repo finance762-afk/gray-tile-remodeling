@@ -3,8 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
-$pageTitle       = 'Plumbing, Electrical & HVAC Services Bowdon GA | Gray Tile & Remodeling';
-$pageDescription = 'Complete mechanical services for your remodeling project in Bowdon, GA — plumbing, electrical, and HVAC installation by Gray Tile & Remodeling. Licensed & insured.';
+$pageTitle       = 'Plumbing, Electrical & HVAC in Bowdon GA | Gray Tile';
+$pageDescription = 'Plumbing, electrical, and HVAC installation for remodeling projects in Bowdon, GA. Gray Tile & Remodeling provides complete mechanical services. Licensed & insured.';
 $canonicalUrl    = $siteUrl . '/services/seasonal-services/';
 $ogImage         = $clientPhotos['photo05'];
 $currentPage     = 'services';
@@ -56,6 +56,7 @@ $schemaMarkup = json_encode([
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
+// SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>

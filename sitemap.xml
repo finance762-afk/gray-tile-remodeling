@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ═══════════════════════════════════════════
+       Gray Tile & Remodeling — sitemap.xml
+       Domain: gray-tile-remodeling.pageone.cloud
+       Generated: 2026-04-30
+  ═══════════════════════════════════════════ -->
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/gallery/1777502893596-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg</image:loc>
+      <image:title>Gray Tile &amp; Remodeling — Home Remodeling in Bowdon, GA</image:title>
+      <image:caption>Expert tile installation and home remodeling services in Bowdon, Georgia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Landing -->
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Service Group Pages -->
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/remodeling-services/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502658606-ba0wdv-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg</image:loc>
+      <image:title>Kitchen remodeling services in Bowdon, GA</image:title>
+      <image:caption>Professional kitchen and bathroom remodeling by Gray Tile &amp; Remodeling</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/flooring-services/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502664960-it2cqa-9e5df7d8-551b-47e2-a520-cea8b6b318df.jpg</image:loc>
+      <image:title>Flooring installation in Bowdon, GA — tile, LVP, hardwood</image:title>
+      <image:caption>Custom tile showers, LVP flooring, and hardwood refinishing in West Georgia</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/seasonal-services/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Solo Service Pages -->
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/design-build-remodeling/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502662130-10k6sr-c6f9aa95-11c0-4a17-8b7c-1649db5db363.jpg</image:loc>
+      <image:title>Design-build remodeling project planning in Bowdon, GA</image:title>
+      <image:caption>Gray Tile &amp; Remodeling design-build process — seamless concept to completion</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/home-restoration/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502663900-1avp26-d3ab0e48-7fd4-4b3f-ac55-76cc02f03dfd.jpg</image:loc>
+      <image:title>Home restoration services in Bowdon, GA</image:title>
+      <image:caption>Restoring older Georgia homes — structural updates, tile, and renovation</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/garage-conversion/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502662924-8klbnf-c7da939c-61e3-487d-a025-1c778f88d951.jpg</image:loc>
+      <image:title>Garage conversion to living space in Bowdon, GA</image:title>
+      <image:caption>Convert your garage into a bedroom, office, or living area in West Georgia</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/home-upgrades/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502666040-0axxar-a8109cf3-d111-423a-8187-27dbd3c0fe85.jpg</image:loc>
+      <image:title>Home upgrade services — tile backsplash and fixtures in Bowdon, GA</image:title>
+      <image:caption>Kitchen, bathroom, and tile upgrades for Bowdon and Carroll County homeowners</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/services/framing-contractor/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777502667550-e73ktf-c73de1e7-fac8-4450-89af-fdef3145cf75.jpg</image:loc>
+      <image:title>Residential framing contractor in Bowdon, GA</image:title>
+      <image:caption>Expert framing services for additions and remodeling in Carroll County, Georgia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/about/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/gallery/1777502893596-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg</image:loc>
+      <image:title>Gray Tile &amp; Remodeling team — Bowdon, GA tile and remodeling experts</image:title>
+      <image:caption>25 years of tile installation and home remodeling craftsmanship in West Georgia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Service Area -->
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/service-area/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/contact/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/privacy-policy/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/terms/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/cookie-policy/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://gray-tile-remodeling.pageone.cloud/accessibility/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

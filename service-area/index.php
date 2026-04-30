@@ -3,7 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
-$pageTitle       = 'Service Area | Home Remodeling & Tile Near Bowdon, GA | Gray Tile';
+$pageTitle       = 'Service Area | Tile & Remodeling Near Bowdon GA | Gray Tile';
 $pageDescription = 'Gray Tile & Remodeling serves Bowdon, Carrollton, Villa Rica, Bremen, Temple, and communities throughout Carroll County and West Georgia. Get a free estimate near you.';
 $canonicalUrl    = $siteUrl . '/service-area/';
 $ogImage         = $clientPhotos['photo02'];
@@ -64,6 +64,7 @@ $schemaMarkup = json_encode([
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
+// SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>

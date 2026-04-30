@@ -1,0 +1,13 @@
+# robots.txt — Gray Tile & Remodeling
+# gray-tile-remodeling.pageone.cloud
+
+User-agent: *
+Allow: /
+
+# Block server internals — never exposed to crawlers
+Disallow: /includes/
+Disallow: /assets/js/
+
+# Sitemaps
+Sitemap: https://gray-tile-remodeling.pageone.cloud/sitemap.xml
+Sitemap: https://gray-tile-remodeling.pageone.cloud/sitemap-images.xml

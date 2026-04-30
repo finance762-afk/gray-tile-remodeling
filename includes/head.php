@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/site-config.php';
 /**
  * head.php — Gray Tile & Remodeling
  * Outputs everything from <!DOCTYPE html> through </head>.

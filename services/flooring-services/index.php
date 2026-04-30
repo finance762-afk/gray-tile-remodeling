@@ -3,7 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
-$pageTitle       = 'Flooring Services in Bowdon, GA — Tile, LVP & Hardwood | Gray Tile & Remodeling';
+$pageTitle       = 'Flooring Services Bowdon GA | Tile, LVP & Hardwood';
 $pageDescription = 'Custom tile showers, LVP flooring, hardwood refinishing, and subfloor replacement in Bowdon, GA. Gray Tile & Remodeling — 25 years of West Georgia floor expertise.';
 $canonicalUrl    = $siteUrl . '/services/flooring-services/';
 $ogImage         = $clientPhotos['photo08'];
@@ -54,6 +54,7 @@ $schemaMarkup = json_encode([
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
+// SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>

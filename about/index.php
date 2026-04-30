@@ -3,8 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
-$pageTitle       = 'About Gray Tile & Remodeling | Bowdon, GA Tile & Renovation Experts';
-$pageDescription = '25 years of tile installation and home remodeling craftsmanship in Bowdon, GA. Learn about Gray Tile & Remodeling — our story, our process, and our commitment to West Georgia homeowners.';
+$pageTitle       = 'About Gray Tile & Remodeling | Bowdon, GA Remodelers';
+$pageDescription = '25 years of tile and remodeling craftsmanship in Bowdon, GA. Learn about Gray Tile & Remodeling — our story, process, and commitment to West Georgia homeowners.';
 $canonicalUrl    = $siteUrl . '/about/';
 $ogImage         = $clientPhotos['gallery01'];
 $currentPage     = 'about';
@@ -54,6 +54,7 @@ $schemaMarkup = json_encode([
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
+// SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>

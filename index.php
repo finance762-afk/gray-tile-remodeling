@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 <?php
 // ── Page Setup ────────────────────────────────────────────────
 $pageTitle       = 'Home Remodeling in Bowdon, GA | Gray Tile & Remodeling';
-$pageDescription = 'Gray Tile & Remodeling transforms kitchens, bathrooms, and living spaces in Bowdon, GA with expert tile work and 25 years of craftsmanship. Free estimates — Carroll County and West Georgia.';
+$pageDescription = 'Expert tile installation and home remodeling in Bowdon, GA. Gray Tile & Remodeling — 25 years of West Georgia craftsmanship. Free estimates. Call today.';
 $canonicalUrl    = $siteUrl . '/';
 $ogImage         = $clientPhotos['hero'];
 $currentPage     = 'home';
@@ -53,6 +53,7 @@ $schemaMarkup = json_encode([
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
+// SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -589,7 +590,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
      HERO — Split Layout with Lead-Capture Form
 ═══════════════════════════════════════════════════════════════ -->
 <section class="hp-hero" aria-label="Expert tile remodeling in Bowdon, Georgia"
-         style="background-image: url('<?= htmlspecialchars($clientPhotos['hero']) ?>');">
+         style="background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591308186-c7da939c-61e3-487d-a025-1c778f88d951.jpg'hero']) ?>');">
 
   <div class="hp-hero-inner">
 
@@ -733,7 +734,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 1: Kitchen Remodeling -->
       <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1" data-animate>
         <div class="service-card__image">
-          <img src="<?= htmlspecialchars($clientPhotos['photo01']) ?>"
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591424703-kitchen_remodel.jpg'photo01']) ?>"
                alt="Kitchen remodeling with custom tile backsplash in Bowdon, GA"
                width="600" height="360" loading="lazy">
         </div>
@@ -755,7 +756,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 2: Bathroom Remodeling -->
       <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-2" data-animate>
         <div class="service-card__image">
-          <img src="<?= htmlspecialchars($clientPhotos['photo02']) ?>"
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591476835-bathroom_remodel.jpg'photo02']) ?>"
                alt="Bathroom remodeling with tile floors and shower in Bowdon, GA"
                width="600" height="360" loading="lazy">
         </div>
@@ -777,7 +778,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 3: Custom Tile Showers -->
       <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-3" data-animate>
         <div class="service-card__image">
-          <img src="<?= htmlspecialchars($clientPhotos['photo03']) ?>"
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591532228-custome_tile_work.jpg'photo03']) ?>"
                alt="Custom tile shower installation in Bowdon Georgia bathroom"
                width="600" height="360" loading="lazy">
         </div>
@@ -799,7 +800,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 4: Flooring Installation -->
       <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1" data-animate>
         <div class="service-card__image">
-          <img src="<?= htmlspecialchars($clientPhotos['photo04']) ?>"
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591680976-room_additions.jpg'photo04']) ?>"
                alt="Professional flooring installation in Bowdon Georgia home"
                width="600" height="360" loading="lazy">
         </div>

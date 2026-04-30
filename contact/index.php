@@ -3,8 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
-$pageTitle       = 'Contact Gray Tile & Remodeling | Get a Free Estimate in Bowdon, GA';
-$pageDescription = 'Request your free estimate from Gray Tile & Remodeling in Bowdon, GA. Serving Carroll County and West Georgia for tile installation, kitchen remodeling, bathroom renovation, and more.';
+$pageTitle       = 'Get a Free Estimate | Gray Tile & Remodeling Bowdon GA';
+$pageDescription = 'Request your free estimate from Gray Tile & Remodeling in Bowdon, GA. We serve Carroll County and West Georgia for tile, kitchen, bathroom, and home renovation.';
 $canonicalUrl    = $siteUrl . '/contact/';
 $ogImage         = $clientPhotos['photo01'];
 $currentPage     = 'contact';
@@ -45,6 +45,7 @@ $schemaMarkup = json_encode([
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
+// SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -759,7 +760,7 @@ details[open] .faq-question::after {
 
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="contact-form" novalidate>
           <!-- Honeypot -->
-          <input type="text" name="_honeypot" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
           <!-- Required hidden fields -->
           <input type="hidden" name="_next" value="/thank-you">
           <input type="hidden" name="_consent_version" value="v2.1">

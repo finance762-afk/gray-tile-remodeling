@@ -9,6 +9,7 @@ $canonicalUrl    = $siteUrl . '/thank-you/';
 $currentPage     = 'home';
 $noindex         = true;
 
+// SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>

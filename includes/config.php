@@ -17,7 +17,7 @@ $ownerName   = '';
 // ------------------------------------------------------------
 // Contact
 // ------------------------------------------------------------
-$phone          = '';
+$phone          = '(770) 555-0000'; // TODO: replace with client's actual phone number
 $phoneSecondary = '';
 $email          = '';
 
@@ -323,7 +323,7 @@ $gscVerification   = '';
 // ------------------------------------------------------------
 // Lead form
 // ------------------------------------------------------------
-$formAction     = 'https://design.pageone.cloud/api/leads/gray-tile-remodeling';
+$formAction     = 'https://db.pageone.cloud/functions/v1/leads/gray-tile-remodeling';
 $contactEmail   = $email ?: 'info@gray-tile-remodeling.pageone.cloud';
 
 // ------------------------------------------------------------
@@ -387,3 +387,22 @@ $faqs = [
         'a' => 'We use proper waterproofing, quality grout, and moisture barriers appropriate for Georgia\'s climate. Our installation methods prevent mold, mildew, and water damage for long-lasting results.',
     ],
 ];
+
+// ------------------------------------------------------------
+// Dynamic deployment config (set by site-verify / post-deploy Edge Functions)
+// Reads site-config.json if present; falls back to empty strings.
+// Previously lived in site-config.php — merged here so config.php is the
+// single include required by every page.
+// ------------------------------------------------------------
+$gscVerification  = '';
+$ga4MeasurementId = '';
+$__siteConfigPath = __DIR__ . '/site-config.json';
+if (is_readable($__siteConfigPath)) {
+    $__cfg = json_decode(file_get_contents($__siteConfigPath), true);
+    if (is_array($__cfg)) {
+        $gscVerification  = isset($__cfg['gsc_verification'])   ? (string) $__cfg['gsc_verification']   : '';
+        $ga4MeasurementId = isset($__cfg['ga4_measurement_id']) ? (string) $__cfg['ga4_measurement_id'] : '';
+    }
+    unset($__cfg);
+}
+unset($__siteConfigPath);

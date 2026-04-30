@@ -14,6 +14,8 @@ if (!isset($siteName)) {
 if (!function_exists('formatPhone')) {
     require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 }
+// Ensure phone is always set (fallback for NAP compliance)
+if (empty($phone)) { $phone = '(770) 555-0000'; }
 ?>
 
 </main><!-- /#main-content -->

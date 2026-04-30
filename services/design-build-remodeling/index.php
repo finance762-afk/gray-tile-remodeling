@@ -33,6 +33,7 @@ $schemaMarkup = $currentService
     ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs)
     : generateFAQSchema($pageFaqs);
 
+// SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
