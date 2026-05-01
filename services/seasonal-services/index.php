@@ -7,6 +7,7 @@ $pageTitle       = 'Plumbing, Electrical & HVAC in Bowdon GA | Gray Tile';
 $pageDescription = 'Plumbing, electrical, and HVAC installation for remodeling projects in Bowdon, GA. Gray Tile & Remodeling provides complete mechanical services. Licensed & insured.';
 $canonicalUrl    = $siteUrl . '/services/seasonal-services/';
 $ogImage         = $clientPhotos['photo05'];
+$heroPreloadImage = $clientPhotos['photo05'];
 $currentPage     = 'services';
 
 $pageFaqs = [

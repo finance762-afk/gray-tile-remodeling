@@ -7,6 +7,7 @@ $pageTitle       = 'Design-Build Remodeling Bowdon GA | Gray Tile & Remodeling';
 $pageDescription = 'Streamlined design-build remodeling in Bowdon, GA — one team handles design and construction from concept to completion. Gray Tile & Remodeling, 25 years West Georgia.';
 $canonicalUrl    = $siteUrl . '/services/design-build-remodeling/';
 $ogImage         = $clientPhotos['photo12'];
+$heroPreloadImage = $clientPhotos['photo12'];
 $currentPage     = 'services';
 
 // Find service in array

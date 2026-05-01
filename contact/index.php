@@ -7,6 +7,7 @@ $pageTitle       = 'Get a Free Estimate | Gray Tile & Remodeling Bowdon GA';
 $pageDescription = 'Request your free estimate from Gray Tile & Remodeling in Bowdon, GA. We serve Carroll County and West Georgia for tile, kitchen, bathroom, and home renovation.';
 $canonicalUrl    = $siteUrl . '/contact/';
 $ogImage         = $clientPhotos['photo01'];
+$heroPreloadImage = $clientPhotos['photo01'];
 $currentPage     = 'contact';
 
 $contactFaqs = [

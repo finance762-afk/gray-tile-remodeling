@@ -7,6 +7,7 @@ $pageTitle       = 'Remodeling Services in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Gray Tile & Remodeling delivers kitchen, bathroom, basement, attic, and full home remodeling in Bowdon, GA. 25 years of West Georgia craftsmanship. Get a free estimate.';
 $canonicalUrl    = $siteUrl . '/services/remodeling-services/';
 $ogImage         = $clientPhotos['photo01'];
+$heroPreloadImage = $clientPhotos['photo01'];
 $currentPage     = 'services';
 
 $pageFaqs = [

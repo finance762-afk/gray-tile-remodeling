@@ -84,8 +84,8 @@ foreach ($services as $svc) {
   <link rel="icon"             type="image/png"     href="/assets/images/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon"                      href="/assets/images/favicon.png">
 
-  <!-- Hero Image Preload (improves LCP on pages using the hero photo) -->
-  <link rel="preload" as="image" href="<?php echo htmlspecialchars($clientPhotos['hero']); ?>">
+  <!-- Hero Image Preload (improves LCP — uses page-specific hero when set) -->
+  <link rel="preload" as="image" href="<?php echo htmlspecialchars($heroPreloadImage ?? $clientPhotos['hero']); ?>">
 
   <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="/assets/css/framework.css">

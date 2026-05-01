@@ -7,6 +7,7 @@ $pageTitle       = 'Garage Conversion in Bowdon GA | Add Living Space | Gray Til
 $pageDescription = 'Convert your garage into a bedroom, office, studio, or living area in Bowdon, GA. Gray Tile & Remodeling handles insulation, flooring, electrical, and finishing throughout West Georgia.';
 $canonicalUrl    = $siteUrl . '/services/garage-conversion/';
 $ogImage         = $clientPhotos['photo16'];
+$heroPreloadImage = $clientPhotos['photo16'];
 $currentPage     = 'services';
 
 $currentService = null;

@@ -7,6 +7,7 @@ $pageTitle       = 'Framing Contractor Bowdon GA | Residential Framing Services'
 $pageDescription = 'Expert residential framing for additions, remodels, and new construction in Bowdon, GA. Gray Tile & Remodeling provides professional framing throughout Carroll County and West Georgia.';
 $canonicalUrl    = $siteUrl . '/services/framing-contractor/';
 $ogImage         = $clientPhotos['photo07'];
+$heroPreloadImage = $clientPhotos['photo07'];
 $currentPage     = 'services';
 
 $currentService = null;

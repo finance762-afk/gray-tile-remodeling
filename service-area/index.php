@@ -7,6 +7,7 @@ $pageTitle       = 'Service Area | Tile & Remodeling Near Bowdon GA | Gray Tile'
 $pageDescription = 'Gray Tile & Remodeling serves Bowdon, Carrollton, Villa Rica, Bremen, Temple, and communities throughout Carroll County and West Georgia. Get a free estimate near you.';
 $canonicalUrl    = $siteUrl . '/service-area/';
 $ogImage         = $clientPhotos['photo02'];
+$heroPreloadImage = $clientPhotos['photo02'];
 $currentPage     = 'service-area';
 
 $areaFaqs = [

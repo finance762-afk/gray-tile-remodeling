@@ -590,7 +590,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
      HERO — Split Layout with Lead-Capture Form
 ═══════════════════════════════════════════════════════════════ -->
 <section class="hp-hero" aria-label="Expert tile remodeling in Bowdon, Georgia"
-         style="background-image: url('https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591308186-c7da939c-61e3-487d-a025-1c778f88d951.jpg'hero']) ?>');">
+         style="background-image: url('<?php echo htmlspecialchars($clientPhotos['hero']); ?>');">
 
   <div class="hp-hero-inner">
 
@@ -756,7 +756,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 2: Bathroom Remodeling -->
       <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-2" data-animate>
         <div class="service-card__image">
-          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591476835-bathroom_remodel.jpg'photo02']) ?>"
+          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777592424691-bathroom_remodel.jpg'photo02']) ?>"
                alt="Bathroom remodeling with tile floors and shower in Bowdon, GA"
                width="600" height="360" loading="lazy">
         </div>

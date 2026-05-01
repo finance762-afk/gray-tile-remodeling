@@ -7,6 +7,7 @@ $pageTitle       = 'Home Upgrades in Bowdon GA | Kitchen, Bath & Tile Updates';
 $pageDescription = 'Upgrade your Bowdon, GA home without a full remodel — tile backsplashes, countertops, flooring, and fixture updates from Gray Tile & Remodeling, serving all of Carroll County.';
 $canonicalUrl    = $siteUrl . '/services/home-upgrades/';
 $ogImage         = $clientPhotos['photo05'];
+$heroPreloadImage = $clientPhotos['photo05'];
 $currentPage     = 'services';
 
 $currentService = null;

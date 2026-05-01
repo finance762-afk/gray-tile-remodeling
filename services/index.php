@@ -7,6 +7,7 @@ $pageTitle       = 'Remodeling Services in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Browse all tile installation and remodeling services from Gray Tile & Remodeling in Bowdon, GA — kitchen, bathroom, flooring, basement, and more.';
 $canonicalUrl    = $siteUrl . '/services/';
 $ogImage         = $clientPhotos['gallery01'];
+$heroPreloadImage = $clientPhotos['gallery01'];
 $currentPage     = 'services';
 
 // BreadcrumbList + ItemList schema

@@ -7,6 +7,7 @@ $pageTitle       = 'Flooring Services Bowdon GA | Tile, LVP & Hardwood';
 $pageDescription = 'Custom tile showers, LVP flooring, hardwood refinishing, and subfloor replacement in Bowdon, GA. Gray Tile & Remodeling — 25 years of West Georgia floor expertise.';
 $canonicalUrl    = $siteUrl . '/services/flooring-services/';
 $ogImage         = $clientPhotos['photo08'];
+$heroPreloadImage = $clientPhotos['photo08'];
 $currentPage     = 'services';
 
 $pageFaqs = [

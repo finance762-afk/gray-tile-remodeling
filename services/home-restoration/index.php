@@ -7,6 +7,7 @@ $pageTitle       = 'Home Restoration Bowdon GA | Historic & Older Home Specialis
 $pageDescription = 'Restore your Bowdon, GA home to its original beauty with Gray Tile & Remodeling — specialists in older home renovation, water damage repair, and structural updates in West Georgia.';
 $canonicalUrl    = $siteUrl . '/services/home-restoration/';
 $ogImage         = $clientPhotos['photo14'];
+$heroPreloadImage = $clientPhotos['photo14'];
 $currentPage     = 'services';
 
 $currentService = null;

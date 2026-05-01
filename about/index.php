@@ -7,6 +7,7 @@ $pageTitle       = 'About Gray Tile & Remodeling | Bowdon, GA Remodelers';
 $pageDescription = '25 years of tile and remodeling craftsmanship in Bowdon, GA. Learn about Gray Tile & Remodeling — our story, process, and commitment to West Georgia homeowners.';
 $canonicalUrl    = $siteUrl . '/about/';
 $ogImage         = $clientPhotos['gallery01'];
+$heroPreloadImage = $clientPhotos['gallery01'];
 $currentPage     = 'about';
 
 $aboutFaqs = [
