@@ -68,7 +68,7 @@ if (!function_exists('isActivePage')) {
                       if (in_array($svc['name'], $group['services'], true)) {
                           $total++;
                           if ($shown < 4) {
-                              echo '<li><a href="/services/' . htmlspecialchars($group['slug']) . '/">' . htmlspecialchars($svc['name']) . '</a></li>' . "\n";
+                              echo '<li><a href="/services/' . htmlspecialchars($svc['slug']) . '/">' . htmlspecialchars($svc['name']) . '</a></li>' . "\n";
                               $shown++;
                           }
                       }
