@@ -46,16 +46,17 @@ $yearEstablished = 2001;
 $yearsInBusiness = 25;
 
 // ------------------------------------------------------------
-// Brand colors (extracted from logo)
+// Brand colors (extracted from logo — charcoal grey + warm gold)
 // ------------------------------------------------------------
 $colors = [
-    'primary'        => '#1a2b3c',
-    'primary_rgb'    => '26, 43, 60',
-    'primary_dark'   => '#0f1a26',
-    'secondary'      => '#4d5e6f',
-    'secondary_rgb'  => '77, 94, 111',
-    'accent'         => '#06b6d4',
-    'accent_rgb'     => '6, 182, 212',
+    'primary'        => '#3c3c3c',
+    'primary_rgb'    => '60, 60, 60',
+    'primary_dark'   => '#1a1a1a',
+    'primary_dark_rgb' => '26, 26, 26',
+    'secondary'      => '#6b6b6b',
+    'secondary_rgb'  => '107, 107, 107',
+    'accent'         => '#c9963a',
+    'accent_rgb'     => '201, 150, 58',
 ];
 
 // ------------------------------------------------------------

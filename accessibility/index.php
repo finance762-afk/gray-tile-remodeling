@@ -17,6 +17,8 @@ $pageTitle       = 'Accessibility | ' . $siteName;
 $pageDescription = 'Accessibility statement for ' . $siteName . ' — our commitment to WCAG 2.1 AA compliance.';
 $canonicalUrl    = $siteUrl . '/accessibility/';
 $currentPage     = 'legal';
+$ogImage         = $clientPhotos['photo09'];
+$heroPreloadImage = $clientPhotos['photo09'];
 
 $schemaMarkup = json_encode([
     '@context' => 'https://schema.org',
@@ -52,7 +54,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: flex-end;
   padding: var(--space-3xl) 0 var(--space-2xl);
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background-color: var(--color-primary-dark);
+  background-image: url('<?php echo htmlspecialchars($clientPhotos['photo09']); ?>');
+  background-size: cover;
+  background-position: center;
   position: relative;
   overflow: hidden;
 }
@@ -61,7 +66,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 60%);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-primary-dark-rgb), 0.88) 0%,
+    rgba(var(--color-primary-rgb), 0.75) 60%,
+    rgba(var(--color-primary-dark-rgb), 0.65) 100%
+  );
   pointer-events: none;
 }
 
