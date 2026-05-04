@@ -3,6 +3,7 @@
 # ============================================================
 
 Options -Indexes
+DirectoryIndex index.php index.html
 
 # ------------------------------------------------------------
 # Security Headers
@@ -45,19 +46,23 @@ Options -Indexes
 </IfModule>
 
 # ------------------------------------------------------------
-# Clean URLs — Subdirectory-Safe
-# NOTE: !-d condition intentionally omitted to support pages
-# inside real subdirectories (e.g. /services/) on Hostinger.
-# NOTE: /assets/ and /includes/ are explicitly excluded to
-# prevent rewrites from breaking static file delivery.
+# Clean URLs
+# - Real directories with index.php served via DirectoryIndex
+# - Real files served as-is
+# - Otherwise, append .php to extensionless URLs
 # ------------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Remove .php extension from requests (clean URL → .php)
+    # Skip rewrite for assets and includes
     RewriteCond %{REQUEST_URI} !^/assets/
     RewriteCond %{REQUEST_URI} !^/includes/
+
+    # Skip if it's a real file or real directory
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Try .php extension
     RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
     # Redirect .php requests to clean URLs (301)
