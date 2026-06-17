@@ -1,7 +1,8 @@
 <?php
 /**
  * head.php — Gray Tile & Remodeling
- * Outputs everything from <!DOCTYPE html> through </head>.
+ * Outputs everything from <!DOCTYPE html> through <?php require_once __DIR__ . '/edit-mode.php'; ?>
+</head>.
  *
  * REQUIRED variables (set by each page before including):
  *   $pageTitle        — unique page title (50–60 chars)
