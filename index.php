@@ -675,6 +675,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </select>
         </div>
 
+        <!-- spam shield: signed render timestamp + JS interaction signal -->
+        <?php $__ft_ts = (string) time(); ?>
+        <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+        <input type="hidden" name="_js" value="" class="js-shield-field">
+        <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+        <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+        <?php } ?>
         <button type="submit" class="btn btn-accent btn-lg btn-block">Get My Free Estimate</button>
 
         <p class="form-footnote">
@@ -734,7 +741,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 1: Kitchen Remodeling -->
       <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1" data-animate>
         <div class="service-card__image">
-          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591424703-kitchen_remodel.jpg"
+          <img src="<?= htmlspecialchars($clientPhotos['photo_kitchen']) ?>"
                alt="Kitchen remodeling with custom tile backsplash in Bowdon, GA"
                width="600" height="360" loading="lazy">
         </div>
@@ -756,7 +763,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 2: Bathroom Remodeling -->
       <article class="service-card-with-image card-tint-2 reveal-up reveal-delay-2" data-animate>
         <div class="service-card__image">
-          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777592424691-bathroom_remodel.jpg"
+          <img src="<?= htmlspecialchars($clientPhotos['photo_bathroom']) ?>"
                alt="Bathroom remodeling with tile floors and shower in Bowdon, GA"
                width="600" height="360" loading="lazy">
         </div>
@@ -778,7 +785,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 3: Custom Tile Showers -->
       <article class="service-card-with-image card-tint-3 reveal-up reveal-delay-3" data-animate>
         <div class="service-card__image">
-          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591532228-custome_tile_work.jpg"
+          <img src="<?= htmlspecialchars($clientPhotos['photo_tile_work']) ?>"
                alt="Custom tile shower installation in Bowdon Georgia bathroom"
                width="600" height="360" loading="lazy">
         </div>
@@ -800,7 +807,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <!-- Card 4: Flooring Installation -->
       <article class="service-card-with-image card-tint-1 reveal-up reveal-delay-1" data-animate>
         <div class="service-card__image">
-          <img src="https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/photos/1777591680976-room_additions.jpg"
+          <img src="<?= htmlspecialchars($clientPhotos['photo06']) ?>"
                alt="Professional flooring installation in Bowdon Georgia home"
                width="600" height="360" loading="lazy">
         </div>

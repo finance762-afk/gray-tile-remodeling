@@ -355,6 +355,11 @@ $clientPhotos = [
     'gallery02' => $cdnBase . '/gallery/1777502895455-e0d16062-bac4-4f4d-abe3-8ed2677a9609.jpg',
     'gallery03' => $cdnBase . '/gallery/1777502896486-f5c363da-5a68-4502-9d66-3b07364ced3e.jpg',
     'gallery04' => $cdnBase . '/gallery/1777502897463-cd964894-8675-458e-8593-8ddfff96d576.jpg',
+    // Descriptive client photos (named by subject)
+    'photo_kitchen'        => $cdnBase . '/photos/1777591424703-kitchen_remodel.jpg',
+    'photo_bathroom'       => $cdnBase . '/photos/1777592424691-bathroom_remodel.jpg',
+    'photo_tile_work'      => $cdnBase . '/photos/1777591532228-custome_tile_work.jpg',
+    'photo_room_additions' => $cdnBase . '/photos/1777591680976-room_additions.jpg',
     'logo'      => $cdnBase . '/logo/1777502577007-x0wqro-grey_tile_logo.jpg',
 ];
 
@@ -407,3 +412,4 @@ if (is_readable($__siteConfigPath)) {
     unset($__cfg);
 }
 unset($__siteConfigPath);
+$leadsFormSecret = 'bac7714a8f41505ab12d75311ccbb11a6374e38b1a010d69111c84a652cfa0f3'; // spam-shield HMAC (matches leads fn LEADS_FORM_SECRET)
