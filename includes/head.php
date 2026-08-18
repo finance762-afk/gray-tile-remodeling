@@ -1,7 +1,7 @@
 <?php
 /**
  * head.php — Gray Tile & Remodeling
- * Outputs everything from <!DOCTYPE html> through <?php require_once __DIR__ . '/edit-mode.php'; ?>
+ * Outputs everything from <!DOCTYPE html> through the head close
 </head>.
  *
  * REQUIRED variables (set by each page before including):
@@ -178,4 +178,5 @@ foreach ($services as $svc) {
   <script type="application/ld+json"><?php echo $schemaMarkup; ?></script>
   <?php endif; ?>
 
+<?php require_once __DIR__ . '/edit-mode.php'; ?>
 </head>
