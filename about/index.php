@@ -35,7 +35,6 @@ $schemaMarkup = json_encode([
             'foundingYear'  => (string)$yearEstablished,
             'description'   => $businessDescription,
             'areaServed'    => ['Bowdon GA', 'Carrollton GA', 'Villa Rica GA', 'Carroll County GA'],
-            'aggregateRating' => getAggregateRatingSchema(),
         ],
         [
             '@type' => 'BreadcrumbList',

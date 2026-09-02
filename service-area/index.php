@@ -51,7 +51,7 @@ $schemaMarkup = json_encode([
                 ['@type' => 'City', 'name' => 'Cedartown',    'addressRegion' => 'GA'],
                 ['@type' => 'City', 'name' => 'Dallas',        'addressRegion' => 'GA'],
                 ['@type' => 'City', 'name' => 'Hiram',         'addressRegion' => 'GA'],
-                ['@type' => 'County', 'name' => 'Carroll County', 'addressRegion' => 'GA'],
+                ['@type' => 'AdministrativeArea', 'name' => 'Carroll County', 'addressRegion' => 'GA'],
             ],
         ],
         [

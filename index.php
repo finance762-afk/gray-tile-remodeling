@@ -40,7 +40,6 @@ $schemaMarkup = json_encode([
             '@type'           => 'HomeAndConstructionBusiness',
             'name'            => $siteName,
             'url'             => $siteUrl,
-            'aggregateRating' => getAggregateRatingSchema(),
         ],
         [
             '@type'      => 'FAQPage',
