@@ -6,8 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageTitle       = 'LVP Flooring Installation in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'LVP flooring installed in Bowdon, GA — $3–$8/sq ft, 100% waterproof, works over concrete. Best flooring choice for Georgia humidity. Carroll County free estimates.';
 $canonicalUrl    = $siteUrl . '/services/lvp-flooring/';
-$ogImage         = $clientPhotos['photo08'];
-$heroPreloadImage = $clientPhotos['photo08'];
+$ogImage         = $clientPhotos['photo10'];
+$heroPreloadImage = $clientPhotos['photo10'];
 $currentPage     = 'services';
 
 $currentService = null;
@@ -109,7 +109,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 }
 .lvp-hero-right {
   position: relative;
-  background-image: url('<?php echo $clientPhotos['photo08']; ?>');
+  background-image: url('<?php echo $clientPhotos['photo10']; ?>');
   background-size: cover;
   background-position: center;
   min-height: 60vh;

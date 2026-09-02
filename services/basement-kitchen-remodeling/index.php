@@ -388,8 +388,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div class="bkr-intro-photo-col" data-animate="fade-up">
           <div class="bkr-intro-photo-wrap">
             <picture>
-              <source srcset="<?php echo htmlspecialchars($clientPhotos['gallery04']); ?>" type="image/jpeg">
-              <img src="<?php echo htmlspecialchars($clientPhotos['gallery04']); ?>" alt="Basement kitchen remodeling in Bowdon GA — custom tile, cabinetry, and countertops in finished lower level" width="800" height="1000" loading="lazy">
+              <source srcset="<?php echo htmlspecialchars($clientPhotos['gallery02']); ?>" type="image/jpeg">
+              <img src="<?php echo htmlspecialchars($clientPhotos['gallery02']); ?>" alt="Basement kitchen remodeling in Bowdon GA — custom tile, cabinetry, and countertops in finished lower level" width="800" height="1000" loading="lazy">
             </picture>
             <div class="bkr-intro-badge">$18K–$55K<br>Typical Range</div>
           </div>
@@ -409,8 +409,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="bkr-editorial-photo-col">
           <picture>
-            <source srcset="<?php echo htmlspecialchars($clientPhotos['photo04']); ?>" type="image/jpeg">
-            <img src="<?php echo htmlspecialchars($clientPhotos['photo04']); ?>" alt="Custom basement kitchen installation in Bowdon GA showing tile backsplash and full cabinetry" width="800" height="900" loading="lazy">
+            <source srcset="<?php echo htmlspecialchars($clientPhotos['photo06']); ?>" type="image/jpeg">
+            <img src="<?php echo htmlspecialchars($clientPhotos['photo06']); ?>" alt="Custom basement kitchen installation in Bowdon GA showing tile backsplash and full cabinetry" width="800" height="900" loading="lazy">
           </picture>
         </div>
 

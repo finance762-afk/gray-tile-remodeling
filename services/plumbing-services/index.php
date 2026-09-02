@@ -270,7 +270,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <div class="plm-accent-strip"></div>
           <div class="plm-photo-frame">
             <img
-              src="<?php echo $clientPhotos['photo01']; ?>"
+              src="<?php echo $clientPhotos['photo05']; ?>"
               alt="Plumbing rough-in work during bathroom remodel in Bowdon Georgia showing new supply and drain lines"
               width="800" height="600"
               loading="lazy">
@@ -281,7 +281,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </div>
           <div class="plm-secondary-img">
             <img
-              src="<?php echo $clientPhotos['gallery01']; ?>"
+              src="<?php echo $clientPhotos['gallery03']; ?>"
               alt="Bathroom tile and plumbing fixture installation Bowdon GA"
               width="240" height="240"
               loading="lazy">

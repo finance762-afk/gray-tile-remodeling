@@ -6,8 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageTitle       = 'Kitchen Remodeling in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Full kitchen remodels in Bowdon, GA — custom tile, cabinets, countertops & layout redesign. 25 years of West Georgia kitchen renovations. Free estimates, Carroll County.';
 $canonicalUrl    = $siteUrl . '/services/kitchen-remodeling/';
-$ogImage         = $clientPhotos['photo01'];
-$heroPreloadImage = $clientPhotos['photo01'];
+$ogImage         = $clientPhotos['photo_kitchen'];
+$heroPreloadImage = $clientPhotos['photo_kitchen'];
 $currentPage     = 'services';
 
 $currentService = null;
@@ -784,7 +784,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="km-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo01']); ?>');" aria-label="Kitchen Remodeling hero">
+  <section class="km-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo_kitchen']); ?>');" aria-label="Kitchen Remodeling hero">
     <div class="km-hero-inner container">
       <div class="km-hero-content" data-animate="fade-up">
         <span class="km-eyebrow">

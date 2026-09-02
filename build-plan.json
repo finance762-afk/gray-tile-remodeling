@@ -714,8 +714,8 @@
         "Local service reliability and quick turnaround times",
         "Understanding of moisture/humidity challenges in Georgia climate for tile installations"
       ],
-      "hero_subheadline": "Transform your kitchen, bathroom, and floors with custom tile designs from Gray Tile Remodeling—specialized craftsmanship you can trust.",
-      "tone_recommendation": "Professional yet approachable—position as knowledgeable experts who are easy to work with. Use confident language about expertise while maintaining warmth and accessibility. Avoid overly technical jargon; explain tile choices and processes in terms homeowners understand. Friendly enough to feel personable, but authoritative enough to inspire confidence in the specialized craft."
+      "hero_subheadline": "Transform your kitchen, bathroom, and floors with custom tile designs from Gray Tile Remodeling\u2014specialized craftsmanship you can trust.",
+      "tone_recommendation": "Professional yet approachable\u2014position as knowledgeable experts who are easy to work with. Use confident language about expertise while maintaining warmth and accessibility. Avoid overly technical jargon; explain tile choices and processes in terms homeowners understand. Friendly enough to feel personable, but authoritative enough to inspire confidence in the specialized craft."
     },
     "competitors": [],
     "generated_at": "2026-04-29T22:54:10.860Z",
@@ -803,5 +803,7 @@
   },
   "lead_notification_email": "",
   "lead_notification_phone": "",
-  "google_business_profile_url": ""
+  "google_business_profile_url": "https://www.google.com/maps/place/?q=place_id:ChIJkzazn-Yg9YgRms-LZNwZj6E",
+  "business_hours": "{\"timetable\": {\"friday\": null, \"monday\": [{\"open\": {\"hour\": 9, \"minute\": 0}, \"close\": {\"hour\": 17, \"minute\": 0}}], \"sunday\": null, \"tuesday\": [{\"open\": {\"hour\": 9, \"minute\": 0}, \"close\": {\"hour\": 17, \"minute\": 0}}], \"saturday\": null, \"thursday\": [{\"open\": {\"hour\": 9, \"minute\": 0}, \"close\": {\"hour\": 17, \"minute\": 0}}], \"wednesday\": [{\"open\": {\"hour\": 9, \"minute\": 0}, \"close\": {\"hour\": 17, \"minute\": 0}}]}, \"current_status\": \"open\"}",
+  "gbp_place_id": "ChIJkzazn-Yg9YgRms-LZNwZj6E"
 }

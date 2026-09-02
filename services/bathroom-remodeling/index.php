@@ -6,8 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageTitle       = 'Bathroom Remodeling in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Custom bathroom remodels in Bowdon, GA — tile showers, vanities, waterproofing & full gut renovations. 2–4 weeks typical. 25 years serving Carroll County. Free estimates.';
 $canonicalUrl    = $siteUrl . '/services/bathroom-remodeling/';
-$ogImage         = $clientPhotos['photo02'];
-$heroPreloadImage = $clientPhotos['photo02'];
+$ogImage         = $clientPhotos['photo_bathroom'];
+$heroPreloadImage = $clientPhotos['photo_bathroom'];
 $currentPage     = 'services';
 
 $currentService = null;
@@ -566,7 +566,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="bmr-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo02']); ?>');" aria-label="Bathroom Remodeling hero">
+  <section class="bmr-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo_bathroom']); ?>');" aria-label="Bathroom Remodeling hero">
     <div class="bmr-hero-inner container">
       <div class="bmr-hero-content" data-animate="fade-up">
         <span class="bmr-eyebrow">
