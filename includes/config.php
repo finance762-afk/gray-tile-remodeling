@@ -416,5 +416,5 @@ $leadsFormSecret = 'bac7714a8f41505ab12d75311ccbb11a6374e38b1a010d69111c84a652cf
 
 // Hours — from the Google Business Profile (Mon–Thu 9am–5pm; closed Fri–Sun)
 $hours = ['days' => ['Monday','Tuesday','Wednesday','Thursday'], 'opens' => '09:00', 'closes' => '17:00', 'display' => 'Mon–Thu 9am–5pm'];
-$cssVersion = '2';
+$cssVersion = '3';
 $googlePlaceId = 'ChIJkzazn-Yg9YgRms-LZNwZj6E';
