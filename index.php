@@ -5,12 +5,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 <?php
 // ── Page Setup ────────────────────────────────────────────────
 $pageTitle       = 'Home Remodeling in Bowdon, GA | Gray Tile & Remodeling';
-$pageDescription = 'Expert tile installation and home remodeling in Bowdon, GA. Gray Tile & Remodeling — 25 years of West Georgia craftsmanship. Free estimates. Call today.';
+$pageDescription = 'Expert tile installation and home remodeling in Bowdon, GA. Gray Tile & Remodeling — West Georgia craftsmanship. Free estimates. Call today.';
 $canonicalUrl    = $siteUrl . '/';
 $ogImage         = $clientPhotos['hero'];
 $currentPage     = 'home';
 $heroPreloadImage = $clientPhotos['hero'];
-$useSwiper       = false;
+$pageType        = 'home';
 
 // ── Homepage FAQs (5 from config + 1 local) ──────────────────
 $homeFaqs = $faqs;
@@ -19,7 +19,7 @@ $homeFaqs[] = [
     'a' => 'We serve Bowdon and surrounding communities throughout Carroll County and West Georgia, including Carrollton, Villa Rica, Bremen, Temple, and areas within approximately 50 miles of Bowdon.',
 ];
 
-// ── Schema (WebSite + AggregateRating + FAQPage) ─────────────
+// ── Schema (WebSite + FAQPage — never a self-serving AggregateRating) ─────────────
 $schemaMarkup = json_encode([
     '@context' => 'https://schema.org',
     '@graph'   => [
@@ -66,7 +66,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 /* --- Hero: Split Layout --------------------------------------- */
 .hp-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 0;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -588,8 +588,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <!-- ═══════════════════════════════════════════════════════════
      HERO — Split Layout with Lead-Capture Form
 ═══════════════════════════════════════════════════════════════ -->
-<section class="hp-hero" aria-label="Expert tile remodeling in Bowdon, Georgia"
-         style="background-image: url('<?php echo htmlspecialchars($clientPhotos['hero']); ?>');">
+<section class="hp-hero hero--picture hero--has-form" aria-label="Expert tile remodeling in Bowdon, Georgia">
+  <?php echo p1_hero_picture('kitchen-remodel', 'Remodeled kitchen with white cabinets and tile backsplash by Gray Tile & Remodeling in Bowdon, GA'); ?>
 
   <div class="hp-hero-inner">
 
@@ -598,7 +598,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
       <div class="hp-hero-eyebrow">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Serving Bowdon Since <?= $yearEstablished ?>
+        Tile &amp; Remodeling &middot; Bowdon, GA
       </div>
 
       <h1 class="hp-hero-title">
@@ -606,27 +606,27 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <span class="text-accent">Bowdon, GA</span> Homes
       </h1>
 
-      <p class="hp-hero-subtitle">
-        Transform your kitchen, bathroom, and living spaces with custom tile designs from Gray Tile &amp; Remodeling — <?= $yearsInBusiness ?> years of specialized craftsmanship, deep roots in Carroll County, and a track record that speaks for itself.
+      <p class="hp-hero-subtitle hero-answer">
+        Gray Tile &amp; Remodeling is a Bowdon, GA tile contractor that remodels kitchens, bathrooms and floors for Carroll County and West Georgia homeowners — custom tile showers, backsplashes, LVP and full remodels, handled in-house from layout to final grout.
       </p>
 
       <div class="hp-hero-actions">
-        <a href="#estimate-form" class="btn btn-accent btn-lg">Get My Free Estimate</a>
+        <a href="#estimate-form" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get My Free Estimate</a>
         <a href="/services/" class="btn btn-outline-white btn-lg">Explore Services</a>
       </div>
 
       <div class="hp-hero-trust">
         <span class="hp-trust-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          Licensed &amp; Insured
+          Tile Specialists
         </span>
         <span class="hp-trust-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <?= $yearsInBusiness ?>+ Years Experience
+          Kitchens &middot; Baths &middot; Floors
         </span>
         <span class="hp-trust-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          5.0 Google Rating
+          Google-verified business
         </span>
         <span class="hp-trust-item">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
@@ -637,75 +637,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     </div><!-- /.hp-hero-text -->
 
     <!-- Right 40%: Quick-Capture Form -->
-    <aside class="hp-form-card" id="estimate-form">
-      <h2>Get Your Free Estimate</h2>
-      <p class="hp-form-tagline">No obligation. Same-day response.</p>
-
-      <form action="<?= htmlspecialchars($formAction) ?>" method="POST" class="hp-form">
-        <!-- Honeypot -->
-        <input type="text" name="_honeypot" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <!-- Hidden tracking -->
-        <input type="hidden" name="_form_location" value="hero">
-        <input type="hidden" name="_next" value="/thank-you">
-        <input type="hidden" name="_consent_version" value="v2.1">
-        <input type="hidden" name="_consent_page" value="<?= htmlspecialchars($_SERVER['REQUEST_URI']) ?>">
-
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Your full name" required aria-label="Full name">
-        </div>
-        <div class="form-row">
-          <input type="tel" name="phone" placeholder="Phone number" required aria-label="Phone number">
-        </div>
-        <div class="form-row">
-          <input type="text" name="zip" placeholder="ZIP code" pattern="[0-9]{5}" required aria-label="ZIP code">
-        </div>
-        <div class="form-row">
-          <select name="service_requested" aria-label="Service needed">
-            <option value="">What do you need?</option>
-            <option value="Kitchen Remodeling">Kitchen Remodeling</option>
-            <option value="Bathroom Remodeling">Bathroom Remodeling</option>
-            <option value="Custom Tile Showers">Custom Tile Showers</option>
-            <option value="Flooring Installation">Flooring Installation</option>
-            <option value="Basement Finishing">Basement Finishing</option>
-            <option value="Room Additions">Room Additions</option>
-            <option value="Design-Build Remodeling">Design-Build Remodeling</option>
-            <option value="Full Home Remodel">Full Home Remodel</option>
-            <option value="Other">Other / Not Listed</option>
-          </select>
-        </div>
-
-        <!-- spam shield: signed render timestamp + JS interaction signal -->
-        <?php $__ft_ts = (string) time(); ?>
-        <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
-        <input type="hidden" name="_js" value="" class="js-shield-field">
-        <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
-        <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
-        <?php } ?>
-        <?php if (empty($GLOBALS['__p1_consent_css'])) { $GLOBALS['__p1_consent_css'] = 1; ?>
-        <style>
-        .p1-consent{margin:14px 0;text-align:left}
-        .p1-consent-set{border:0;margin:0;padding:0}
-        .p1-consent-legend{font-size:13px;font-weight:600;padding:0;margin-bottom:6px}
-        .p1-consent-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;font-size:12px;line-height:1.5;cursor:pointer}
-        .p1-consent-item input{margin:2px 0 0;flex:0 0 auto;width:16px;height:16px;cursor:pointer}
-        .p1-consent-line{display:flex;gap:8px;align-items:flex-start;font-size:12px;line-height:1.45;cursor:pointer}
-        .p1-consent-line input{margin:2px 0 0;flex:0 0 auto;width:16px;height:16px;cursor:pointer}
-        .p1-consent a{text-decoration:underline}
-        </style>
-        <?php } ?>
-        <!-- TCPA consent — terms_accepted is REQUIRED by the leads endpoint -->
-        <div class="p1-consent">
-          <label class="p1-consent-line">
-            <input type="checkbox" name="terms_accepted" value="yes" required>
-            <span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted about my request. *</span>
-          </label>
-        </div>
-        <button type="submit" class="btn btn-accent btn-lg btn-block">Get My Free Estimate</button>
-
-        <p class="form-footnote">
-          By submitting, you agree to our <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>.
-        </p>
-      </form>
+    <aside class="hp-form-card hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+      <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get Your Free Estimate</p>
+      <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+      <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+            include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
     </aside>
 
   </div><!-- /.hp-hero-inner -->
@@ -717,8 +653,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ═══════════════════════════════════════════════════════════════ -->
 <div class="ticker-strip hp-ticker" aria-hidden="true" role="presentation">
   <div class="ticker-track">
-    <span>★ 25 Years Experience</span>
-    <span>· Licensed &amp; Insured ·</span>
+    <span>★ Bowdon, GA Tile Specialists</span>
+    <span>· Carroll County &amp; West Georgia ·</span>
     <span>✓ Kitchen Remodeling</span>
     <span>· Custom Tile Showers ·</span>
     <span>✓ Bathroom Remodeling</span>
@@ -727,8 +663,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <span>· Free Estimates ·</span>
     <span>✓ Design-Build Services</span>
     <span>· Basement Finishing ·</span>
-    <span>★ 25 Years Experience</span>
-    <span>· Licensed &amp; Insured ·</span>
+    <span>★ Bowdon, GA Tile Specialists</span>
+    <span>· Carroll County &amp; West Georgia ·</span>
     <span>✓ Kitchen Remodeling</span>
     <span>· Custom Tile Showers ·</span>
     <span>✓ Bathroom Remodeling</span>
@@ -952,37 +888,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   </svg>
 </div>
 
-<section class="hp-stats" aria-label="Company statistics">
+<section class="proof-strip texture-grain" aria-label="Facts about Gray Tile and Remodeling">
   <div class="container">
-    <div class="hp-stats-grid">
-
-      <div class="hp-stat" data-animate>
-        <span class="hp-stat-number">
-          <span data-counter="<?= $yearsInBusiness ?>" data-suffix="+" aria-label="<?= $yearsInBusiness ?> years"></span><span class="s-suffix" aria-hidden="true"></span>
-        </span>
-        <span class="hp-stat-label">Years in Business</span>
-      </div>
-
-      <div class="hp-stat" data-animate>
-        <span class="hp-stat-number">
-          <span data-counter="500" data-suffix="+" aria-label="500 plus projects"></span>
-        </span>
-        <span class="hp-stat-label">Projects Completed</span>
-      </div>
-
-      <div class="hp-stat" data-animate>
-        <span class="hp-stat-number" style="color:var(--color-accent);">5.0<span class="s-suffix">★</span></span>
-        <span class="hp-stat-label">Google Rating</span>
-      </div>
-
-      <div class="hp-stat" data-animate>
-        <span class="hp-stat-number">
-          <span data-counter="50" data-suffix="mi" aria-label="50 mile"></span>
-        </span>
-        <span class="hp-stat-label">Service Radius</span>
-      </div>
-
-    </div>
+    <div class="proof-item"><?php echo p1_icon('map-pin'); ?><div><b>Bowdon, GA</b><span>Serving Carroll County &amp; West Georgia</span></div></div>
+    <div class="proof-item"><?php echo p1_icon('badge-check'); ?><div><b>Google-verified</b><span>Tile contractor listing on Google Business Profile</span></div></div>
+    <div class="proof-item"><?php echo p1_icon('layers'); ?><div><b>In-house crew</b><span>Tile, kitchens, baths &amp; floors — one team start to finish</span></div></div>
+    <div class="proof-item"><?php echo p1_icon('clock'); ?><div><b>Mon–Thu 9am–5pm</b><span>Free estimates · replies within one business day</span></div></div>
   </div>
 </section>
 
@@ -1001,7 +912,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <div class="container">
     <div data-animate>
       <h2>Your Remodel Shouldn't Wait<br>for the Right Contractor</h2>
-      <p class="cta-lead">Gray Tile &amp; Remodeling brings <?= $yearsInBusiness ?> years of specialized tile and remodeling expertise to every project in Carroll County. We show up, we communicate, and we finish what we start — on time and on budget.</p>
+      <p class="cta-lead">Gray Tile &amp; Remodeling brings years of specialized tile and remodeling expertise to every project in Carroll County. We show up, we communicate, and we finish what we start — on time and on budget.</p>
       <div class="hp-cta-actions">
         <?php if ($phone): ?>
         <a href="tel:<?= htmlspecialchars($phone) ?>" class="btn btn-accent btn-lg">
@@ -1035,10 +946,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <img src="<?= htmlspecialchars($clientPhotos['photo09']) ?>"
              alt="Gray Tile and Remodeling craftsman working on tile installation in Bowdon Georgia"
              width="800" height="1000" loading="lazy">
-        <div class="hp-about-stat-card" aria-label="<?= $yearsInBusiness ?> years of experience">
-          <span class="hp-stat-big"><?= $yearsInBusiness ?>+</span>
-          <span class="hp-stat-lbl">Years of<br>Expertise</span>
-        </div>
       </div>
 
       <!-- Right: Text + Process Steps -->
@@ -1047,7 +954,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <span class="eyebrow-label">About Us</span>
         <h2>Bowdon's Dedicated<br><span class="text-accent">Tile Specialists</span></h2>
 
-        <p>At Gray Tile &amp; Remodeling, we do one thing and we do it exceptionally well — tile installation and full-scope remodeling for homes throughout Carroll County and West Georgia. We're not a general contractor trying to be everything to everyone. We're tile specialists who've spent <?= $yearsInBusiness ?> years perfecting the craft.</p>
+        <p>At Gray Tile &amp; Remodeling, we do one thing and we do it exceptionally well — tile installation and full-scope remodeling for homes throughout Carroll County and West Georgia. We're not a general contractor trying to be everything to everyone. We're tile specialists who've spent years perfecting the craft.</p>
 
         <p>Based right here in Bowdon, our team understands Georgia's climate, its humidity challenges, and the specific demands of homes in our region. That means your tile installation won't just look great on day one — it'll hold up for decades.</p>
 
@@ -1073,7 +980,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <div class="hp-step-num" aria-hidden="true">03</div>
             <div class="hp-step-body">
               <h4>Expert Installation</h4>
-              <p>Our crew handles demo, prep, and installation with the precision that only comes from <?= $yearsInBusiness ?> years of focused tile work.</p>
+              <p>Our crew handles demo, prep, and installation with the precision that only comes from years of focused tile work.</p>
             </div>
           </div>
 
@@ -1108,85 +1015,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   </svg>
 </div>
 
-<section class="hp-reviews" id="reviews" aria-label="Customer reviews and testimonials">
+<section class="hp-reviews hp-gallery texture-grain" id="recent-work" aria-label="Recent tile and remodeling work">
   <div class="container">
-
     <div class="hp-reviews-header" data-animate>
-      <span class="eyebrow-label">What Clients Say</span>
-      <h2>Bowdon Homeowners<br><span class="text-accent">Love the Results</span></h2>
-      <p>From Carroll County kitchens to Carroll County bathrooms — hear what our clients say after working with us.</p>
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What Does Our Tile Work<br><span class="text-accent">Actually Look Like?</span></h2>
+      <p>Showers, kitchens and floors from real Carroll County jobs — the crew's own photos, no stock imagery.</p>
     </div>
-
-    <div class="hp-reviews-grid">
-
-      <div class="hp-review-card" data-animate>
-        <div class="hp-review-stars" aria-label="5 out of 5 stars">
-          <?php for ($i = 0; $i < 5; $i++): ?>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <?php endfor; ?>
-        </div>
-        <p class="hp-review-text">"Gray Tile transformed our outdated kitchen into something out of a magazine. The tile backsplash work is flawless — every seam is perfect. We've gotten compliments from every visitor since the remodel. Finished on time, clean crew, no surprises."</p>
-        <div class="hp-review-author">
-          <div class="hp-review-avatar" aria-hidden="true">SM</div>
-          <div class="hp-review-meta">
-            <span class="hp-review-name">Sarah M.</span>
-            <span class="hp-review-service">Kitchen Remodeling · Bowdon, GA</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hp-review-card" data-animate>
-        <div class="hp-review-stars" aria-label="5 out of 5 stars">
-          <?php for ($i = 0; $i < 5; $i++): ?>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <?php endfor; ?>
-        </div>
-        <p class="hp-review-text">"We hired Gray Tile for a complete master bathroom remodel including a custom walk-in shower. The tile layout they suggested completely transformed the space. These guys care about the details — you can see the craftsmanship in every grout line."</p>
-        <div class="hp-review-author">
-          <div class="hp-review-avatar" aria-hidden="true">JR</div>
-          <div class="hp-review-meta">
-            <span class="hp-review-name">James R.</span>
-            <span class="hp-review-service">Custom Tile Shower · Villa Rica, GA</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hp-review-card" data-animate>
-        <div class="hp-review-stars" aria-label="5 out of 5 stars">
-          <?php for ($i = 0; $i < 5; $i++): ?>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <?php endfor; ?>
-        </div>
-        <p class="hp-review-text">"Had Gray Tile do our entire downstairs flooring — LVP in the main areas and custom tile in the kitchen and bathrooms. Clean, professional, and the result is stunning. Already recommended them to three neighbors in Carrollton."</p>
-        <div class="hp-review-author">
-          <div class="hp-review-avatar" aria-hidden="true">LT</div>
-          <div class="hp-review-meta">
-            <span class="hp-review-name">Linda T.</span>
-            <span class="hp-review-service">Flooring Installation · Carrollton, GA</span>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /.hp-reviews-grid -->
-
-    <!-- Review Platform Badges -->
-    <div class="hp-badge-strip" data-animate>
-      <div class="hp-badge">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <span>5.0 on Google Reviews</span>
-      </div>
-      <div class="hp-badge">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <span>Verified on Facebook</span>
-      </div>
-      <div class="hp-badge">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span>Licensed &amp; Insured in Georgia</span>
-      </div>
+    <?php $recentWork = [
+      ['project-07', 'Walk-in tile shower with glass enclosure and freestanding tub in a Bowdon, GA bathroom remodel', 'Walk-in shower &amp; tub'],
+      ['custom-tile-work', 'Custom tile shower with built-in niche and half wall during installation in Carroll County', 'Custom tile shower'],
+      ['kitchen-remodel', 'Remodeled kitchen with white cabinets, subway tile backsplash and stainless range in Bowdon, GA', 'Kitchen remodel'],
+      ['project-10', 'White subway tile shower with rain head in a West Georgia bathroom', 'Subway tile shower'],
+      ['project-15', 'Kitchen island with quartz top and new hardwood flooring in a Carrollton area home', 'Island &amp; new floors'],
+      ['project-06', 'Subway tile shower with tiled bench and mosaic floor', 'Tile shower &amp; bench'],
+      ['room-addition', 'Open living and kitchen space with plank flooring during a room addition in Carroll County', 'Open floor plan'],
+      ['project-08', 'Heated tile floor underlayment being installed before tile in a Bowdon bathroom', 'Heated tile floor'],
+    ]; ?>
+    <div class="gallery-track" data-p1-dynamic>
+      <?php foreach ($recentWork as $g): ?>
+      <figure><?php echo p1_picture($g[0], $g[1], ['sizes' => '(max-width: 900px) 70vw, 30vw']); ?><figcaption><?php echo $g[2]; ?></figcaption></figure>
+      <?php endforeach; ?>
     </div>
-
-  </div><!-- /.container -->
-</section><!-- /.hp-reviews -->
+  </div>
+</section><!-- /.hp-gallery -->
 
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -1208,7 +1060,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <span class="section-subtitle">The questions Bowdon homeowners ask us most — answered directly, no fluff.</span>
     </div>
 
-    <div class="hp-faq-grid">
+    <div class="hp-faq-grid" data-p1-dynamic>
       <?php foreach ($homeFaqs as $faq): ?>
       <div class="hp-faq-item" data-animate>
         <div class="hp-faq-q">

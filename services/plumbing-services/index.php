@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo01' => '/assets/images/project-07.jpg', 'gallery01' => '/assets/images/custom-tile-work.jpg', 'photo05' => '/assets/images/project-10.jpg', 'photo06' => '/assets/images/project-06.jpg', 'photo08' => '/assets/images/project-05.jpg']);
 ?>
 <?php
 $pageTitle       = 'Plumbing Services Bowdon GA | Remodel Plumbing Carroll County';
 $pageDescription = 'Rough-in plumbing, fixture installation, and supply line work for remodels in Bowdon, GA. Carroll County permits handled. Part of our full remodeling scope. Call (770) 555-0000.';
 $canonicalUrl    = $siteUrl . '/services/plumbing-services/';
 $ogImage         = $clientPhotos['photo01'];
-$heroPreloadImage = $clientPhotos['photo01'];
+$heroPreloadImage = '/assets/images/project-08.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'plumbing-services';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo01']; ?>');
   background-size: cover;
   background-position: center 45%;
   background-repeat: no-repeat;
@@ -215,8 +219,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="plm-hero" aria-label="Plumbing Services hero">
-    <div class="hero-content container">
+  <section class="plm-hero hero--picture hero--has-form" aria-label="Plumbing Services hero">
+    <?php echo p1_hero_picture('project-08', 'Plumbing Services for Remodels in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Plumbing Services for Remodels in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Rough-in plumbing, fixture installation, and drain line work — integrated into your
@@ -224,9 +230,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         as part of the full project in Carroll County.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get a Plumbing Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a Plumbing Estimate</a>
         <a href="#plm-scope" class="btn btn-outline-white btn-lg">See Plumbing Scope</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -461,7 +474,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo05']; ?>" alt="Bathroom remodeling Bowdon Georgia tile showers vanities" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="bath"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-bath" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></div>
             <h3>Bathroom Remodeling</h3>
             <p class="service-card__desc">Complete bathroom renovations — tile, fixtures, vanities, and all rough-in plumbing throughout Carroll County.</p>
             <ul>
@@ -477,7 +490,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo06']; ?>" alt="Basement kitchen remodeling Bowdon GA plumbing extension" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="utensils"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-utensils" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
             <h3>Basement Kitchen Remodeling</h3>
             <p class="service-card__desc">Full basement kitchen addition with supply and drain line extension, rough-in, and fixture installation.</p>
             <ul>
@@ -493,7 +506,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="Seasonal services maintenance Bowdon GA remodeling" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="wrench"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-wrench" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" /></svg></div>
             <h3>Seasonal Services</h3>
             <p class="service-card__desc">Scheduled maintenance, minor plumbing repairs, and pre-winter and pre-summer home readiness throughout Carroll County.</p>
             <ul>
@@ -534,7 +547,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

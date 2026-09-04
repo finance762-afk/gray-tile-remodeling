@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo04' => '/assets/images/room-addition.jpg', 'gallery04' => '/assets/images/project-08.jpg', 'photo11' => '/assets/images/kitchen-remodel.jpg', 'photo07' => '/assets/images/project-07.jpg']);
 ?>
 <?php
 $pageTitle       = 'Open Floor Plan Remodeling Bowdon GA | Wall Removal Carroll County';
 $pageDescription = 'Remove walls and open your floor plan in 2–6 weeks in Bowdon, GA. Load-bearing engineering, Carroll County permits, beam installation, and finish work included. Call (770) 555-0000.';
 $canonicalUrl    = $siteUrl . '/services/open-floor-plan-remodeling/';
 $ogImage         = $clientPhotos['photo04'];
-$heroPreloadImage = $clientPhotos['photo04'];
+$heroPreloadImage = '/assets/images/room-addition.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'open-floor-plan-remodeling';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo04']; ?>');
   background-size: cover;
   background-position: center 35%;
   background-repeat: no-repeat;
@@ -224,8 +228,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="ofp-hero" aria-label="Open Floor Plan Remodeling hero">
-    <div class="hero-content container">
+  <section class="ofp-hero hero--picture hero--has-form" aria-label="Open Floor Plan Remodeling hero">
+    <?php echo p1_hero_picture('room-addition', 'Open Floor Plan Remodeling in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Open Floor Plan Remodeling in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Wall removal, beam installation, and full finish work — completed in 2–6 weeks
@@ -233,9 +239,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         We handle both. Non-load-bearing removals start for less.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get a Wall Removal Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a Wall Removal Estimate</a>
         <a href="#ofp-process" class="btn btn-outline-white btn-lg">How It Works</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -499,7 +512,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo04']; ?>" alt="Kitchen remodeling open floor plan Bowdon Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="utensils"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-utensils" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
             <h3>Kitchen Remodeling</h3>
             <p class="service-card__desc">Complete kitchen renovations — often combined with open floor plan wall removal for a fully transformed space.</p>
             <ul>
@@ -515,7 +528,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo11']; ?>" alt="Structural renovation Bowdon Georgia load bearing walls beams" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hard-hat"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hard-hat" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" /> <path d="M14 6a6 6 0 0 1 6 6v3" /> <path d="M4 15v-3a6 6 0 0 1 6-6" /> <rect x="2" y="15" width="20" height="4" rx="1" /></svg></div>
             <h3>Structural Renovation</h3>
             <p class="service-card__desc">Comprehensive structural changes beyond wall removal — foundation work, major beam installations, and complex load path modifications.</p>
             <ul>
@@ -531,7 +544,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo07']; ?>" alt="Framing contractor Bowdon Georgia structural framing" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Framing Contractor</h3>
             <p class="service-card__desc">Residential framing for additions, structural modifications, and new construction — framed to tile-grade deflection standards.</p>
             <ul>
@@ -572,7 +585,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

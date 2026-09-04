@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo05' => '/assets/images/room-addition.jpg', 'photo06' => '/assets/images/project-08.jpg', 'photo13' => '/assets/images/kitchen-remodel.jpg', 'photo12' => '/assets/images/project-07.jpg', 'photo14' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Attic Remodeling in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Attic remodeling in Bowdon, GA — convert your attic to a bedroom, office, or bonus room. Add 400–800 sq ft. Georgia insulation & egress expertise. Free estimates, Carroll County.';
 $canonicalUrl    = $siteUrl . '/services/attic-remodeling/';
 $ogImage         = $clientPhotos['photo05'];
-$heroPreloadImage = $clientPhotos['photo05'];
+$heroPreloadImage = '/assets/images/room-addition.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -36,6 +39,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'attic-remodeling';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -308,8 +313,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="atr-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo05']); ?>');" aria-label="Attic Remodeling hero">
-    <div class="atr-hero-inner container">
+  <section class="atr-hero hero--picture hero--has-form" aria-label="Attic Remodeling hero">
+    <?php echo p1_hero_picture('room-addition', 'Attic Remodeling Space You&#39;re Not Using Yet — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form atr-hero-inner container">
       <div class="atr-hero-content" data-animate="fade-up">
         <span class="atr-eyebrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -320,15 +326,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           Add 400–800 sq ft of Livable Space
         </div>
-        <p class="atr-hero-sub">Convert your attic into a bedroom, home office, playroom, or bonus room — structural floor assessment, Georgia-appropriate insulation, egress windows, and Carroll County permits all handled. <?php echo $yearsInBusiness; ?> years remodeling West Georgia homes.</p>
+        <p class="atr-hero-sub">Convert your attic into a bedroom, home office, playroom, or bonus room — structural floor assessment, Georgia-appropriate insulation, egress windows, and Carroll County permits all handled. years remodeling West Georgia homes.</p>
         <div class="atr-hero-actions">
-          <a href="/contact/" class="atr-btn-primary">
+          <a href="/contact/" class="atr-btn-primary hero-form-open" data-open-estimate>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
             Get a Free Estimate
           </a>
           <a href="tel:<?php echo preg_replace('/\D/','',$phone); ?>" class="atr-btn-ghost">Call <?php echo htmlspecialchars($phone); ?></a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -367,7 +380,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </span>
             <span class="atr-meta-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              Licensed &amp; insured, GA
+              Bowdon, GA
             </span>
           </div>
           <p style="font-family: var(--font-body); font-size: 0.82rem; color: var(--color-text-light); margin-top: var(--space-md);">Last updated: April 2026</p>
@@ -552,7 +565,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="car"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-car" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" /> <circle cx="7" cy="17" r="2" /> <path d="M9 17h6" /> <circle cx="17" cy="17" r="2" /></svg></div>
             <h3>Garage Conversion</h3>
             <p class="service-card__desc">Convert your attached garage to livable space in Bowdon, GA.</p>
             <ul>
@@ -572,7 +585,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="plus-square"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-plus-square" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
             <h3>Room Additions</h3>
             <p class="service-card__desc">Add bedrooms, bathrooms, or living space beyond your home's current footprint.</p>
             <ul>
@@ -592,7 +605,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="building-2"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-building-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg></div>
             <h3>Framing Contractor</h3>
             <p class="service-card__desc">Expert structural framing for attic floor upgrades, dormers, and additions.</p>
             <ul>
@@ -613,7 +626,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="atr-closing-inner" data-animate="fade-up">
       <span class="atr-section-eyebrow" style="color: var(--color-accent);">Ready to Start?</span>
       <h2>Your Attic.<br>Georgia-Ready.</h2>
-      <p>We've converted attics across Bowdon, Carrollton, Villa Rica, and Carroll County since <?php echo $yearEstablished; ?>. We handle structural assessment, insulation design, permits, and finish work — tell us what you want the space to be and we'll tell you what it takes.</p>
+      <p>We've converted attics across Bowdon, Carrollton, Villa Rica, and Carroll County . We handle structural assessment, insulation design, permits, and finish work — tell us what you want the space to be and we'll tell you what it takes.</p>
       <a href="/contact/" class="atr-btn-primary">Schedule a Free Assessment →</a>
     </div>
   </section>
@@ -638,10 +651,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   });
 }());
 </script>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

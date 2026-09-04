@@ -5,8 +5,7 @@
  * mobile floating CTA bar, and all deferred scripts.
  *
  * OPTIONAL page-level flags (set before including footer.php):
- *   $useSwiper       — bool true → loads Swiper JS from CDN
- *   $useVanillaTilt  — bool true → loads VanillaTilt JS from CDN
+ *   (v6.3: no third-party CDN libraries)
  */
 if (!isset($siteName)) {
     require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
@@ -14,8 +13,6 @@ if (!isset($siteName)) {
 if (!function_exists('formatPhone')) {
     require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 }
-// Ensure phone is always set (fallback for NAP compliance)
-if (empty($phone)) { $phone = '(770) 555-0000'; }
 ?>
 
 </main><!-- /#main-content -->
@@ -34,7 +31,7 @@ if (empty($phone)) { $phone = '(770) 555-0000'; }
             <img
               src="<?php echo htmlspecialchars($clientPhotos['logo']); ?>"
               alt="<?php echo htmlspecialchars($siteName); ?> logo"
-              width="160" height="44"
+              width="160" height="59"
               loading="lazy">
           </a>
           <p class="footer-tagline"><?php echo htmlspecialchars($tagline); ?></p>
@@ -65,11 +62,11 @@ if (empty($phone)) { $phone = '(770) 555-0000'; }
           <div class="footer-trust">
             <span class="trust-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-              Licensed &amp; Insured
+              Tile Specialists
             </span>
             <span class="trust-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <?php echo $yearsInBusiness; ?> Years Experience
+              Free Estimates
             </span>
             <span class="trust-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
@@ -133,14 +130,15 @@ if (empty($phone)) { $phone = '(770) 555-0000'; }
             <div class="contact-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <span>
-                <?php echo htmlspecialchars($address['street']); ?><br>
-                <?php echo htmlspecialchars($address['city']); ?>, <?php echo htmlspecialchars($address['state']); ?>&nbsp;<?php echo htmlspecialchars($address['zip']); ?>
+                <?php if (!empty($address['street'])): ?><?php echo htmlspecialchars($address['street']); ?><br><?php endif; ?>
+                <?php echo htmlspecialchars($address['city']); ?>, <?php echo htmlspecialchars($address['state']); ?>&nbsp;<?php echo htmlspecialchars($address['zip']); ?><br>
+                <small>Serving Carroll County &amp; West Georgia</small>
               </span>
             </div>
 
             <div class="contact-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Mon–Fri 8am–6pm<br>Sat 9am–2pm</span>
+              <span><?php echo htmlspecialchars($hours['display']); ?></span>
             </div>
           </address>
 
@@ -163,9 +161,9 @@ if (empty($phone)) { $phone = '(770) 555-0000'; }
       <meta itemprop="name"      content="<?php echo htmlspecialchars($siteName); ?>">
       <meta itemprop="url"       content="<?php echo htmlspecialchars($siteUrl); ?>">
       <?php if ($phone): ?><meta itemprop="telephone" content="<?php echo htmlspecialchars($phone); ?>"><?php endif; ?>
-      <meta itemprop="address"   content="<?php echo htmlspecialchars($address['street'] . ', ' . $address['city'] . ', ' . $address['state'] . ' ' . $address['zip']); ?>">
+      <meta itemprop="address"   content="<?php echo htmlspecialchars(trim(($address['street'] ? $address['street'] . ', ' : '') . $address['city'] . ', ' . $address['state'] . ' ' . $address['zip'])); ?>">
       <p>
-        <?php echo htmlspecialchars($siteName); ?> is a tile installation and home remodeling company based in <?php echo htmlspecialchars($address['city']); ?>, <?php echo htmlspecialchars($address['state']); ?>, serving Bowdon, Carrollton, Villa Rica, Bremen, Temple, and communities throughout Carroll County and West Georgia. Founded in <?php echo $yearEstablished; ?> with <?php echo $yearsInBusiness; ?> years of experience, <?php echo htmlspecialchars($siteName); ?> specializes in kitchen remodeling, bathroom remodeling, custom tile showers, and flooring installation.<?php if ($phone): ?> Contact: <a href="tel:<?php echo htmlspecialchars($phone); ?>"><?php echo htmlspecialchars(formatPhone($phone)); ?></a><?php if ($email): ?> |<?php endif; ?><?php endif; ?><?php if ($email): ?> <a href="mailto:<?php echo htmlspecialchars($email); ?>"><?php echo htmlspecialchars($email); ?></a><?php endif; ?><?php if ($phone || $email): ?> |<?php endif; ?> <a href="<?php echo htmlspecialchars($siteUrl); ?>"><?php echo htmlspecialchars($siteUrl); ?></a>. Licensed and insured.
+        <?php echo htmlspecialchars($siteName); ?> is a tile installation and home remodeling company based in <?php echo htmlspecialchars($address['city']); ?>, <?php echo htmlspecialchars($address['state']); ?>, serving Bowdon, Carrollton, Villa Rica, Bremen, Temple, and communities throughout Carroll County and West Georgia. <?php echo htmlspecialchars($siteName); ?> specializes in kitchen remodeling, bathroom remodeling, custom tile showers, and flooring installation.<?php if ($phone): ?> Contact: <a href="tel:<?php echo htmlspecialchars($phone); ?>"><?php echo htmlspecialchars(formatPhone($phone)); ?></a><?php if ($email): ?> |<?php endif; ?><?php endif; ?><?php if ($email): ?> <a href="mailto:<?php echo htmlspecialchars($email); ?>"><?php echo htmlspecialchars($email); ?></a><?php endif; ?><?php if ($phone || $email): ?> |<?php endif; ?> <a href="<?php echo htmlspecialchars($siteUrl); ?>"><?php echo htmlspecialchars($siteUrl); ?></a>. Licensed and insured.
       </p>
     </div>
   </div>
@@ -232,6 +230,7 @@ if (empty($phone)) { $phone = '(770) 555-0000'; }
     <?php endif; ?>
     <a href="/contact/"
        class="btn btn-accent"
+       data-open-estimate
        aria-label="Get a free estimate from <?php echo htmlspecialchars($siteName); ?>">
       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
       Free Estimate
@@ -240,22 +239,27 @@ if (empty($phone)) { $phone = '(770) 555-0000'; }
 </div>
 
 
-<!-- ─── Scripts ─── -->
-
+<!-- ─── Scripts (all defer; no CDN libraries — v6.3) ─── -->
 <!-- Core JS (animations, effects, mobile menu, back-to-top) -->
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/animations.js" defer></script>
 <script src="/assets/js/effects.js" defer></script>
 
-<?php if (isset($useSwiper) && $useSwiper): ?>
-<!-- Swiper JS (conditional — only on pages with carousels) -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-<?php endif; ?>
-
-<?php if (isset($useVanillaTilt) && $useVanillaTilt): ?>
-<!-- VanillaTilt (conditional — only on pages with tilt cards) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
-<?php endif; ?>
+<!-- Estimate dialog (v6.3) — opened by any [data-open-estimate]; the hero form card is hidden on mobile so this carries it -->
+<dialog class="estimate-dialog" id="estimate-dialog" aria-labelledby="estimate-dialog-title">
+  <div class="dialog-head">
+    <div>
+      <h3 id="estimate-dialog-title">Get a Free Estimate</h3>
+      <p class="ef-footnote" style="margin:0;">No obligation. We reply within one business day.</p>
+    </div>
+    <button type="button" class="dialog-close" aria-label="Close" data-close-estimate><?php echo p1_icon('x', 20); ?></button>
+  </div>
+  <div class="dialog-body">
+    <?php $efPrefix = 'dlg'; $efLocation = 'dialog'; $efCompact = false;
+          include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+  </div>
+</dialog>
+<script>(function(){var d=document.getElementById('estimate-dialog');if(!d||!d.showModal)return;var last=null;function open(e){e.preventDefault();last=e.currentTarget;d.showModal();var f=d.querySelector('input:not([type=hidden]):not([name=_honey])');if(f)setTimeout(function(){f.focus();},50);}function close(){d.close();if(last&&last.focus)last.focus();}var o=document.querySelectorAll('[data-open-estimate]'),i;for(i=0;i<o.length;i++)o[i].addEventListener('click',open);var c=d.querySelectorAll('[data-close-estimate]');for(i=0;i<c.length;i++)c[i].addEventListener('click',close);d.addEventListener('click',function(e){if(e.target===d)close();});})();</script>
 
 <!-- Inline: Back-to-top + Header scroll + Mobile menu -->
 <script>

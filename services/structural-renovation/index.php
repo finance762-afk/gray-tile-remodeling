@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo12' => '/assets/images/room-addition.jpg', 'photo13' => '/assets/images/project-08.jpg', 'photo04' => '/assets/images/kitchen-remodel.jpg', 'photo08' => '/assets/images/project-07.jpg', 'photo05' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Structural Renovation Bowdon GA | Load-Bearing & Beam Work';
 $pageDescription = 'Structural renovation in Bowdon, GA — load-bearing wall removal, beam installation, foundation repair, and major structural modifications with engineering documentation in Carroll County.';
 $canonicalUrl    = $siteUrl . '/services/structural-renovation/';
 $ogImage         = $clientPhotos['photo12'];
-$heroPreloadImage = $clientPhotos['photo12'];
+$heroPreloadImage = '/assets/images/project-08.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'structural-renovation';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo12']; ?>');
   background-size: cover;
   background-position: center 45%;
   background-repeat: no-repeat;
@@ -212,18 +216,27 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="str-hero" aria-label="Structural renovation hero">
-    <div class="hero-content container">
+  <section class="str-hero hero--picture hero--has-form" aria-label="Structural renovation hero">
+    <?php echo p1_hero_picture('project-08', 'Structural Renovation in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Structural Renovation in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Load-bearing wall removal, beam installation, major openings, and foundation work —
-        done right with engineering documentation, Carroll County permits, and 25 years of
+        done right with engineering documentation, Carroll County permits, and hands-on
         structural experience in West Georgia.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Assess Your Project</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Assess Your Project</a>
         <a href="#str-types" class="btn btn-outline-white btn-lg">Types of Structural Work</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -305,8 +318,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         </div>
         <div class="str-eng-sep" aria-hidden="true"></div>
         <div class="str-eng-item">
-          <span class="ev">25</span>
-          <span class="el">Years Structural Experience</span>
+          <span class="ev">GA</span>
+          <span class="el">Based in Bowdon</span>
         </div>
         <div class="str-eng-sep" aria-hidden="true"></div>
         <div class="str-eng-item">
@@ -484,7 +497,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo04']; ?>" alt="Framing contractor Bowdon Georgia structural framing services" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Framing Contractor</h3>
             <p class="service-card__desc">Structural framing for additions and renovations — built to tile-grade L/360 deflection.</p>
             <ul><li>L/360 floor deflection</li><li>Load-bearing expertise</li><li>Carroll County permitted</li></ul>
@@ -496,7 +509,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="Full home remodel Bowdon GA complete renovation" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Full Home Remodel</h3>
             <p class="service-card__desc">When structural work is part of a larger renovation — one team handles everything.</p>
             <ul><li>Structural through finish</li><li>All trades coordinated</li><li>One contract, one timeline</li></ul>
@@ -508,7 +521,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo05']; ?>" alt="Home additions Bowdon GA structural addition construction" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="home"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-home" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg></div>
             <h3>Home Additions</h3>
             <p class="service-card__desc">New structural additions that tie into your existing home — foundation through finishes.</p>
             <ul><li>Foundation &amp; framing</li><li>Ties into existing structure</li><li>Permit management included</li></ul>
@@ -538,7 +551,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
 </main>
 
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {
@@ -549,7 +561,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

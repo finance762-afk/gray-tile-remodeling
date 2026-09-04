@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo05' => '/assets/images/project-07.jpg', 'gallery01' => '/assets/images/custom-tile-work.jpg', 'photo02' => '/assets/images/project-10.jpg', 'photo06' => '/assets/images/project-06.jpg', 'photo12' => '/assets/images/project-05.jpg']);
 ?>
 <?php
 $pageTitle       = 'Custom Tile Showers in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Custom tile shower installation in Bowdon, GA — walk-ins, tub surrounds, steam showers. 3–5 day installs, waterproof systems for Georgia humidity. Free estimate.';
 $canonicalUrl    = $siteUrl . '/services/custom-tile-showers/';
 $ogImage         = $clientPhotos['photo05'];
-$heroPreloadImage = $clientPhotos['photo05'];
+$heroPreloadImage = '/assets/images/custom-tile-work.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -40,6 +43,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'custom-tile-showers';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -58,7 +63,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo05']; ?>');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
@@ -597,34 +601,25 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="cts-hero" aria-label="Custom tile showers hero">
-    <div class="cts-hero-inner container">
+  <section class="cts-hero hero--picture hero--has-form" aria-label="Custom tile showers hero">
+    <?php echo p1_hero_picture('custom-tile-work', 'Custom Tile Showers in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form cts-hero-inner container">
       <div class="cts-hero-copy" data-animate="fade-up">
         <h1>Custom Tile Showers in Bowdon, GA</h1>
         <p class="hero-lead prose">
-          Installed in 3–5 days. Walk-ins from $3,500, tub surrounds from $2,200 — fully waterproofed for Georgia's humidity. Gray Tile has been building custom showers in Carroll County for 25 years.
+          Installed in 3–5 days. Walk-ins from $3,500, tub surrounds from $2,200 — fully waterproofed for Georgia's humidity. Gray Tile has been building custom showers in Carroll County for years.
         </p>
         <div class="hero-cta-row">
-          <a href="/contact/" class="btn btn-accent btn-lg">Get a Free Estimate</a>
+          <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a Free Estimate</a>
           <a href="tel:<?php echo htmlspecialchars($phone); ?>" class="btn btn-outline-white btn-lg"><?php echo htmlspecialchars(formatPhone($phone)); ?></a>
         </div>
       </div>
-      <div class="cts-hero-stat-card" data-animate="fade-up">
-        <div>
-          <div class="stat-num">3–5</div>
-          <div class="stat-label">Day average install<br>start to final seal</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div>
-          <div class="stat-num">25</div>
-          <div class="stat-label">Years of shower installs<br>in Carroll County</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div>
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Waterproofed with<br>full membrane system</div>
-        </div>
-      </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -665,7 +660,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               <span class="meta-desc">Average install timeline</span>
             </div>
             <div class="cts-intro-meta-item">
-              <span class="meta-val">25 Yrs</span>
+              <span class="meta-val">Local</span>
               <span class="meta-desc">Serving Carroll County</span>
             </div>
           </div>
@@ -884,7 +879,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo02']; ?>" alt="Bathroom remodeling in Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="bath"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-bath" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></div>
             <h3>Bathroom Remodeling</h3>
             <p class="service-card__desc">Complete bathroom renovations — layout, tile, fixtures, and finishes from start to finish.</p>
             <ul>
@@ -901,7 +896,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo06']; ?>" alt="Flooring installation service Bowdon Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Flooring Installation</h3>
             <p class="service-card__desc">All flooring materials installed — tile, LVP, hardwood, and engineered for Georgia homes.</p>
             <ul>
@@ -918,7 +913,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo12']; ?>" alt="Flooring services overview Gray Tile Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="grid-3x3"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-grid-3x3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg></div>
             <h3>Flooring Services</h3>
             <p class="service-card__desc">Full flooring service group — tile, LVP, refinishing, and subfloor work under one roof.</p>
             <ul>
@@ -970,7 +965,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

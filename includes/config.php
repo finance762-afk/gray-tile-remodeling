@@ -9,6 +9,7 @@
 // Identity
 // ------------------------------------------------------------
 $slug        = 'gray-tile-remodeling';
+require_once __DIR__ . '/attribution.php'; // v6.3 lead attribution — must run before any output
 $siteName    = 'Gray Tile & Remodeling';
 $tagline     = 'Quality Tiles, Expert Remodeling, Exceptional Results';
 $industry    = 'tile';
@@ -17,15 +18,15 @@ $ownerName   = '';
 // ------------------------------------------------------------
 // Contact
 // ------------------------------------------------------------
-$phone          = '(770) 555-0000'; // TODO: replace with client's actual phone number
+$phone          = '(404) 310-3381'; // GBP listing phone (native sync 2026-09-04)
 $phoneSecondary = '';
-$email          = '';
+$email          = 'graytile@bellsouth.net';
 
 // ------------------------------------------------------------
 // Address (must match Google Business Profile character-for-character)
 // ------------------------------------------------------------
 $address = [
-    'street' => '220 Fowler Dr',
+    'street' => '', // service-area business — GBP hides the street address; never publish one
     'city'   => 'Bowdon',
     'state'  => 'GA',
     'zip'    => '30108',
@@ -35,15 +36,15 @@ $address = [
 // Domain & URLs
 // No production_domain in build-plan.json → using preview URL
 // ------------------------------------------------------------
-$domain  = 'gray-tile-remodeling.pageone.cloud';
+$domain  = 'graytileremodeling.com'; // launch domain (replaces the Hostinger Website Builder site)
 $siteUrl = 'https://' . $domain;
 // $canonicalUrl is NOT set here — each page sets its own before including head.php
 
 // ------------------------------------------------------------
 // Business history
 // ------------------------------------------------------------
-$yearEstablished = 2001;
-$yearsInBusiness = 25;
+$yearEstablished = null; // not provided by the client and not on GBP — never claim a founding year
+$yearsInBusiness = null;
 
 // ------------------------------------------------------------
 // Brand colors (extracted from logo — charcoal grey + warm gold)
@@ -330,43 +331,42 @@ $contactEmail   = $email ?: 'info@gray-tile-remodeling.pageone.cloud';
 // ------------------------------------------------------------
 // Client photos (remote CDN — referenced in templates)
 // ------------------------------------------------------------
-$cdnBase = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling';
-
+// v6.3 (2026-09-04): photos live in /assets/images/ with -480/-960/-1600 webp+avif variants (see manifest.json);
+// the Supabase-storage originals are the masters. Small originals (360–480px) are thumbnail-only.
 $clientPhotos = [
-    'hero'    => $cdnBase . '/gallery/1777502893596-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg',
-    'photo01' => $cdnBase . '/photos/1777502658606-ba0wdv-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg',
-    'photo02' => $cdnBase . '/photos/1777502659744-9sf0ka-e0d16062-bac4-4f4d-abe3-8ed2677a9609.jpg',
-    'photo03' => $cdnBase . '/photos/1777502660546-5tv01m-f5c363da-5a68-4502-9d66-3b07364ced3e.jpg',
-    'photo04' => $cdnBase . '/photos/1777502661301-x354j6-cd964894-8675-458e-8593-8ddfff96d576.jpg',
-    'photo05' => $cdnBase . '/photos/1777502662130-10k6sr-c6f9aa95-11c0-4a17-8b7c-1649db5db363.jpg',
-    'photo06' => $cdnBase . '/photos/1777502662924-8klbnf-c7da939c-61e3-487d-a025-1c778f88d951.jpg',
-    'photo07' => $cdnBase . '/photos/1777502663900-1avp26-d3ab0e48-7fd4-4b3f-ac55-76cc02f03dfd.jpg',
-    'photo08' => $cdnBase . '/photos/1777502664960-it2cqa-9e5df7d8-551b-47e2-a520-cea8b6b318df.jpg',
-    'photo09' => $cdnBase . '/photos/1777502666040-0axxar-a8109cf3-d111-423a-8187-27dbd3c0fe85.jpg',
-    'photo10' => $cdnBase . '/photos/1777502666780-0c1lb5-6baca883-28b1-450f-8618-0bb1e6a2c69b.jpg',
-    'photo11' => $cdnBase . '/photos/1777502667550-e73ktf-c73de1e7-fac8-4450-89af-fdef3145cf75.jpg',
-    'photo12' => $cdnBase . '/photos/1777502668290-i6rgb9-295362e2-bc93-43f3-bacd-98cf90a01674.jpg',
-    'photo13' => $cdnBase . '/photos/1777502669520-szchcm-097b270c-06ac-4ac5-9dd3-3b7fb1549789.jpg',
-    'photo14' => $cdnBase . '/photos/1777502670300-nod4ze-89ce741b-f095-4115-a763-22fdf50a649c.jpg',
-    'photo15' => $cdnBase . '/photos/1777502671390-1sw8f5-8c9a3f42-e142-4e90-b98f-e3bfd92f5634.jpg',
-    'photo16' => $cdnBase . '/photos/1777502672198-b93pyk-0c9d4bad-e283-4857-82fd-7c6eb5f46060.jpg',
-    'photo17' => $cdnBase . '/photos/1777502672941-k1rl61-e96199bb-ccb2-457e-b615-588bafff4bcd.jpg',
-    'gallery01' => $cdnBase . '/gallery/1777502893596-e2d8ca9f-3347-4acd-a11d-7d584fc38b31.jpg',
-    'gallery02' => $cdnBase . '/gallery/1777502895455-e0d16062-bac4-4f4d-abe3-8ed2677a9609.jpg',
-    'gallery03' => $cdnBase . '/gallery/1777502896486-f5c363da-5a68-4502-9d66-3b07364ced3e.jpg',
-    'gallery04' => $cdnBase . '/gallery/1777502897463-cd964894-8675-458e-8593-8ddfff96d576.jpg',
-    // Descriptive client photos (named by subject)
-    'photo_kitchen'        => $cdnBase . '/photos/1777591424703-kitchen_remodel.jpg',
-    'photo_bathroom'       => $cdnBase . '/photos/1777592424691-bathroom_remodel.jpg',
-    'photo_tile_work'      => $cdnBase . '/photos/1777591532228-custome_tile_work.jpg',
-    'photo_room_additions' => $cdnBase . '/photos/1777591680976-room_additions.jpg',
-    'logo'      => $cdnBase . '/logo/1777502577007-x0wqro-grey_tile_logo.jpg',
+    'hero' => '/assets/images/kitchen-remodel.jpg',
+    'photo01' => '/assets/images/project-01.jpg',
+    'photo02' => '/assets/images/project-05.jpg',
+    'photo03' => '/assets/images/project-09.jpg',
+    'photo04' => '/assets/images/project-01.jpg',
+    'photo05' => '/assets/images/project-05.jpg',
+    'photo06' => '/assets/images/project-06.jpg',
+    'photo07' => '/assets/images/project-07.jpg',
+    'photo08' => '/assets/images/project-08.jpg',
+    'photo09' => '/assets/images/project-09.jpg',
+    'photo10' => '/assets/images/project-10.jpg',
+    'photo11' => '/assets/images/project-11.jpg',
+    'photo12' => '/assets/images/project-12.jpg',
+    'photo13' => '/assets/images/custom-tile-work.jpg',
+    'photo14' => '/assets/images/kitchen-remodel.jpg',
+    'photo15' => '/assets/images/project-15.jpg',
+    'photo16' => '/assets/images/bathroom-remodel.jpg',
+    'photo17' => '/assets/images/room-addition.jpg',
+    'gallery01' => '/assets/images/project-01.jpg',
+    'gallery02' => '/assets/images/project-06.jpg',
+    'gallery03' => '/assets/images/project-10.jpg',
+    'gallery04' => '/assets/images/project-07.jpg',
+    'photo_kitchen' => '/assets/images/kitchen-remodel.jpg',
+    'photo_bathroom' => '/assets/images/bathroom-remodel.jpg',
+    'photo_tile_work' => '/assets/images/custom-tile-work.jpg',
+    'photo_room_additions' => '/assets/images/room-addition.jpg',
+    'logo' => '/assets/images/logo.jpg',
 ];
 
 // ------------------------------------------------------------
 // Business description (for AEO entity block and llms.txt)
 // ------------------------------------------------------------
-$businessDescription = 'At Gray Tile & Remodeling, beautiful and functional design begins with expert craftsmanship and an unwavering commitment to quality. Based in Bowdon, Georgia, our experienced team brings ' . $yearsInBusiness . ' years of passion and expertise to every tile installation and remodeling project.';
+$businessDescription = 'Gray Tile & Remodeling is a tile contractor and home remodeler based in Bowdon, Georgia, serving Carroll County and West Georgia. The team handles custom tile showers, kitchen and bathroom remodels, flooring and finished basements in-house, from layout through final grout.';
 
 // ------------------------------------------------------------
 // FAQs (from research brief — used on homepage and service pages)
@@ -413,3 +413,8 @@ if (is_readable($__siteConfigPath)) {
 }
 unset($__siteConfigPath);
 $leadsFormSecret = 'bac7714a8f41505ab12d75311ccbb11a6374e38b1a010d69111c84a652cfa0f3'; // spam-shield HMAC (matches leads fn LEADS_FORM_SECRET)
+
+// Hours — from the Google Business Profile (Mon–Thu 9am–5pm; closed Fri–Sun)
+$hours = ['days' => ['Monday','Tuesday','Wednesday','Thursday'], 'opens' => '09:00', 'closes' => '17:00', 'display' => 'Mon–Thu 9am–5pm'];
+$cssVersion = '2';
+$googlePlaceId = 'ChIJkzazn-Yg9YgRms-LZNwZj6E';

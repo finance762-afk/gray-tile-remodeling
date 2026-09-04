@@ -18,7 +18,7 @@
     ]
   },
   "tier": "standard",
-  "email": "",
+  "email": "graytile@bellsouth.net",
   "pages": [
     {
       "slug": "remodeling-services",
@@ -118,7 +118,7 @@
       "primary_keyword": "framing contractor Bowdon GA"
     }
   ],
-  "phone": "",
+  "phone": "(404) 310-3381",
   "assets": {
     "logo": {
       "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/gray-tile-remodeling/logo/1777502577007-x0wqro-grey_tile_logo.jpg",
@@ -372,14 +372,16 @@
     }
   ],
   "address": {
-    "zip": "30108",
+    "street": "",
     "city": "Bowdon",
     "state": "GA",
-    "street": "220 Fowler Dr"
+    "zip": "30108",
+    "address_hidden": true,
+    "note": "service-area business; GBP hides the street"
   },
   "content": {
     "usps": [],
-    "years": 25,
+    "years": null,
     "insurance": "",
     "description": "At Gray Tile & Remodeling, beautiful and functional design begins with expert craftsmanship and an unwavering commitment to quality. Based in Bowden, Georgia, our experienced team brings years of passion and expertise to every tile installation and remodeling project we undertake. We specialize in transforming kitchens, bathrooms, and living spaces through meticulous tile work, with skilled craftsmen who focus on exquisite installations and exceptional attention to detail.\n\nOur customer-centric approach ensures that we deliver stunning results on time and within budget, helping clients bring their unique visions to life. We offer custom tile solutions tailored to meet the specific needs of each project, whether you're upgrading your kitchen, enhancing your bathroom, or refreshing any living space. At Gray Tile & Remodeling, we're dedicated to transforming your space one tile at a time, combining quality craftsmanship with reliable service to exceed your expectations.",
     "certifications": []
@@ -666,7 +668,7 @@
   ],
   "owner_name": "",
   "client_slug": "gray-tile-remodeling",
-  "form_action": "https://design.pageone.cloud/api/leads/gray-tile-remodeling",
+  "form_action": "https://db.pageone.cloud/functions/v1/leads/gray-tile-remodeling",
   "github_repo": "",
   "company_name": "gray-tile-remodeling",
   "service_areas": [
@@ -714,8 +716,8 @@
         "Local service reliability and quick turnaround times",
         "Understanding of moisture/humidity challenges in Georgia climate for tile installations"
       ],
-      "hero_subheadline": "Transform your kitchen, bathroom, and floors with custom tile designs from Gray Tile Remodeling—specialized craftsmanship you can trust.",
-      "tone_recommendation": "Professional yet approachable—position as knowledgeable experts who are easy to work with. Use confident language about expertise while maintaining warmth and accessibility. Avoid overly technical jargon; explain tile choices and processes in terms homeowners understand. Friendly enough to feel personable, but authoritative enough to inspire confidence in the specialized craft."
+      "hero_subheadline": "Transform your kitchen, bathroom, and floors with custom tile designs from Gray Tile Remodeling\u2014specialized craftsmanship you can trust.",
+      "tone_recommendation": "Professional yet approachable\u2014position as knowledgeable experts who are easy to work with. Use confident language about expertise while maintaining warmth and accessibility. Avoid overly technical jargon; explain tile choices and processes in terms homeowners understand. Friendly enough to feel personable, but authoritative enough to inspire confidence in the specialized craft."
     },
     "competitors": [],
     "generated_at": "2026-04-29T22:54:10.860Z",
@@ -803,5 +805,8 @@
   },
   "lead_notification_email": "",
   "lead_notification_phone": "",
-  "google_business_profile_url": ""
+  "google_business_profile_url": "https://www.google.com/maps/place/?q=place_id:ChIJkzazn-Yg9YgRms-LZNwZj6E",
+  "production_domain": "graytileremodeling.com",
+  "standards_version": "v6.3",
+  "hours": "Mon-Thu 9am-5pm (GBP)"
 }

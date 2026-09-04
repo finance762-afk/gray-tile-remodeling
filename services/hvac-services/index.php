@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo03' => '/assets/images/room-addition.jpg', 'gallery03' => '/assets/images/project-08.jpg', 'photo16' => '/assets/images/kitchen-remodel.jpg', 'photo09' => '/assets/images/project-07.jpg', 'photo08' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'HVAC Services Bowdon GA | Remodel HVAC Carroll County Georgia';
 $pageDescription = "HVAC rough-in, ductwork extension, and mini-split installation for remodels and additions in Bowdon, GA. Georgia-rated equipment, Carroll County permits. Call (770) 555-0000.";
 $canonicalUrl    = $siteUrl . '/services/hvac-services/';
 $ogImage         = $clientPhotos['photo03'];
-$heroPreloadImage = $clientPhotos['photo03'];
+$heroPreloadImage = '/assets/images/project-08.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'hvac-services';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo03']; ?>');
   background-size: cover;
   background-position: center 38%;
   background-repeat: no-repeat;
@@ -216,8 +220,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="hvac-hero" aria-label="HVAC Services hero">
-    <div class="hero-content container">
+  <section class="hvac-hero hero--picture hero--has-form" aria-label="HVAC Services hero">
+    <?php echo p1_hero_picture('project-08', 'HVAC Services for Remodels in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">HVAC Services for Remodels in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Ductwork extension, mini-split installation, and HVAC rough-in for additions and
@@ -225,9 +231,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         coordinated with your full remodel timeline.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get an HVAC Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get an HVAC Estimate</a>
         <a href="#hvac-scope" class="btn btn-outline-white btn-lg">See HVAC Options</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -465,7 +478,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo16']; ?>" alt="Garage conversion HVAC mini-split Bowdon Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="door-open"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-door-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20H2"/><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"/><path d="M11 4H8a2 2 0 0 0-2 2v14"/><path d="M14 12h.01"/><path d="M22 20h-3"/></svg></div>
             <h3>Garage Conversion</h3>
             <p class="service-card__desc">Convert your garage to conditioned living space — mini-split sizing, insulation, and finish work throughout Carroll County.</p>
             <ul>
@@ -481,7 +494,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo09']; ?>" alt="Attic remodeling HVAC insulation Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="home"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-home" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg></div>
             <h3>Attic Remodeling</h3>
             <p class="service-card__desc">Attic conversions to conditioned living space require careful HVAC planning — we include ductwork and insulation in scope.</p>
             <ul>
@@ -497,7 +510,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="Seasonal HVAC maintenance Bowdon Georgia Carroll County" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="wrench"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-wrench" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" /></svg></div>
             <h3>Seasonal Services</h3>
             <p class="service-card__desc">Pre-summer and pre-winter HVAC maintenance, filter service, and minor repairs throughout Bowdon and Carroll County.</p>
             <ul>
@@ -538,7 +551,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

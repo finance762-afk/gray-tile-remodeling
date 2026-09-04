@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo08' => '/assets/images/room-addition.jpg', 'photo09' => '/assets/images/project-08.jpg', 'photo16' => '/assets/images/kitchen-remodel.jpg', 'photo01' => '/assets/images/project-07.jpg', 'photo02' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Full Home Remodel Bowdon GA | Whole House Renovation';
 $pageDescription = 'Complete whole-house renovation in Bowdon, GA — kitchen, baths, flooring, framing, and every finish. Gray Tile manages all trades and Carroll County permits under one contract.';
 $canonicalUrl    = $siteUrl . '/services/full-home-remodel/';
 $ogImage         = $clientPhotos['photo08'];
-$heroPreloadImage = $clientPhotos['photo08'];
+$heroPreloadImage = '/assets/images/kitchen-remodel.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'full-home-remodel';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo08']; ?>');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -204,8 +208,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="fhr-hero" aria-label="Full home remodel hero">
-    <div class="hero-content container">
+  <section class="fhr-hero hero--picture hero--has-form" aria-label="Full home remodel hero">
+    <?php echo p1_hero_picture('kitchen-remodel', 'Full Home Remodel in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Full Home Remodel in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Every room. One team. One contract. Gray Tile handles whole-house renovations from framing
@@ -213,9 +219,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         Carroll County permits managed start to finish.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get a Whole-House Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a Whole-House Estimate</a>
         <a href="#fhr-scope" class="btn btn-outline-white btn-lg">What's Included</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -255,7 +268,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <p>
             Gray Tile runs whole-house renovations as a single managed project. Our crews cover tile,
             flooring, and framing. We coordinate the licensed subs we've worked with in Carroll County
-            for over 25 years for plumbing, electrical, and HVAC. Everything moves on one schedule.
+            for years for plumbing, electrical, and HVAC. Everything moves on one schedule.
             One call solves any problem.
           </p>
           <p>
@@ -291,8 +304,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="fhr-stat-bar-inner">
         <div class="fhr-stat">
-          <span class="sv">25</span>
-          <span class="sl">Years in Carroll County</span>
+          <span class="sv">GA</span>
+          <span class="sl">Based in Bowdon</span>
         </div>
         <div class="fhr-stat-sep" aria-hidden="true"></div>
         <div class="fhr-stat">
@@ -499,7 +512,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo16']; ?>" alt="Design-build remodeling Bowdon GA one contract all trades" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="pencil-ruler"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-pencil-ruler" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"/><path d="m8 6 2-2"/><path d="m18 16 2-2"/><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></div>
             <h3>Design-Build Remodeling</h3>
             <p class="service-card__desc">Design and construction under one contract — faster, simpler, no scope gaps between designers and builders.</p>
             <ul><li>Design through permit</li><li>Fixed-price execution</li><li>One point of accountability</li></ul>
@@ -511,7 +524,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo01']; ?>" alt="Kitchen remodeling Bowdon Georgia custom cabinets and tile" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="utensils"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-utensils" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
             <h3>Kitchen Remodeling</h3>
             <p class="service-card__desc">Complete kitchen renovations — cabinets, counters, backsplash tile, and full layout changes.</p>
             <ul><li>Custom tile backsplash</li><li>Cabinet &amp; counter install</li><li>Full layout redesign</li></ul>
@@ -523,7 +536,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo02']; ?>" alt="Bathroom remodeling Bowdon GA custom tile shower renovation" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="droplets"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-droplets" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg></div>
             <h3>Bathroom Remodeling</h3>
             <p class="service-card__desc">Bathroom renovations with custom tile work — showers, floors, vanities, and full plumbing.</p>
             <ul><li>Custom tile showers</li><li>Vanity &amp; fixture install</li><li>Plumbing rough-in included</li></ul>
@@ -552,7 +565,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
 </main>
 
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {
@@ -563,7 +575,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

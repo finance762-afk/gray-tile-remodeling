@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo02' => '/assets/images/project-07.jpg', 'gallery02' => '/assets/images/custom-tile-work.jpg', 'photo10' => '/assets/images/project-10.jpg', 'photo01' => '/assets/images/project-06.jpg', 'photo08' => '/assets/images/project-05.jpg']);
 ?>
 <?php
 $pageTitle       = 'Bathroom Remodeling in Bowdon, GA | Gray Tile & Remodeling';
-$pageDescription = 'Custom bathroom remodels in Bowdon, GA — tile showers, vanities, waterproofing & full gut renovations. 2–4 weeks typical. 25 years serving Carroll County. Free estimates.';
+$pageDescription = 'Custom bathroom remodels in Bowdon, GA — tile showers, vanities, waterproofing & full gut renovations. 2–4 weeks typical. Free estimates.';
 $canonicalUrl    = $siteUrl . '/services/bathroom-remodeling/';
 $ogImage         = $clientPhotos['photo02'];
-$heroPreloadImage = $clientPhotos['photo02'];
+$heroPreloadImage = '/assets/images/project-07.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -36,6 +39,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'bathroom-remodeling';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -566,8 +571,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="bmr-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo02']); ?>');" aria-label="Bathroom Remodeling hero">
-    <div class="bmr-hero-inner container">
+  <section class="bmr-hero hero--picture hero--has-form" aria-label="Bathroom Remodeling hero">
+    <?php echo p1_hero_picture('project-07', 'Bathroom Remodeling That Holds in Georgia — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form bmr-hero-inner container">
       <div class="bmr-hero-content" data-animate="fade-up">
         <span class="bmr-eyebrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h8m-8 6V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12H4z"/><line x1="20" y1="6" x2="20" y2="18"/></svg>
@@ -578,15 +584,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           2–4 Weeks Typical — All Bathroom Types
         </div>
-        <p class="bmr-hero-sub">Full and partial bathroom remodels across Bowdon, Carrollton, Villa Rica, and Carroll County. Tile work, waterproofing, vanities, and fixtures — every scope handled in-house by the same crew that's been working Georgia bathrooms for <?php echo $yearsInBusiness; ?> years.</p>
+        <p class="bmr-hero-sub">Full and partial bathroom remodels across Bowdon, Carrollton, Villa Rica, and Carroll County. Tile work, waterproofing, vanities, and fixtures — every scope handled in-house by the same crew that's been working Georgia bathrooms for years.</p>
         <div class="bmr-hero-actions">
-          <a href="/contact/" class="bmr-btn-primary">
+          <a href="/contact/" class="bmr-btn-primary hero-form-open" data-open-estimate>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
             Get a Free Estimate
           </a>
           <a href="tel:<?php echo preg_replace('/\D/','',$phone); ?>" class="bmr-btn-ghost">Call <?php echo htmlspecialchars($phone); ?></a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -625,7 +638,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </span>
             <span class="bmr-meta-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              Licensed &amp; insured, GA
+              Bowdon, GA
             </span>
           </div>
           <p style="font-family: var(--font-body); font-size: 0.82rem; color: var(--color-text-light); margin-top: var(--space-md);">Last updated: April 2026</p>
@@ -793,7 +806,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="droplets"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-droplets" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg></div>
             <h3>Custom Tile Showers</h3>
             <p class="service-card__desc">Specialty tile shower builds with certified waterproofing membranes.</p>
             <ul>
@@ -813,7 +826,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="utensils-crossed"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-utensils-crossed" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg></div>
             <h3>Kitchen Remodeling</h3>
             <p class="service-card__desc">Complete kitchen renovations from tile to custom cabinetry in Bowdon, GA.</p>
             <ul>
@@ -833,7 +846,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Flooring Services</h3>
             <p class="service-card__desc">Tile, LVP, and hardwood flooring for bathrooms and every other room.</p>
             <ul>
@@ -853,8 +866,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <section class="bmr-closing" aria-label="Start your bathroom remodel">
     <div class="bmr-closing-inner" data-animate="fade-up">
       <span class="bmr-section-eyebrow" style="color: var(--color-accent);">Ready to Start?</span>
-      <h2>Your Bathroom.<br>Our <?php echo $yearsInBusiness; ?> Years.</h2>
-      <p>We've remodeled bathrooms across Bowdon, Carrollton, Villa Rica, Bremen, and Carroll County since <?php echo $yearEstablished; ?>. Free on-site estimates. Written, itemized quotes. No pressure, no vague ballparks.</p>
+      <h2>Your Bathroom.<br>Our Tile Crew.</h2>
+      <p>We've remodeled bathrooms across Bowdon, Carrollton, Villa Rica, Bremen, and Carroll County . Free on-site estimates. Written, itemized quotes. No pressure, no vague ballparks.</p>
       <a href="/contact/" class="bmr-btn-primary">Schedule a Free Estimate →</a>
     </div>
   </section>
@@ -879,10 +892,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   });
 }());
 </script>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

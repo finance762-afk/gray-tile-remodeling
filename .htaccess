@@ -38,8 +38,8 @@ DirectoryIndex index.php index.html
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/avif "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
     ExpiresByType font/woff "access plus 1 year"
     ExpiresByType font/woff2 "access plus 1 year"
     ExpiresByType text/html "access plus 0 seconds"
@@ -53,6 +53,16 @@ DirectoryIndex index.php index.html
 # ------------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+# Dynamic sitemap (v6.3) — never a static sitemap.xml
+RewriteRule ^sitemap\.xml$ /sitemap.php [L]
+RewriteRule ^sitemap-images\.xml$ /sitemap.php [L]
+
+# Canonical host: force HTTPS + non-www
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
     # Skip rewrite for assets and includes
     RewriteCond %{REQUEST_URI} !^/assets/
@@ -74,3 +84,20 @@ DirectoryIndex index.php index.html
 # Custom 404
 # ------------------------------------------------------------
 ErrorDocument 404 /404.php
+
+# v6.3 retrofit (2026-09-04): brotli first, immutable static assets (css/js carry ?v=), revalidating HTML
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript application/javascript application/json application/xml application/ld+json image/svg+xml
+</IfModule>
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|woff2|woff|webp|avif|jpe?g|png|gif|svg|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(php|html)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+<IfModule mod_mime.c>
+    AddType image/avif .avif
+    AddType font/woff2 .woff2
+</IfModule>

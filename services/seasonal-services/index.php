@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo05' => '/assets/images/room-addition.jpg', 'photo06' => '/assets/images/project-08.jpg', 'photo07' => '/assets/images/kitchen-remodel.jpg']);
 ?>
 <?php
 $pageTitle       = 'Plumbing, Electrical & HVAC in Bowdon GA | Gray Tile';
-$pageDescription = 'Plumbing, electrical, and HVAC installation for remodeling projects in Bowdon, GA. Gray Tile & Remodeling provides complete mechanical services. Licensed & insured.';
+$pageDescription = 'Plumbing, electrical, and HVAC installation for remodeling projects in Bowdon, GA. Gray Tile & Remodeling provides complete mechanical services. Free estimates.';
 $canonicalUrl    = $siteUrl . '/services/seasonal-services/';
 $ogImage         = $clientPhotos['photo05'];
-$heroPreloadImage = $clientPhotos['photo05'];
+$heroPreloadImage = '/assets/images/project-08.jpg';
 $currentPage     = 'services';
 
 $pageFaqs = [
@@ -58,6 +61,8 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'service';
+$serviceSlug = 'seasonal-services';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -797,23 +802,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="ss-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo05']); ?>');" aria-label="Mechanical Services hero">
-    <div class="ss-hero-inner container">
+  <section class="ss-hero hero--picture hero--has-form" aria-label="Mechanical Services hero">
+    <?php echo p1_hero_picture('project-08', 'Mechanical Services for Every Remodel in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form ss-hero-inner container">
       <div class="ss-hero-content" data-animate="fade-up">
         <span class="ss-hero-eyebrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          Licensed &amp; Insured — Carroll County
+          Tile Specialists — Carroll County
         </span>
         <h1>Mechanical Services<br>for Every Remodel<br><span class="text-gradient">in Bowdon, GA</span></h1>
         <p class="ss-hero-sub">Plumbing, electrical, and HVAC handled by the same crew doing your remodel — no coordination gap, no subcontractor runaround, no project delays from scheduling conflicts between trades.</p>
         <div class="ss-hero-actions">
-          <a href="/contact/" class="ss-btn-primary">
+          <a href="/contact/" class="ss-btn-primary hero-form-open" data-open-estimate>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
             Get a Free Estimate
           </a>
           <a href="#mechanical-services" class="ss-btn-ghost">See Services ↓</a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -1077,7 +1090,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="ss-closing-cta-inner" data-animate="fade-up">
       <span class="eyebrow-label" style="color: var(--color-accent);">Ready to Start?</span>
       <h2>One Contractor.<br>Every Trade.</h2>
-      <p>Serving Bowdon, Carrollton, Villa Rica, Bremen, Temple, and Carroll County. Licensed and insured for plumbing, electrical, and HVAC work. <?php echo $yearsInBusiness; ?> years without a callback problem we didn't fix.</p>
+      <p>Serving Bowdon, Carrollton, Villa Rica, Bremen, Temple, and Carroll County. Tile specialists for plumbing, electrical, and HVAC work. years without a callback problem we didn't fix.</p>
       <a href="/contact/" class="ss-btn-cta">Get a Free Estimate →</a>
     </div>
   </section>

@@ -7,7 +7,7 @@ $pageTitle       = 'Service Area | Tile & Remodeling Near Bowdon GA | Gray Tile'
 $pageDescription = 'Gray Tile & Remodeling serves Bowdon, Carrollton, Villa Rica, Bremen, Temple, and communities throughout Carroll County and West Georgia. Get a free estimate near you.';
 $canonicalUrl    = $siteUrl . '/service-area/';
 $ogImage         = $clientPhotos['photo02'];
-$heroPreloadImage = $clientPhotos['photo02'];
+$heroPreloadImage = '/assets/images/project-10.jpg';
 $currentPage     = 'service-area';
 
 $areaFaqs = [
@@ -66,6 +66,8 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'city';
+$citySlug = 'bowdon';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -83,7 +85,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: flex-end;
   padding-bottom: var(--space-4xl);
-  background-image: url('<?php echo htmlspecialchars($clientPhotos['photo02']); ?>');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -887,11 +888,13 @@ details[open] .faq-question::after {
 <!-- ═══════════════════════════════════════════════════════════
      HERO
 ═══════════════════════════════════════════════════════════ -->
-<section class="area-hero" aria-label="Service area hero">
-  <div class="area-hero-content container">
+<section class="area-hero hero--picture hero--has-form" aria-label="Service area hero">
+    <?php echo p1_hero_picture('project-10', 'Tile & Remodeling Services Near Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+  <div class="hero-grid--form area-hero-content container">
+      <div class="hero-copy">
     <h1 data-animate="fade-up">Tile &amp; Remodeling Services<br>Near Bowdon, GA</h1>
     <p class="area-hero-sub" data-animate="fade-up">
-      Serving Carroll County and West Georgia since <?php echo $yearEstablished; ?>. Free estimates with no travel fees for most primary service areas.
+      Serving Carroll County and West Georgia . Free estimates with no travel fees for most primary service areas.
     </p>
     <div class="area-hero-pill-row" data-animate="fade-up">
       <?php
@@ -902,6 +905,13 @@ details[open] .faq-question::after {
       <span class="area-hero-pill"><span class="dot" aria-hidden="true"></span>+ More</span>
     </div>
   </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
+    </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -945,10 +955,6 @@ details[open] .faq-question::after {
             width="600" height="450"
             loading="lazy">
         </picture>
-        <div class="area-intro-badge" aria-label="25 years serving West Georgia">
-          <strong><?php echo $yearsInBusiness; ?></strong>
-          YEARS<br>WEST GEORGIA
-        </div>
       </div>
 
     </div>
@@ -1206,7 +1212,7 @@ details[open] .faq-question::after {
     <span class="eyebrow-label" data-animate="fade-up">Your Neighborhood. Our Craft.</span>
     <h2 id="area-closing-heading" data-animate="fade-up">Ready to Start a Project<br>in West Georgia?</h2>
     <p data-animate="fade-up">
-      Gray Tile &amp; Remodeling has served Carroll County and surrounding communities for <?php echo $yearsInBusiness; ?> years. Free estimates, same-week visits for most areas, no travel surprises.
+      Gray Tile &amp; Remodeling has served Carroll County and surrounding communities for years. Free estimates, same-week visits for most areas, no travel surprises.
     </p>
     <div class="btn-group" data-animate="fade-up">
       <a href="/contact/" class="btn-cta-primary">Get a Free Estimate</a>

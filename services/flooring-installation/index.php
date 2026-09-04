@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo06' => '/assets/images/project-15.jpg', 'gallery02' => '/assets/images/room-addition.jpg', 'photo05' => '/assets/images/project-08.jpg', 'photo08' => '/assets/images/kitchen-remodel.jpg', 'photo09' => '/assets/images/project-06.jpg']);
 ?>
 <?php
 $pageTitle       = 'Flooring Installation in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Professional flooring installation in Bowdon, GA — tile, LVP, hardwood, engineered hardwood. All material types, subfloor prep included. Free estimate, Carroll County.';
 $canonicalUrl    = $siteUrl . '/services/flooring-installation/';
 $ogImage         = $clientPhotos['photo06'];
-$heroPreloadImage = $clientPhotos['photo06'];
+$heroPreloadImage = '/assets/images/project-15.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -40,6 +43,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'flooring-installation';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -58,7 +63,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo06']; ?>');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -498,8 +502,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="flri-hero" aria-label="Flooring installation hero">
-    <div class="flri-hero-inner container">
+  <section class="flri-hero hero--picture hero--has-form" aria-label="Flooring installation hero">
+    <?php echo p1_hero_picture('project-15', 'Flooring Installation in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form flri-hero-inner container">
       <div data-animate="fade-up">
         <h1>Flooring Installation in Bowdon, GA</h1>
         <p class="hero-lead prose">
@@ -508,13 +513,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div class="hero-badge-row">
           <span class="hero-badge">All Material Types</span>
           <span class="hero-badge">Subfloor Prep Included</span>
-          <span class="hero-badge">25 Yrs Carroll County</span>
+          <span class="hero-badge">Bowdon &amp; Carroll County</span>
         </div>
         <div class="hero-cta-row">
-          <a href="/contact/" class="btn btn-accent btn-lg">Get a Free Estimate</a>
+          <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a Free Estimate</a>
           <a href="tel:<?php echo htmlspecialchars($phone); ?>" class="btn btn-outline-white btn-lg"><?php echo htmlspecialchars(formatPhone($phone)); ?></a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -765,7 +777,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <h2 data-animate="fade-up">Not Sure Which Floor Is Right for Your Bowdon Home?</h2>
       <p class="prose-centered" data-animate="fade-up">
-        We come out, check your subfloor, measure the space, and give you a material recommendation backed by 25 years of Carroll County installs — then a written quote. Same-week appointments usually available.
+        We come out, check your subfloor, measure the space, and give you a material recommendation backed by our Carroll County installs — then a written quote. Same-week appointments usually available.
       </p>
       <a href="tel:<?php echo htmlspecialchars($phone); ?>" class="flri-cta-phone" data-animate="fade-up">
         <?php echo htmlspecialchars(formatPhone($phone)); ?>
@@ -830,7 +842,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo05']; ?>" alt="Custom tile shower installation Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="droplets"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-droplets" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg></div>
             <h3>Custom Tile Showers</h3>
             <p class="service-card__desc">Walk-in, tub surround, and steam showers — tile installed with full waterproofing.</p>
             <ul>
@@ -847,7 +859,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="LVP luxury vinyl plank flooring installed in Bowdon Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>LVP Flooring</h3>
             <p class="service-card__desc">Luxury vinyl plank — the most humidity-resistant option for Georgia homes.</p>
             <ul>
@@ -864,7 +876,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo09']; ?>" alt="Subfloor replacement service Carroll County Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Subfloor Replacement</h3>
             <p class="service-card__desc">Damaged subfloor fixed before new flooring goes down — the right foundation matters.</p>
             <ul>
@@ -916,7 +928,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

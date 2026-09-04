@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo08' => '/assets/images/project-15.jpg', 'photo09' => '/assets/images/room-addition.jpg', 'photo10' => '/assets/images/project-08.jpg', 'photo11' => '/assets/images/kitchen-remodel.jpg']);
 ?>
 <?php
 $pageTitle       = 'Flooring Services Bowdon GA | Tile, LVP & Hardwood';
-$pageDescription = 'Custom tile showers, LVP flooring, hardwood refinishing, and subfloor replacement in Bowdon, GA. Gray Tile & Remodeling — 25 years of West Georgia floor expertise.';
+$pageDescription = 'Custom tile showers, LVP flooring, hardwood refinishing, and subfloor replacement in Bowdon, GA. Gray Tile & Remodeling — West Georgia floor expertise.';
 $canonicalUrl    = $siteUrl . '/services/flooring-services/';
 $ogImage         = $clientPhotos['photo08'];
-$heroPreloadImage = $clientPhotos['photo08'];
+$heroPreloadImage = '/assets/images/project-15.jpg';
 $currentPage     = 'services';
 
 $pageFaqs = [
@@ -56,6 +59,8 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'service';
+$serviceSlug = 'flooring-services';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -771,23 +776,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="fs-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo08']); ?>');" aria-label="Flooring Services hero">
-    <div class="fs-hero-inner container">
+  <section class="fs-hero hero--picture hero--has-form" aria-label="Flooring Services hero">
+    <?php echo p1_hero_picture('project-15', 'Flooring & Custom Tile Services in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form fs-hero-inner container">
       <div class="fs-hero-content" data-animate="fade-up">
         <span class="fs-hero-eyebrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          Bowdon, GA &amp; Carroll County — <?php echo $yearsInBusiness; ?> Years Experience
+          Bowdon, GA &amp; Carroll County
         </span>
         <h1>Flooring &amp;<br><span class="text-gradient">Custom Tile Services</span><br>in Bowdon, GA</h1>
         <p class="fs-hero-sub">Open floor plans, custom tile showers, LVP, hardwood refinishing, and subfloor work — every floor application handled by the same crew, built for Georgia's climate challenges.</p>
         <div class="fs-hero-actions">
-          <a href="/contact/" class="fs-btn-primary">
+          <a href="/contact/" class="fs-btn-primary hero-form-open" data-open-estimate>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
             Get a Free Estimate
           </a>
           <a href="#flooring-services-grid" class="fs-btn-ghost">Browse Services ↓</a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -825,7 +838,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layout"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layout" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
             <h3>Open Floor Plan</h3>
             <p class="service-card__desc">Remove walls and reconfigure layouts to create connected, flowing living spaces.</p>
             <ul>
@@ -846,7 +859,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="droplets"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-droplets" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg></div>
             <h3>Custom Tile Showers</h3>
             <p class="service-card__desc">Specialty tile shower builds with waterproofing systems rated for wet applications.</p>
             <ul>
@@ -867,7 +880,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="square"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-square" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/></svg></div>
             <h3>Flooring Installation</h3>
             <p class="service-card__desc">Full floor installation for ceramic, porcelain, hardwood, and LVP in any room configuration.</p>
             <ul>
@@ -888,7 +901,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="wind"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-wind" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></div>
             <h3>Sanded Finish Flooring</h3>
             <p class="service-card__desc">Hardwood floor sanding and refinishing to restore original wood without full replacement.</p>
             <ul>
@@ -909,7 +922,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>LVP Flooring</h3>
             <p class="service-card__desc">Luxury vinyl plank installation — waterproof, durable, and appropriate for Georgia's humidity.</p>
             <ul>
@@ -930,7 +943,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Subfloor Replacement</h3>
             <p class="service-card__desc">Full subfloor panel replacement when existing substrate fails deflection requirements for hard surfaces.</p>
             <ul>
@@ -1006,14 +1019,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <p>We've repaired failed tile showers installed by other contractors. The failure mode is almost always the same: no certified waterproofing membrane behind the tile, grout joints left unsealed, or inadequate slope to the drain. A tile shower is only as good as what's behind the tile.</p>
           <p>Every custom shower we build uses Schluter KERDI waterproofing membrane or equivalent — a bonded system that's been third-party tested for wet-area applications. We don't use sheet plastic or painted-on waterproofing as a cost-cutting measure.</p>
           <div class="fs-stats-grid">
-            <div class="fs-stat-block">
-              <span class="fs-stat-num"><?php echo $yearsInBusiness; ?></span>
-              <span class="fs-stat-label">Years Experience</span>
-            </div>
-            <div class="fs-stat-block">
-              <span class="fs-stat-num">200+</span>
-              <span class="fs-stat-label">Showers Built</span>
-            </div>
             <div class="fs-stat-block">
               <span class="fs-stat-num">48"</span>
               <span class="fs-stat-label">Max Tile Format</span>
@@ -1160,7 +1165,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="fs-closing-cta-inner" data-animate="fade-up">
       <span class="fs-section-eyebrow" style="color: var(--color-accent);">Ready to Start?</span>
       <h2>The Right Floor Starts<br>With the Right Subfloor</h2>
-      <p>We assess what you have before we recommend what you need. Free on-site estimates across Bowdon, Carrollton, Villa Rica, Bremen, and Carroll County. <?php echo $yearsInBusiness; ?> years of tile and flooring in West Georgia homes.</p>
+      <p>We assess what you have before we recommend what you need. Free on-site estimates across Bowdon, Carrollton, Villa Rica, Bremen, and Carroll County. years of tile and flooring in West Georgia homes.</p>
       <a href="/contact/" class="fs-btn-cta">Schedule a Free Assessment →</a>
     </div>
   </section>
@@ -1188,10 +1193,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 </script>
 
 <!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo06' => '/assets/images/room-addition.jpg', 'photo07' => '/assets/images/project-08.jpg', 'photo05' => '/assets/images/kitchen-remodel.jpg', 'photo04' => '/assets/images/project-07.jpg', 'photo08' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Room Additions Bowdon GA | Bedroom, Bath & Sunroom';
 $pageDescription = 'Add a bedroom, bathroom, sunroom, or family room to your Bowdon, GA home. Gray Tile handles Carroll County permits, framing, and finish work — $40K–$120K typical range.';
 $canonicalUrl    = $siteUrl . '/services/room-additions/';
 $ogImage         = $clientPhotos['photo06'];
-$heroPreloadImage = $clientPhotos['photo06'];
+$heroPreloadImage = '/assets/images/room-addition.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'room-additions';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo06']; ?>');
   background-size: cover;
   background-position: center 35%;
   background-repeat: no-repeat;
@@ -215,8 +219,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="ra-hero" aria-label="Room Additions hero">
-    <div class="hero-content container">
+  <section class="ra-hero hero--picture hero--has-form" aria-label="Room Additions hero">
+    <?php echo p1_hero_picture('room-addition', 'Room Additions in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Room Additions in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Add the square footage your family actually needs — bedroom, bathroom, sunroom, or family room.
@@ -224,9 +230,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         Typical projects: $40,000–$120,000.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get Your Addition Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get Your Addition Estimate</a>
         <a href="#ra-types" class="btn btn-outline-white btn-lg">See Addition Types</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -301,8 +314,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="ra-cred-inner">
         <div class="ra-cred-item">
-          <span class="cv">25</span>
-          <span class="cl">Years Building Additions</span>
+          <span class="cv">GA</span>
+          <span class="cl">Based in Bowdon</span>
         </div>
         <div class="ra-cred-sep" aria-hidden="true"></div>
         <div class="ra-cred-item">
@@ -484,7 +497,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo05']; ?>" alt="Home additions Bowdon Georgia expand your living space" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="home"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-home" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg></div>
             <h3>Home Additions</h3>
             <p class="service-card__desc">Larger-scale additions — full wings, in-law suites, and multi-room expansions.</p>
             <ul><li>Multi-room additions</li><li>In-law suite builds</li><li>Full structural expansion</li></ul>
@@ -496,7 +509,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo04']; ?>" alt="Framing contractor Bowdon GA structural framing for additions" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Framing Contractor</h3>
             <p class="service-card__desc">Structural framing built to tile-grade L/360 deflection — no shortcuts on the bones.</p>
             <ul><li>L/360 floor deflection</li><li>Load-bearing engineering</li><li>Permit-ready framing</li></ul>
@@ -508,7 +521,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="Full home remodel Bowdon GA complete renovation one team" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Full Home Remodel</h3>
             <p class="service-card__desc">When you need more than an addition — complete whole-house renovation from one team.</p>
             <ul><li>Every room, one contract</li><li>Permits &amp; trade coordination</li><li>Design through tile finish</li></ul>
@@ -537,7 +550,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
 </main>
 
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {
@@ -548,7 +560,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

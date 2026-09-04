@@ -7,7 +7,7 @@ $pageTitle       = 'Get a Free Estimate | Gray Tile & Remodeling Bowdon GA';
 $pageDescription = 'Request your free estimate from Gray Tile & Remodeling in Bowdon, GA. We serve Carroll County and West Georgia for tile, kitchen, bathroom, and home renovation.';
 $canonicalUrl    = $siteUrl . '/contact/';
 $ogImage         = $clientPhotos['photo01'];
-$heroPreloadImage = $clientPhotos['photo01'];
+$heroPreloadImage = '/assets/images/project-07.jpg';
 $currentPage     = 'contact';
 
 $contactFaqs = [
@@ -47,6 +47,7 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'contact';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -63,7 +64,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   min-height: 40vh;
   display: flex;
   align-items: center;
-  background-image: url('<?php echo htmlspecialchars($clientPhotos['photo01']); ?>');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
@@ -723,7 +723,8 @@ details[open] .faq-question::after {
 <!-- ═══════════════════════════════════════════════════════════
      HERO
 ═══════════════════════════════════════════════════════════ -->
-<section class="contact-hero" aria-label="Contact Gray Tile and Remodeling hero">
+<section class="contact-hero hero--picture" aria-label="Contact Gray Tile and Remodeling hero">
+    <?php echo p1_hero_picture('project-07', 'Get Your Free Remodeling Estimate — Gray Tile & Remodeling, Bowdon, GA'); ?>
   <div class="contact-hero-content container">
     <h1 data-animate="fade-up">Get Your Free Remodeling Estimate</h1>
     <p class="contact-hero-sub" data-animate="fade-up">
@@ -762,8 +763,9 @@ details[open] .faq-question::after {
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="contact-form" novalidate>
           <!-- Honeypot -->
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <?php echo p1_attribution_fields('contact'); ?>
           <!-- Required hidden fields -->
-          <input type="hidden" name="_next" value="/thank-you">
+          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you/">
           <input type="hidden" name="_consent_version" value="v2.1">
           <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
 
@@ -847,7 +849,7 @@ details[open] .faq-question::after {
         <div class="contact-info-header">
           <span class="eyebrow-label">Reach Us Directly</span>
           <h2>We're Based in<br>Bowdon, Georgia</h2>
-          <p class="prose">Prefer to call or stop by? We're available Monday through Friday 8am–6pm and Saturday mornings. For non-urgent inquiries, the form is the fastest way to get a response.</p>
+          <p class="prose">Prefer to call or stop by? We're available Monday through Thursday, 9am–5pm. For non-urgent inquiries, the form is the fastest way to get a response.</p>
         </div>
 
         <div class="contact-info-card">
@@ -901,9 +903,8 @@ details[open] .faq-question::after {
             <div>
               <div class="contact-info-label">Business Hours</div>
               <div class="contact-info-value">
-                Mon–Fri: 8:00 AM – 6:00 PM<br>
-                Saturday: 9:00 AM – 2:00 PM<br>
-                Sunday: Closed
+                Mon–Thu: 9:00 AM – 5:00 PM<br>
+                Fri–Sun: Closed
               </div>
             </div>
           </div>
@@ -922,8 +923,7 @@ details[open] .faq-question::after {
           <h3>Why Homeowners Call Us First</h3>
           <ul class="trust-items">
             <li>Free, no-obligation estimates — every time</li>
-            <li>Licensed and insured in Georgia</li>
-            <li><?php echo $yearsInBusiness; ?> years serving Carroll County</li>
+            <li>Tile specialists in Georgia</li>
             <li>Respond within 1 business day</li>
             <li>No subcontractors — our own crew on every job</li>
             <li>Start dates confirmed at time of estimate</li>

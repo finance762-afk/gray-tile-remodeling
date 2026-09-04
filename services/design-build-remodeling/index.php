@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo12' => '/assets/images/room-addition.jpg', 'photo13' => '/assets/images/project-08.jpg', 'gallery02' => '/assets/images/kitchen-remodel.jpg', 'photo05' => '/assets/images/project-07.jpg', 'gallery01' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Design-Build Remodeling Bowdon GA | Gray Tile & Remodeling';
-$pageDescription = 'Streamlined design-build remodeling in Bowdon, GA — one team handles design and construction from concept to completion. Gray Tile & Remodeling, 25 years West Georgia.';
+$pageDescription = 'Streamlined design-build remodeling in Bowdon, GA — one team handles design and construction from concept to completion. Gray Tile & Remodeling, West Georgia.';
 $canonicalUrl    = $siteUrl . '/services/design-build-remodeling/';
 $ogImage         = $clientPhotos['photo12'];
-$heroPreloadImage = $clientPhotos['photo12'];
+$heroPreloadImage = '/assets/images/kitchen-remodel.jpg';
 $currentPage     = 'services';
 
 // Find service in array
@@ -35,6 +38,8 @@ $schemaMarkup = $currentService
     : generateFAQSchema($pageFaqs);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'service';
+$serviceSlug = 'design-build-remodeling';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -52,7 +57,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo12']; ?>');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -495,8 +499,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="db-hero" aria-label="Design-Build Remodeling hero">
-    <div class="hero-content container">
+  <section class="db-hero hero--picture hero--has-form" aria-label="Design-Build Remodeling hero">
+    <?php echo p1_hero_picture('kitchen-remodel', 'Design-Build Remodeling in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Design-Build Remodeling<br>in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         One team. One contract. Zero miscommunication between your designer and contractor.
@@ -504,9 +510,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         final tile install — with no gap in accountability.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get a Free Design Consultation</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a Free Design Consultation</a>
         <a href="#how-it-works" class="btn btn-outline-white btn-lg">See How It Works</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -556,8 +569,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               loading="lazy">
           </div>
           <div class="photo-stat-badge">
-            <span class="stat-number">25</span>
-            <span class="stat-label">Years West Georgia</span>
+            <span class="stat-number">GA</span>
+            <span class="stat-label">Based in Bowdon</span>
           </div>
         </div>
 
@@ -742,7 +755,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['gallery02']; ?>" alt="Custom tile showers and flooring in Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Flooring Services</h3>
             <p class="service-card__desc">Custom tile showers, LVP, hardwood refinishing, and subfloor work.</p>
             <ul>
@@ -759,7 +772,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo05']; ?>" alt="Targeted home upgrades and tile backsplashes in Carroll County" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="sparkles"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-sparkles" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div>
             <h3>Home Upgrades</h3>
             <p class="service-card__desc">Targeted updates — backsplashes, floors, fixtures — completed in days.</p>
             <ul>
@@ -776,7 +789,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['gallery01']; ?>" alt="Full kitchen and bathroom remodeling Bowdon Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Remodeling Services</h3>
             <p class="service-card__desc">Kitchen, bathroom, attic, and basement remodels throughout Carroll County.</p>
             <ul>
@@ -821,7 +834,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 // Init Lucide icons
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

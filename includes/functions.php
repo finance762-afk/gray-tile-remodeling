@@ -166,20 +166,76 @@ function generateMetaTags(string $title, string $description, string $canonical)
     ]);
 }
 
+// ────────────────────────────────────────────────────────────────
+// v6.3 (2026-09-04): local responsive images + inline icons
+// ────────────────────────────────────────────────────────────────
+function p1_manifest(): array {
+    static $m = null;
+    if ($m === null) {
+        $f = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/manifest.json';
+        $m = is_readable($f) ? (json_decode(file_get_contents($f), true) ?: []) : [];
+    }
+    return $m;
+}
+/** Base name ("kitchen-remodel") from a local path or a $clientPhotos key. */
+function p1_img_base(string $src): string {
+    global $clientPhotos;
+    if (isset($clientPhotos[$src])) $src = $clientPhotos[$src];
+    return preg_replace('/\.(jpe?g|png|webp)$/i', '', basename($src));
+}
+function p1_img_src(string $keyOrPath): string {
+    global $clientPhotos;
+    if (isset($clientPhotos[$keyOrPath])) return $clientPhotos[$keyOrPath];
+    if (strpos($keyOrPath, '/') === false && strpos($keyOrPath, '.') === false) {   // bare manifest base name
+        $m = p1_manifest()[$keyOrPath] ?? null;
+        return '/assets/images/' . $keyOrPath . ($m['ext'] ?? '.jpg');
+    }
+    return $keyOrPath;
+}
 /**
- * Returns the AggregateRating schema snippet (array, not JSON-encoded).
- * Merge into any page schema that requires it.
- * Update ratingValue, reviewCount, and bestRating when real reviews are collected.
- *
- * @return array
+ * <picture> with AVIF + WebP srcset from the generated variants and the original as fallback.
+ * $opts: class, sizes (default 100vw), loading (lazy|eager), fetchpriority, width/height override, decoding.
  */
-function getAggregateRatingSchema(): array
-{
-    return [
-        '@type'       => 'AggregateRating',
-        'ratingValue' => '5.0',
-        'reviewCount' => '1',
-        'bestRating'  => '5',
-        'worstRating' => '1',
-    ];
+function p1_picture(string $keyOrPath, string $alt, array $opts = []): string {
+    $src  = p1_img_src($keyOrPath);
+    $base = p1_img_base($src);
+    $m    = p1_manifest()[$base] ?? null;
+    $sizes = $opts['sizes'] ?? '100vw';
+    $loading = $opts['loading'] ?? 'lazy';
+    $w = (int)($opts['width'] ?? ($m['w'] ?? 0)); $h = (int)($opts['height'] ?? ($m['h'] ?? 0));
+    $dims = ($w && $h) ? ' width="' . $w . '" height="' . $h . '"' : '';
+    $extra = (!empty($opts['fetchpriority']) ? ' fetchpriority="' . $opts['fetchpriority'] . '"' : '') . (!empty($opts['imgclass']) ? ' class="' . htmlspecialchars($opts['imgclass']) . '"' : '');
+    $out = '<picture' . (!empty($opts['class']) ? ' class="' . htmlspecialchars($opts['class']) . '"' : '') . '>';
+    if ($m && !empty($m['widths'])) {
+        foreach (['avif', 'webp'] as $fmt) {
+            $set = [];
+            foreach ($m['widths'] as $wv) $set[] = "/assets/images/{$base}-{$wv}.{$fmt} {$wv}w";
+            $out .= '<source type="image/' . $fmt . '" srcset="' . implode(', ', $set) . '" sizes="' . htmlspecialchars($sizes) . '">';
+        }
+    }
+    $out .= '<img src="' . htmlspecialchars($src) . '" alt="' . htmlspecialchars($alt) . '"' . $dims . ' loading="' . ($loading === 'lazy' ? 'lazy' : 'eager') . '" decoding="async"' . $extra . '>';
+    return $out . '</picture>';
+}
+/** Full-bleed hero background as a real <picture> (LCP-safe: eager + fetchpriority=high, never a CSS background). */
+function p1_hero_picture(string $keyOrPath, string $alt): string {
+    return p1_picture($keyOrPath, $alt, ['class' => 'hero-bg', 'sizes' => '100vw', 'loading' => 'eager', 'fetchpriority' => 'high']);
+}
+/** <link rel=preload> for the hero image with imagesrcset so the browser fetches the right variant. */
+function p1_hero_preload(string $keyOrPath): string {
+    $src  = p1_img_src($keyOrPath);
+    $base = p1_img_base($src);
+    $m    = p1_manifest()[$base] ?? null;
+    if ($m && !empty($m['widths'])) {
+        $set = [];
+        foreach ($m['widths'] as $w) $set[] = "/assets/images/{$base}-{$w}.avif {$w}w";
+        return '<link rel="preload" as="image" type="image/avif" imagesrcset="' . implode(', ', $set) . '" imagesizes="100vw" fetchpriority="high">';
+    }
+    return '<link rel="preload" as="image" href="' . htmlspecialchars($src) . '" fetchpriority="high">';
+}
+/** Inline lucide icon (no runtime injection). */
+function p1_icon(string $name, int $size = 24, string $class = ''): string {
+    static $icons = null;
+    if ($icons === null) { $P1_ICONS = []; include $_SERVER['DOCUMENT_ROOT'] . '/includes/icons.php'; $icons = $P1_ICONS; }
+    $inner = $icons[$name] ?? $icons['check'] ?? '';
+    return '<svg class="lucide lucide-' . htmlspecialchars($name) . ($class ? ' ' . htmlspecialchars($class) : '') . '" xmlns="http://www.w3.org/2000/svg" width="' . $size . '" height="' . $size . '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . $inner . '</svg>';
 }

@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo03' => '/assets/images/room-addition.jpg', 'gallery03' => '/assets/images/project-08.jpg', 'photo04' => '/assets/images/kitchen-remodel.jpg', 'photo07' => '/assets/images/project-07.jpg', 'photo14' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Basement Finishing in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Basement finishing in Bowdon, GA — add 40–75% more livable space with moisture-managed framing, drywall, flooring & HVAC. Carroll County permitted. Free estimates.';
 $canonicalUrl    = $siteUrl . '/services/basement-finishing/';
 $ogImage         = $clientPhotos['photo03'];
-$heroPreloadImage = $clientPhotos['photo03'];
+$heroPreloadImage = '/assets/images/room-addition.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -36,6 +39,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'basement-finishing';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -346,8 +351,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="bsf-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo03']); ?>');" aria-label="Basement Finishing hero">
-    <div class="bsf-hero-inner container">
+  <section class="bsf-hero hero--picture hero--has-form" aria-label="Basement Finishing hero">
+    <?php echo p1_hero_picture('room-addition', 'Basement Finishing Built for Georgia Humidity — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form bsf-hero-inner container">
       <div class="bsf-hero-content" data-animate="fade-up">
         <span class="bsf-eyebrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -358,15 +364,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           Add 40–75% More Livable Space
         </div>
-        <p class="bsf-hero-sub">Turn your unfinished basement into functional living space — moisture-managed framing, LVP flooring, electrical, HVAC, and optional full bathroom. Carroll County permitted. <?php echo $yearsInBusiness; ?> years finishing Georgia basements.</p>
+        <p class="bsf-hero-sub">Turn your unfinished basement into functional living space — moisture-managed framing, LVP flooring, electrical, HVAC, and optional full bathroom. Carroll County permitted. years finishing Georgia basements.</p>
         <div class="bsf-hero-actions">
-          <a href="/contact/" class="bsf-btn-primary">
+          <a href="/contact/" class="bsf-btn-primary hero-form-open" data-open-estimate>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
             Get a Free Estimate
           </a>
           <a href="tel:<?php echo preg_replace('/\D/','',$phone); ?>" class="bsf-btn-ghost">Call <?php echo htmlspecialchars($phone); ?></a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -405,7 +418,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </span>
             <span class="bsf-meta-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              Licensed &amp; insured, GA
+              Bowdon, GA
             </span>
           </div>
           <p style="font-family: var(--font-body); font-size: 0.82rem; color: var(--color-text-light); margin-top: var(--space-md);">Last updated: April 2026</p>
@@ -590,7 +603,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="utensils-crossed"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-utensils-crossed" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg></div>
             <h3>Basement Kitchen</h3>
             <p class="service-card__desc">Add a full or secondary kitchen to your finished basement in Bowdon.</p>
             <ul>
@@ -610,7 +623,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Remodeling Services</h3>
             <p class="service-card__desc">Full-scope remodeling for every room in your Bowdon, GA home.</p>
             <ul>
@@ -630,7 +643,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="building-2"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-building-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg></div>
             <h3>Framing Contractor</h3>
             <p class="service-card__desc">Expert residential framing for basement walls, additions, and structural work.</p>
             <ul>
@@ -651,7 +664,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="bsf-closing-inner" data-animate="fade-up">
       <span class="bsf-section-eyebrow" style="color: var(--color-accent);">Ready to Start?</span>
       <h2>Your Basement.<br>Georgia-Ready.</h2>
-      <p>We've finished basements across Bowdon, Carrollton, Villa Rica, and Carroll County since <?php echo $yearEstablished; ?>. We assess moisture conditions, manage permits, and finish the space to code — no surprises mid-project.</p>
+      <p>We've finished basements across Bowdon, Carrollton, Villa Rica, and Carroll County . We assess moisture conditions, manage permits, and finish the space to code — no surprises mid-project.</p>
       <a href="/contact/" class="bsf-btn-primary">Schedule a Free Assessment →</a>
     </div>
   </section>
@@ -676,10 +689,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   });
 }());
 </script>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

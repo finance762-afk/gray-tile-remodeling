@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo02' => '/assets/images/room-addition.jpg', 'photo04' => '/assets/images/project-08.jpg', 'photo05' => '/assets/images/kitchen-remodel.jpg', 'photo08' => '/assets/images/project-07.jpg']);
 ?>
 <?php
 $pageTitle       = 'Electrical Services Bowdon GA | Remodel Electrical Carroll County';
 $pageDescription = 'Electrical rough-in, panel upgrades, recessed lighting, and circuit work for remodels in Bowdon, GA. Carroll County permits pulled. Integrated with your full remodel scope.';
 $canonicalUrl    = $siteUrl . '/services/electrical-services/';
 $ogImage         = $clientPhotos['photo02'];
-$heroPreloadImage = $clientPhotos['photo02'];
+$heroPreloadImage = '/assets/images/project-08.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'electrical-services';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo02']; ?>');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -209,8 +213,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="elc-hero" aria-label="Electrical Services hero">
-    <div class="hero-content container">
+  <section class="elc-hero hero--picture hero--has-form" aria-label="Electrical Services hero">
+    <?php echo p1_hero_picture('project-08', 'Electrical Services for Remodels in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Electrical Services for Remodels in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Circuit rough-in, panel upgrades, recessed lighting, and GFCI/AFCI compliance —
@@ -218,9 +224,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         coordinate. Gray Tile pulls the permit and schedules every required inspection.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get an Electrical Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get an Electrical Estimate</a>
         <a href="#elc-scope" class="btn btn-outline-white btn-lg">See Electrical Scope</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -459,7 +472,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo04']; ?>" alt="Kitchen remodeling Bowdon Georgia electrical circuits lighting" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="utensils"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-utensils" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
             <h3>Kitchen Remodeling</h3>
             <p class="service-card__desc">Complete kitchen renovations with all required electrical circuits, recessed lighting, and panel assessment included.</p>
             <ul>
@@ -475,7 +488,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo05']; ?>" alt="Bathroom remodeling electrical GFCI Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="bath"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-bath" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></div>
             <h3>Bathroom Remodeling</h3>
             <p class="service-card__desc">Bathroom remodels with GFCI-compliant circuits, exhaust fan wiring, and lighting rough-in handled in-house.</p>
             <ul>
@@ -491,7 +504,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="Seasonal services electrical maintenance Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="wrench"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-wrench" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" /></svg></div>
             <h3>Seasonal Services</h3>
             <p class="service-card__desc">Scheduled electrical inspection, outlet and circuit maintenance, and minor electrical repairs throughout Carroll County.</p>
             <ul>
@@ -532,7 +545,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

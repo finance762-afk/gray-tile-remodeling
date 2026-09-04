@@ -1,13 +1,29 @@
 # robots.txt — Gray Tile & Remodeling
-# gray-tile-remodeling.pageone.cloud
-
 User-agent: *
 Allow: /
-
-# Block server internals — never exposed to crawlers
+Disallow: /thank-you/
 Disallow: /includes/
-Disallow: /assets/js/
 
-# Sitemaps
-Sitemap: https://gray-tile-remodeling.pageone.cloud/sitemap.xml
-Sitemap: https://gray-tile-remodeling.pageone.cloud/sitemap-images.xml
+Sitemap: https://graytileremodeling.com/sitemap.xml
+
+# LLM crawlers — allowed (answer engine optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /

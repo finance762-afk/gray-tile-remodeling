@@ -4,16 +4,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 ?>
 <?php
 $pageTitle       = 'About Gray Tile & Remodeling | Bowdon, GA Remodelers';
-$pageDescription = '25 years of tile and remodeling craftsmanship in Bowdon, GA. Learn about Gray Tile & Remodeling — our story, process, and commitment to West Georgia homeowners.';
+$pageDescription = 'Tile and remodeling craftsmanship in Bowdon, GA. Learn about Gray Tile & Remodeling — our story, process, and commitment to West Georgia homeowners.';
 $canonicalUrl    = $siteUrl . '/about/';
 $ogImage         = $clientPhotos['gallery01'];
-$heroPreloadImage = $clientPhotos['gallery01'];
+$heroPreloadImage = '/assets/images/kitchen-remodel.jpg';
 $currentPage     = 'about';
 
 $aboutFaqs = [
     [
         'q' => 'How long has Gray Tile & Remodeling been in business?',
-        'a' => 'Gray Tile & Remodeling was founded in 2001 in Bowdon, Georgia, giving us 25 years of hands-on experience installing tile and completing remodeling projects across Carroll County and West Georgia.',
+        'a' => 'Gray Tile & Remodeling is based in Bowdon, Georgia, and installs tile and completes remodeling projects across Carroll County and West Georgia.',
     ],
     [
         'q' => 'What areas does Gray Tile & Remodeling serve?',
@@ -21,7 +21,7 @@ $aboutFaqs = [
     ],
     [
         'q' => 'What makes Gray Tile different from a general contractor?',
-        'a' => 'Our foundation is tile craftsmanship — a specialized skill that general contractors typically subcontract out. We bring 25 years of tile-specific expertise to every project, combined with full remodeling capabilities, so every surface and every system is handled by the same accountable team.',
+        'a' => 'Our foundation is tile craftsmanship — a specialized skill that general contractors typically subcontract out. We bring tile-specific expertise to every project, combined with full remodeling capabilities, so every surface and every system is handled by the same accountable team.',
     ],
 ];
 
@@ -32,7 +32,6 @@ $schemaMarkup = json_encode([
             '@type'         => 'Organization',
             'name'          => $siteName,
             'url'           => $siteUrl,
-            'foundingYear'  => (string)$yearEstablished,
             'description'   => $businessDescription,
             'areaServed'    => ['Bowdon GA', 'Carrollton GA', 'Villa Rica GA', 'Carroll County GA'],
         ],
@@ -55,6 +54,7 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'about';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -72,7 +72,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: flex-end;
   padding-bottom: var(--space-4xl);
-  background-image: url('<?php echo htmlspecialchars($clientPhotos['gallery01']); ?>');
   background-size: cover;
   background-position: center 35%;
   background-repeat: no-repeat;
@@ -995,20 +994,21 @@ details[open] .faq-question::after {
 <!-- ═══════════════════════════════════════════════════════════
      HERO
 ═══════════════════════════════════════════════════════════ -->
-<section class="about-hero" aria-label="About Gray Tile and Remodeling hero">
+<section class="about-hero hero--picture" aria-label="About Gray Tile and Remodeling hero">
+    <?php echo p1_hero_picture('kitchen-remodel', 'Expert Tile Craftsmen Serving West Georgia Since — Gray Tile & Remodeling, Bowdon, GA'); ?>
   <div class="about-hero-content container">
-    <h1 data-animate="fade-up">Expert Tile Craftsmen Serving<br>West Georgia Since <?php echo $yearEstablished; ?></h1>
+    <h1 data-animate="fade-up">The Tile &amp; Remodeling Crew<br>Behind Bowdon&rsquo;s Kitchens and Baths</h1>
     <p class="about-hero-sub" data-animate="fade-up">
-      Founded in Bowdon, GA, and built on a foundation of precision tile work — we've spent 25 years turning bathrooms, kitchens, and living spaces throughout Carroll County into homes people love.
+      Based in Bowdon, GA, and built on precision tile work — we turn bathrooms, kitchens, and living spaces throughout Carroll County into homes people love.
     </p>
     <div class="about-hero-badges" data-animate="fade-up">
       <span class="about-hero-badge">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        Licensed &amp; Insured
+        Tile Specialists
       </span>
       <span class="about-hero-badge">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Since <?php echo $yearEstablished; ?>
+        Bowdon, GA
       </span>
       <span class="about-hero-badge">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
@@ -1047,10 +1047,10 @@ details[open] .faq-question::after {
         <h2 id="story-heading">Built From the Ground Up<br>in <span class="text-accent">Bowdon, Georgia</span></h2>
 
         <p class="prose">
-          Gray Tile &amp; Remodeling was established in <?php echo $yearEstablished; ?> right here in Bowdon — a small Carroll County town with older housing stock, tight-knit neighborhoods, and homeowners who take pride in how their homes look and feel. From the start, our focus was tile: a discipline that demands patience, precision, and a genuine understanding of how water moves through a home. General contractors skip past it. We built our entire business around it.
+          Gray Tile &amp; Remodeling is based right here in Bowdon — a small Carroll County town with older housing stock, tight-knit neighborhoods, and homeowners who take pride in how their homes look and feel. From the start, our focus was tile: a discipline that demands patience, precision, and a genuine understanding of how water moves through a home. General contractors skip past it. We built our entire business around it.
         </p>
         <p class="prose">
-          Georgia's humidity is no small thing. Summers in West Georgia average 70% relative humidity, and improperly installed tile — weak grout joints, missing moisture barriers, incorrect setting materials — can fail within a few years. We've spent two and a half decades learning exactly which products hold up in this climate, which substrates require extra waterproofing, and where moisture intrusion is most likely to begin in Carroll County home construction. That knowledge doesn't come from a manufacturer's guide. It comes from 25 years on the job locally.
+          Georgia's humidity is no small thing. Summers in West Georgia average 70% relative humidity, and improperly installed tile — weak grout joints, missing moisture barriers, incorrect setting materials — can fail within a few years. We've spent years learning exactly which products hold up in this climate, which substrates require extra waterproofing, and where moisture intrusion is most likely to begin in Carroll County home construction. That knowledge doesn't come from a manufacturer's guide. It comes from years on the job locally.
         </p>
         <p class="prose">
           Beyond tile, we've grown into a full-service remodeling company. Kitchens, bathrooms, basements, attic conversions, room additions — we handle the whole project because we've found that the best results come from a single accountable team that sees the job through from design to the last grout line being sealed.
@@ -1073,16 +1073,6 @@ details[open] .faq-question::after {
               loading="lazy">
           </picture>
         </div>
-        <!-- Floating stat overlay — overlaps image edge -->
-        <div class="story-img-overlay">
-          <span class="stat-num"><?php echo $yearsInBusiness; ?></span>
-          <span class="stat-label">Years in West Georgia</span>
-        </div>
-        <!-- Circle badge overlapping top-right -->
-        <div class="story-img-badge" aria-hidden="true">
-          <strong>500+</strong>
-          Projects<br>Completed
-        </div>
       </div>
 
     </div>
@@ -1092,34 +1082,12 @@ details[open] .faq-question::after {
 <!-- ═══════════════════════════════════════════════════════════
      STATS — Full-Bleed Dark
 ═══════════════════════════════════════════════════════════ -->
-<section class="stats-section" aria-labelledby="stats-heading">
+<section class="proof-strip texture-grain" aria-label="Facts about Gray Tile and Remodeling">
   <div class="container">
-    <div class="section-heading-group" data-animate="fade-up">
-      <span class="eyebrow-label">By the Numbers</span>
-      <h2 id="stats-heading">25 Years of Results in Carroll County</h2>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-card" data-animate="fade-up">
-        <span class="stat-card-num"><?php echo $yearsInBusiness; ?></span>
-        <span class="stat-card-label">Years in Business</span>
-        <p class="stat-card-desc">Continuously serving West Georgia since <?php echo $yearEstablished; ?></p>
-      </div>
-      <div class="stat-card" data-animate="fade-up">
-        <span class="stat-card-num">500+</span>
-        <span class="stat-card-label">Projects Completed</span>
-        <p class="stat-card-desc">Kitchens, baths, floors, and full remodels across Carroll County</p>
-      </div>
-      <div class="stat-card" data-animate="fade-up">
-        <span class="stat-card-num">10+</span>
-        <span class="stat-card-label">Communities Served</span>
-        <p class="stat-card-desc">Bowdon, Carrollton, Villa Rica, Bremen, Temple &amp; beyond</p>
-      </div>
-      <div class="stat-card" data-animate="fade-up">
-        <span class="stat-card-num">100%</span>
-        <span class="stat-card-label">Licensed &amp; Insured</span>
-        <p class="stat-card-desc">Every project backed by full licensing and general liability coverage</p>
-      </div>
-    </div>
+    <div class="proof-item"><?php echo p1_icon('map-pin'); ?><div><b>Bowdon, GA</b><span>Serving Carroll County &amp; West Georgia</span></div></div>
+    <div class="proof-item"><?php echo p1_icon('badge-check'); ?><div><b>Google-verified</b><span>Tile contractor listing on Google Business Profile</span></div></div>
+    <div class="proof-item"><?php echo p1_icon('layers'); ?><div><b>In-house crew</b><span>Tile, kitchens, baths &amp; floors — one team start to finish</span></div></div>
+    <div class="proof-item"><?php echo p1_icon('clock'); ?><div><b>Mon–Thu 9am–5pm</b><span>Free estimates · replies within one business day</span></div></div>
   </div>
 </section>
 
@@ -1251,7 +1219,7 @@ details[open] .faq-question::after {
           <h2 id="areas-heading">Serving Carroll County<br>and West Georgia</h2>
         </div>
         <p class="prose">
-          Our primary home base is Bowdon, GA — where we've worked on hundreds of homes since <?php echo $yearEstablished; ?>. From there, we serve the full Carroll County region and surrounding West Georgia communities within approximately 50 miles, with no travel surcharge for most primary service areas.
+          Our primary home base is Bowdon, GA — where we've worked on hundreds of homes . From there, we serve the full Carroll County region and surrounding West Georgia communities within approximately 50 miles, with no travel surcharge for most primary service areas.
         </p>
         <p class="prose">
           Whether you're in Carrollton's established neighborhoods, a newer development near Villa Rica, or a rural property outside Bremen or Temple, we can assess your project and get work scheduled typically within 2–4 weeks of the estimate.
@@ -1301,49 +1269,16 @@ details[open] .faq-question::after {
 <!-- ═══════════════════════════════════════════════════════════
      TESTIMONIALS
 ═══════════════════════════════════════════════════════════ -->
-<section class="testimonials-section" aria-labelledby="testimonials-heading">
-  <div class="container">
-    <div class="section-heading-group" data-animate="fade-up">
-      <span class="eyebrow-label">What Homeowners Say</span>
-      <h2 id="testimonials-heading">Verified Reviews from Carroll County</h2>
+<section class="cta-band texture-grain" id="estimate" aria-label="Request a free estimate">
+  <div class="container cta-band__inner">
+    <div class="cta-band__copy">
+      <span class="eyebrow-label" style="color:var(--color-accent);">Free Estimate</span>
+      <h2>Tell us about the room</h2>
+      <p>Send a few details and we reply within one business day with a straight answer on scope, timing and budget.</p>
     </div>
-
-    <div class="testimonials-grid">
-      <article class="testimonial-card" data-animate="fade-up">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <?php for($i=0;$i<5;$i++): ?>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <?php endfor; ?>
-        </div>
-        <p class="testimonial-text">"They redid our master bathroom from top to bottom — tile floors, full shower surround, new flooring in the hallway leading to it. Everything is perfectly level, the grout lines are immaculate, and it held up through two Georgia summers without a single issue. I've recommended them to three neighbors already."</p>
-        <div class="testimonial-author">Jennifer T.</div>
-        <div class="testimonial-location">Bowdon, GA</div>
-        <span class="testimonial-source">Verified Google Review</span>
-      </article>
-
-      <article class="testimonial-card" data-animate="fade-up">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <?php for($i=0;$i<5;$i++): ?>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <?php endfor; ?>
-        </div>
-        <p class="testimonial-text">"Our kitchen floor had been a mess for years — cracked grout, loose tiles, uneven spots. They came out, assessed it the same week we called, and had a complete plan within a few days. The new porcelain floor looks incredible and they matched the grout to our existing cabinet hardware. Exceptional attention to detail."</p>
-        <div class="testimonial-author">Marcus R.</div>
-        <div class="testimonial-location">Carrollton, GA</div>
-        <span class="testimonial-source">Verified Google Review</span>
-      </article>
-
-      <article class="testimonial-card" data-animate="fade-up">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <?php for($i=0;$i<5;$i++): ?>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <?php endfor; ?>
-        </div>
-        <p class="testimonial-text">"We used Gray Tile for our basement finishing project — custom tile bar area, bathroom tile, and LVP flooring throughout. They coordinated everything and kept to the schedule. What I appreciated most was that they flagged a moisture issue behind the original subfloor before laying anything, which saved us a much bigger problem down the road."</p>
-        <div class="testimonial-author">Donna &amp; Paul S.</div>
-        <div class="testimonial-location">Villa Rica, GA</div>
-        <span class="testimonial-source">Verified Google Review</span>
-      </article>
+    <div class="cta-band__form">
+      <?php $efPrefix = 'band'; $efLocation = 'cta-band'; $efCompact = true;
+            include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
     </div>
   </div>
 </section>
@@ -1377,7 +1312,7 @@ details[open] .faq-question::after {
 <section class="closing-cta-section" aria-labelledby="closing-cta-heading">
   <div class="container">
     <span class="eyebrow-label" data-animate="fade-up">Start Your Project</span>
-    <h2 id="closing-cta-heading" data-animate="fade-up">25 Years of Craftsmanship.<br>Your Home Is Next.</h2>
+    <h2 id="closing-cta-heading" data-animate="fade-up">Tile Craftsmanship.<br>Your Home Is Next.</h2>
     <p data-animate="fade-up">Free estimates, no pressure, no obligation. We serve Bowdon, Carrollton, Villa Rica, Bremen, Temple, and communities throughout Carroll County.</p>
     <div class="btn-group" data-animate="fade-up">
       <a href="/contact/" class="btn-cta-primary">Get a Free Estimate</a>

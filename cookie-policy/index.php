@@ -18,7 +18,7 @@ $pageDescription = 'Cookie Policy for ' . $siteName . ' — what cookies we use 
 $canonicalUrl    = $siteUrl . '/cookie-policy/';
 $currentPage     = 'legal';
 $ogImage         = $clientPhotos['photo06'];
-$heroPreloadImage = $clientPhotos['photo06'];
+$heroPreloadImage = '/assets/images/project-06.jpg';
 
 $schemaMarkup = json_encode([
     '@context' => 'https://schema.org',
@@ -42,6 +42,7 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'other';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -55,7 +56,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   align-items: flex-end;
   padding: var(--space-3xl) 0 var(--space-2xl);
   background-color: var(--color-primary-dark);
-  background-image: url('<?php echo htmlspecialchars($clientPhotos['photo06']); ?>');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -257,7 +257,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 </style>
 
 <!-- Hero -->
-<section class="legal-hero" aria-labelledby="cookie-heading">
+<section class="legal-hero hero--picture" aria-labelledby="cookie-heading">
+    <?php echo p1_hero_picture('project-06', 'Cookie Policy — Gray Tile & Remodeling, Bowdon, GA'); ?>
   <div class="container">
     <nav class="legal-breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a>
@@ -345,28 +346,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       </thead>
       <tbody>
         <tr>
-          <td>Google Fonts</td>
-          <td>Google LLC</td>
-          <td>Loads typography fonts (Rajdhani, Open Sans) for consistent visual design</td>
-          <td>1 year</td>
+          <td>Site fonts (self-hosted)</td>
+          <td>Gray Tile &amp; Remodeling</td>
+          <td>Typography files (Rajdhani, Open Sans) are served from this website — no third-party font request or cookie</td>
+          <td>Cached 1 year</td>
         </tr>
         <tr>
           <td>Google Maps</td>
           <td>Google LLC</td>
           <td>Renders embedded maps to show our service area and business location</td>
           <td>Session / Persistent</td>
-        </tr>
-        <tr>
-          <td>Lucide Icons CDN</td>
-          <td>jsDelivr</td>
-          <td>Delivers icon library assets for page icons</td>
-          <td>Session</td>
-        </tr>
-        <tr>
-          <td>Swiper CDN</td>
-          <td>jsDelivr</td>
-          <td>Delivers carousel/slider library (loaded only on pages with slideshows)</td>
-          <td>Session</td>
         </tr>
       </tbody>
     </table>

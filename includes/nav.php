@@ -35,7 +35,7 @@ if (defined('GRAY_TILE_HEADER_RENDERED')) {
         <img
           src="<?php echo htmlspecialchars($clientPhotos['logo']); ?>"
           alt="<?php echo htmlspecialchars($siteName); ?> logo"
-          width="160" height="44"
+          width="160" height="59"
           loading="eager"
           fetchpriority="high">
       </a>
@@ -125,7 +125,7 @@ if (defined('GRAY_TILE_HEADER_RENDERED')) {
           <?php echo htmlspecialchars(formatPhone($phone)); ?>
         </a>
         <?php endif; ?>
-        <a href="/contact/" class="btn btn-accent btn-sm">Free Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-sm" data-open-estimate>Free Estimate</a>
       </div>
 
       <!-- ─── Mobile Hamburger ─── -->
@@ -214,7 +214,7 @@ if (defined('GRAY_TILE_HEADER_RENDERED')) {
         <?php echo htmlspecialchars(formatPhone($phone)); ?>
       </a>
       <?php endif; ?>
-      <a href="/contact/" class="btn btn-accent">Get Free Estimate</a>
+      <a href="/contact/" class="btn btn-accent" data-open-estimate>Get Free Estimate</a>
     </div>
 
   </div><!-- /.mobile-menu-inner -->

@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo01' => '/assets/images/room-addition.jpg', 'photo02' => '/assets/images/project-08.jpg', 'photo03' => '/assets/images/kitchen-remodel.jpg', 'photo04' => '/assets/images/project-07.jpg', 'photo05' => '/assets/images/project-01.jpg', 'photo06' => '/assets/images/custom-tile-work.jpg', 'photo07' => '/assets/images/room-addition.jpg', 'photo08' => '/assets/images/project-08.jpg']);
 ?>
 <?php
 $pageTitle       = 'Remodeling Services in Bowdon, GA | Gray Tile & Remodeling';
-$pageDescription = 'Gray Tile & Remodeling delivers kitchen, bathroom, basement, attic, and full home remodeling in Bowdon, GA. 25 years of West Georgia craftsmanship. Get a free estimate.';
+$pageDescription = 'Gray Tile & Remodeling delivers kitchen, bathroom, basement, attic, and full home remodeling in Bowdon, GA. West Georgia craftsmanship. Get a free estimate.';
 $canonicalUrl    = $siteUrl . '/services/remodeling-services/';
 $ogImage         = $clientPhotos['photo01'];
-$heroPreloadImage = $clientPhotos['photo01'];
+$heroPreloadImage = '/assets/images/kitchen-remodel.jpg';
 $currentPage     = 'services';
 
 $pageFaqs = [
@@ -61,6 +64,8 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'service';
+$serviceSlug = 'remodeling-services';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -818,23 +823,31 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="rs-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo01']); ?>');" aria-label="Remodeling Services hero">
-    <div class="rs-hero-inner container">
+  <section class="rs-hero hero--picture hero--has-form" aria-label="Remodeling Services hero">
+    <?php echo p1_hero_picture('kitchen-remodel', 'Remodeling Services in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form rs-hero-inner container">
       <div class="rs-hero-content" data-animate="fade-up">
         <span class="rs-hero-eyebrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           Bowdon, GA &amp; West Georgia
         </span>
         <h1>Remodeling Services<br><span class="text-gradient">in Bowdon, GA</span></h1>
-        <p class="rs-hero-sub">From basement kitchen conversions to full attic transformations, Gray Tile &amp; Remodeling has been reshaping Carroll County homes for <?php echo $yearsInBusiness; ?> years. No subcontractor runaround — your project runs through one crew.</p>
+        <p class="rs-hero-sub">From basement kitchen conversions to full attic transformations, Gray Tile &amp; Remodeling has been reshaping Carroll County homes for years. No subcontractor runaround — your project runs through one crew.</p>
         <div class="rs-hero-actions">
-          <a href="/contact/" class="rs-btn-primary">
+          <a href="/contact/" class="rs-btn-primary hero-form-open" data-open-estimate>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
             Get a Free Estimate
           </a>
           <a href="#services-grid" class="rs-btn-ghost">Browse Services ↓</a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -896,7 +909,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="utensils-crossed"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-utensils-crossed" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg></div>
             <h3>Kitchen Remodeling</h3>
             <p class="service-card__desc">Full kitchen transformations from layout redesign through final tile installation.</p>
             <ul>
@@ -917,7 +930,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="bath"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-bath" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></div>
             <h3>Bathroom Remodeling</h3>
             <p class="service-card__desc">Complete bath renovations with waterproof tile work built for Georgia's humidity.</p>
             <ul>
@@ -938,7 +951,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Basement Finishing</h3>
             <p class="service-card__desc">Turn raw basement space into functional rooms designed around Georgia's water table.</p>
             <ul>
@@ -959,7 +972,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="chef-hat"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-chef-hat" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg></div>
             <h3>Basement Kitchen Remodeling</h3>
             <p class="service-card__desc">Secondary kitchen installations that add real living value to finished basement spaces.</p>
             <ul>
@@ -980,7 +993,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="triangle"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-triangle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/></svg></div>
             <h3>Attic Remodeling</h3>
             <p class="service-card__desc">Convert unused attic space into bedrooms, offices, or storage without expanding your footprint.</p>
             <ul>
@@ -1001,7 +1014,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="plus-square"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-plus-square" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
             <h3>Room Additions</h3>
             <p class="service-card__desc">New bedrooms, sunrooms, and living spaces built to match your existing home's architecture.</p>
             <ul>
@@ -1022,7 +1035,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="home"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-home" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg></div>
             <h3>Full Home Remodel</h3>
             <p class="service-card__desc">Whole-house renovations managed as a single coordinated project with one point of contact.</p>
             <ul>
@@ -1043,7 +1056,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="pencil-ruler"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-pencil-ruler" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"/><path d="m8 6 2-2"/><path d="m18 16 2-2"/><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></div>
             <h3>Custom Remodeling</h3>
             <p class="service-card__desc">Unique scope that doesn't fit a standard category — we design and execute from scratch.</p>
             <ul>
@@ -1109,7 +1122,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="section-title" data-animate="fade-up">
         <span class="eyebrow-label">Why It Matters</span>
-        <h2 id="why-heading">What Separates a <?php echo $yearsInBusiness; ?>-Year Business<br>from a <span class="text-accent">First-Year Crew</span></h2>
+        <h2 id="why-heading">What Separates a Tile-First Crew<br>from a <span class="text-accent">First-Year Crew</span></h2>
         <p class="prose prose-centered">Most remodeling callbacks are caused by skipped waterproofing, wrong tile adhesive for Georgia clay soils, or subcontractors who don't coordinate. We eliminate those failure points by keeping everything in-house.</p>
       </div>
       <div class="rs-why-grid">
@@ -1226,7 +1239,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="rs-closing-cta-inner" data-animate="fade-up">
       <span class="eyebrow-label" style="color: var(--color-accent);">Ready to Start?</span>
       <h2>Schedule Your Free<br>On-Site Estimate</h2>
-      <p>Serving Bowdon, Carrollton, Villa Rica, Bremen, Temple, and all of Carroll County. <?php echo $yearsInBusiness; ?> years in West Georgia means we know your neighborhood's houses — their quirks, their soil, and their tile.</p>
+      <p>Serving Bowdon, Carrollton, Villa Rica, Bremen, Temple, and all of Carroll County. years in West Georgia means we know your neighborhood's houses — their quirks, their soil, and their tile.</p>
       <a href="/contact/" class="rs-btn-cta">Start Your Project →</a>
     </div>
   </section>
@@ -1254,10 +1267,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 </script>
 
 <!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

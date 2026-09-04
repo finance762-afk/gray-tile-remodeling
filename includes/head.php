@@ -14,7 +14,6 @@
  *   $ogImage          — absolute URL to OG/share image (falls back to hero photo)
  *   $noindex          — bool true → noindex,nofollow (e.g. thank-you page)
  *   $schemaMarkup     — JSON-LD string for page-specific schema (in addition to LocalBusiness)
- *   $useSwiper        — bool true → loads Swiper CSS from CDN
  */
 
 // Pull config if not already loaded
@@ -27,6 +26,7 @@ $_title       = $pageTitle       ?? ($siteName . ' | ' . ucwords($primaryKeyword
 $_description = $pageDescription ?? ($siteName . ' — Expert home remodeling, tile installation, and renovation services in ' . $address['city'] . ', ' . $address['state'] . '. Get a free estimate today.');
 $_canonical   = $canonicalUrl    ?? $siteUrl;
 $_ogImage     = $ogImage         ?? $clientPhotos['hero'];
+if (str_starts_with($_ogImage, '/')) $_ogImage = $siteUrl . $_ogImage;
 $_noindex     = $noindex         ?? false;
 
 // Build service schema items for LocalBusiness hasOfferCatalog
@@ -68,33 +68,23 @@ foreach ($services as $svc) {
   <meta property="og:site_name"   content="<?php echo htmlspecialchars($siteName); ?>">
   <meta property="og:locale"      content="en_US">
 
-  <!-- Performance: DNS Prefetch + Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <!-- v6.3: self-hosted fonts, no third-party preconnects -->
   <link rel="dns-prefetch" href="https://db.pageone.cloud">
-  <link rel="dns-prefetch" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-  <!-- Google Fonts: Rajdhani (heading) + Open Sans (body) -->
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/rajdhani-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/open-sans.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Favicon -->
-  <link rel="icon"             type="image/svg+xml" href="/assets/images/favicon.svg">
-  <link rel="icon"             type="image/png"     href="/assets/images/favicon.png" sizes="32x32">
-  <link rel="apple-touch-icon"                      href="/assets/images/favicon.png">
+  <!-- Favicon (cut from the logo mark) -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-180.png">
 
-  <!-- Hero Image Preload (improves LCP — uses page-specific hero when set) -->
-  <link rel="preload" as="image" href="<?php echo htmlspecialchars($heroPreloadImage ?? $clientPhotos['hero']); ?>">
+  <!-- Hero image preload — AVIF variants via imagesrcset (v6.3) -->
+  <?php echo p1_hero_preload($heroPreloadImage ?? $clientPhotos['hero']); ?>
 
-  <!-- Shared Stylesheet -->
-  <link rel="stylesheet" href="/assets/css/framework.css">
-
-  <?php if (isset($useSwiper) && $useSwiper): ?>
-  <!-- Swiper CSS (conditional — only on pages with carousels) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <?php endif; ?>
+  <!-- Above-the-fold CSS inline (generated from framework.css by the critical extractor — regenerate after editing nav/hero/form rules); full stylesheet loads async (v6.3) -->
+  <style><?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/critical.css'; ?></style>
+  <link rel="preload" href="/assets/css/framework.css?v=<?php echo $cssVersion; ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/framework.css?v=<?php echo $cssVersion; ?>"></noscript>
 
   <!-- Google Analytics 4 — uncomment and replace GA_MEASUREMENT_ID before launch -->
   <!--
@@ -119,19 +109,19 @@ foreach ($services as $svc) {
       '@type'     => 'HomeAndConstructionBusiness',
       'name'      => $siteName,
       'url'       => $siteUrl,
-      'logo'      => $clientPhotos['logo'],
-      'image'     => $clientPhotos['hero'],
+      'logo'      => $siteUrl . $clientPhotos['logo'],
+      'image'     => $_ogImage,
       'description' => $businessDescription,
       'telephone' => $phone ?: null,
       'email'     => $contactEmail,
-      'address'   => [
+      'address'   => array_filter([
           '@type'           => 'PostalAddress',
-          'streetAddress'   => $address['street'],
+          'streetAddress'   => $address['street'] ?: null,
           'addressLocality' => $address['city'],
           'addressRegion'   => $address['state'],
           'postalCode'      => $address['zip'],
           'addressCountry'  => 'US',
-      ],
+      ]),
       'geo' => [
           '@type'     => 'GeoCoordinates',
           'latitude'  => 33.5351,
@@ -140,15 +130,9 @@ foreach ($services as $svc) {
       'openingHoursSpecification' => [
           [
               '@type'     => 'OpeningHoursSpecification',
-              'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-              'opens'     => '08:00',
-              'closes'    => '18:00',
-          ],
-          [
-              '@type'     => 'OpeningHoursSpecification',
-              'dayOfWeek' => 'Saturday',
-              'opens'     => '09:00',
-              'closes'    => '14:00',
+              'dayOfWeek' => $hours['days'],
+              'opens'     => $hours['opens'],
+              'closes'    => $hours['closes'],
           ],
       ],
       'areaServed' => [
@@ -158,14 +142,13 @@ foreach ($services as $svc) {
               'latitude'  => 33.5351,
               'longitude' => -85.2647,
           ],
-          'geoRadius'   => '80000',
+          'geoRadius'   => '50000',
       ],
       'hasOfferCatalog' => [
           '@type'           => 'OfferCatalog',
           'name'            => 'Tile Installation & Remodeling Services',
           'itemListElement' => $_serviceSchemaItems,
       ],
-      'foundingYear' => (string) $yearEstablished,
       'slogan'       => $tagline,
       'priceRange'   => '$$',
       'paymentAccepted' => 'Cash, Check, Credit Card',

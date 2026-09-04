@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo14' => '/assets/images/room-addition.jpg', 'photo15' => '/assets/images/project-08.jpg', 'photo08' => '/assets/images/kitchen-remodel.jpg', 'photo17' => '/assets/images/project-07.jpg', 'gallery03' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Eco-Friendly Remodeling Bowdon GA | Green Home Renovation';
 $pageDescription = 'Eco-friendly remodeling in Bowdon, GA — sustainable tile, low-VOC materials, insulation upgrades, and water-efficient fixtures that lower utility bills in Georgia\'s hot humid climate.';
 $canonicalUrl    = $siteUrl . '/services/eco-friendly-remodeling/';
 $ogImage         = $clientPhotos['photo14'];
-$heroPreloadImage = $clientPhotos['photo14'];
+$heroPreloadImage = '/assets/images/room-addition.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'eco-friendly-remodeling';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo14']; ?>');
   background-size: cover;
   background-position: center 38%;
   background-repeat: no-repeat;
@@ -227,8 +231,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="eco-hero" aria-label="Eco-friendly remodeling hero">
-    <div class="hero-content container">
+  <section class="eco-hero hero--picture hero--has-form" aria-label="Eco-friendly remodeling hero">
+    <?php echo p1_hero_picture('room-addition', 'Eco-Friendly Remodeling in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Eco-Friendly Remodeling in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Lower utility bills, better indoor air quality, and materials that last — without
@@ -236,9 +242,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         financial sense in Georgia's hot-humid climate.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Discuss Your Green Remodel</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Discuss Your Green Remodel</a>
         <a href="#eco-options" class="btn btn-outline-white btn-lg">Green Options &amp; Savings</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -523,7 +536,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="Full home remodel Bowdon GA complete sustainable renovation" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Full Home Remodel</h3>
             <p class="service-card__desc">The best time to add green upgrades is during a full renovation — walls are already open.</p>
             <ul><li>Insulation upgrades included</li><li>Low-VOC materials standard</li><li>Energy-efficient fixtures</li></ul>
@@ -535,7 +548,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo17']; ?>" alt="Home upgrades Bowdon Georgia improve value and efficiency" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="zap"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-zap" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
             <h3>Home Upgrades</h3>
             <p class="service-card__desc">Targeted efficiency upgrades — insulation, fixtures, and lighting without full renovation scope.</p>
             <ul><li>Targeted upgrades</li><li>Lower utility bills fast</li><li>No full renovation required</li></ul>
@@ -547,7 +560,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['gallery03']; ?>" alt="Flooring services Bowdon GA sustainable flooring options" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="ruler"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-ruler" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z" /> <path d="m14.5 12.5 2-2" /> <path d="m11.5 9.5 2-2" /> <path d="m8.5 6.5 2-2" /> <path d="m17.5 15.5 2-2" /></svg></div>
             <h3>Flooring Services</h3>
             <p class="service-card__desc">Sustainable flooring options — recycled-content tile, FSC-certified hardwood, and durable LVP.</p>
             <ul><li>Recycled-content tile</li><li>FSC-certified hardwood</li><li>Long-lasting LVP options</li></ul>
@@ -577,7 +590,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
 </main>
 
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {
@@ -588,7 +600,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

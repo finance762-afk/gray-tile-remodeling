@@ -1,75 +1,65 @@
 # Gray Tile & Remodeling
 
+> Tile contractor and home remodeler in Bowdon, Georgia, serving Carroll County and West Georgia.
+
 ## Business Information
 
-**Company:** Gray Tile & Remodeling
-**Type:** Tile installation and home remodeling contractor
-**Location:** 220 Fowler Dr, Bowdon, GA 30108
-**Phone:** (Not yet provided — contact via website)
-**Email:** info@gray-tile-remodeling.pageone.cloud
-**Website:** https://gray-tile-remodeling.pageone.cloud
-**Hours:** Monday–Friday 8am–6pm | Saturday 9am–2pm
-**Founded:** 2001 (25 years in business)
-**Licensed & Insured:** Yes
+**Business:** Gray Tile & Remodeling
+**Category:** Tile contractor (Google Business Profile)
+**Location:** Bowdon, GA 30108 (service-area business)
+**Phone:** (404) 310-3381
+**Email:** graytile@bellsouth.net
+**Hours:** Mon–Thu 9am–5pm
+**Website:** https://graytileremodeling.com/
 
-## Service Area
+## What the company does
 
-Primary: Bowdon, GA (Carroll County)
-Also serving: Carrollton, Villa Rica, Bremen, Temple, and communities throughout Carroll County and West Georgia (~50-mile radius of Bowdon)
+Gray Tile & Remodeling installs custom tile showers, kitchen and bathroom remodels, flooring (tile, LVP, hardwood refinishing) and finished basements, and handles additions and structural work in-house. Estimates are free.
 
 ## Services
 
-- Kitchen Remodeling
-- Bathroom Remodeling
-- Basement Finishing
-- Basement Kitchen Remodeling
-- Attic Remodeling
-- Room Additions
-- Full Home Remodel
-- Custom Remodeling
-- Structural Renovation
-- Eco-Friendly Remodeling
-- Home Additions
-- Plumbing Services
-- Electrical Services
-- HVAC Services
-- Open Floor Plan Remodeling
-- Custom Tile Showers
-- Flooring Installation
-- Sanded Finish Flooring
-- LVP Flooring
-- Subfloor Replacement
-- Design-Build Remodeling
-- Home Restoration
-- Garage Conversion
-- Home Upgrades
-- Framing Contractor
+- [Kitchen Remodeling](https://graytileremodeling.com/services/kitchen-remodeling/)
+- [Bathroom Remodeling](https://graytileremodeling.com/services/bathroom-remodeling/)
+- [Basement Finishing](https://graytileremodeling.com/services/basement-finishing/)
+- [Basement Kitchen Remodeling](https://graytileremodeling.com/services/basement-kitchen-remodeling/)
+- [Attic Remodeling](https://graytileremodeling.com/services/attic-remodeling/)
+- [Room Additions](https://graytileremodeling.com/services/room-additions/)
+- [Full Home Remodel](https://graytileremodeling.com/services/full-home-remodel/)
+- [Custom Remodeling](https://graytileremodeling.com/services/custom-remodeling/)
+- [Structural Renovation](https://graytileremodeling.com/services/structural-renovation/)
+- [Eco-Friendly Remodeling](https://graytileremodeling.com/services/eco-friendly-remodeling/)
+- [Home Additions](https://graytileremodeling.com/services/home-additions/)
+- [Plumbing Services](https://graytileremodeling.com/services/plumbing-services/)
+- [Electrical Services](https://graytileremodeling.com/services/electrical-services/)
+- [HVAC Services](https://graytileremodeling.com/services/hvac-services/)
+- [Open Floor Plan Remodeling](https://graytileremodeling.com/services/open-floor-plan-remodeling/)
+- [Custom Tile Showers](https://graytileremodeling.com/services/custom-tile-showers/)
+- [Flooring Installation](https://graytileremodeling.com/services/flooring-installation/)
+- [Sanded Finish Flooring](https://graytileremodeling.com/services/sanded-finish-flooring/)
+- [LVP Flooring](https://graytileremodeling.com/services/lvp-flooring/)
+- [Subfloor Replacement](https://graytileremodeling.com/services/subfloor-replacement/)
+- [Design-Build Remodeling](https://graytileremodeling.com/services/design-build-remodeling/)
+- [Home Restoration](https://graytileremodeling.com/services/home-restoration/)
+- [Garage Conversion](https://graytileremodeling.com/services/garage-conversion/)
+- [Home Upgrades](https://graytileremodeling.com/services/home-upgrades/)
+- [Framing Contractor](https://graytileremodeling.com/services/framing-contractor/)
+- [Remodeling Services](https://graytileremodeling.com/services/remodeling-services/)
+- [Seasonal Services](https://graytileremodeling.com/services/seasonal-services/)
+- [Flooring Services](https://graytileremodeling.com/services/flooring-services/)
+- [Design-Build Remodeling](https://graytileremodeling.com/services/design-build-remodeling/)
+- [Home Restoration](https://graytileremodeling.com/services/home-restoration/)
+- [Garage Conversion](https://graytileremodeling.com/services/garage-conversion/)
+- [Home Upgrades](https://graytileremodeling.com/services/home-upgrades/)
+- [Framing Contractor](https://graytileremodeling.com/services/framing-contractor/)
 
-## Key Differentiators
+## Key pages
 
-- Specialized tile expertise — not a general contractor
-- 25 years of Georgia market experience
-- Custom design consultation and visualization
-- Understanding of Georgia humidity/moisture challenges for tile
-- Complete design-build process (design + construction, one team)
-- Licensed and insured
+- [Home](https://graytileremodeling.com/)
+- [All services](https://graytileremodeling.com/services/)
+- [About](https://graytileremodeling.com/about/)
+- [Service area](https://graytileremodeling.com/service-area/)
+- [Contact](https://graytileremodeling.com/contact/)
 
-## Pages
+## Service area
 
-- / — Homepage: Overview of services, reviews, process, and FAQs
-- /services/ — All services overview
-- /services/remodeling-services/ — Kitchen, bathroom, basement, attic, room additions, full home remodel
-- /services/flooring-services/ — Tile showers, LVP, hardwood refinishing, subfloor replacement
-- /services/seasonal-services/ — Plumbing, electrical, HVAC for remodeling projects
-- /services/design-build-remodeling/ — Integrated design-and-build process
-- /services/home-restoration/ — Older home revival and historic renovation
-- /services/garage-conversion/ — Garage-to-living-space conversions
-- /services/home-upgrades/ — Targeted tile, fixture, and surface improvements
-- /services/framing-contractor/ — Residential framing for additions and remodels
-- /about/ — Company story, 25-year history, craftsmanship approach
-- /service-area/ — Coverage map and cities served in Carroll County and West Georgia
-- /contact/ — Free estimate request form
-- /privacy-policy/ — Privacy Policy (CCPA/CPRA compliant)
-- /terms/ — Terms of Service
-- /cookie-policy/ — Cookie disclosures
-- /accessibility/ — WCAG 2.1 AA accessibility statement
+Bowdon, Carrollton, Villa Rica, Bremen, Temple, Whitesburg, Roopville and the rest of Carroll County, GA; West Georgia by request.

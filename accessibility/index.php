@@ -18,7 +18,7 @@ $pageDescription = 'Accessibility statement for ' . $siteName . ' — our commit
 $canonicalUrl    = $siteUrl . '/accessibility/';
 $currentPage     = 'legal';
 $ogImage         = $clientPhotos['photo09'];
-$heroPreloadImage = $clientPhotos['photo09'];
+$heroPreloadImage = '/assets/images/project-06.jpg';
 
 $schemaMarkup = json_encode([
     '@context' => 'https://schema.org',
@@ -42,6 +42,7 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'other';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -55,7 +56,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   align-items: flex-end;
   padding: var(--space-3xl) 0 var(--space-2xl);
   background-color: var(--color-primary-dark);
-  background-image: url('<?php echo htmlspecialchars($clientPhotos['photo09']); ?>');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -289,7 +289,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 </style>
 
 <!-- Hero -->
-<section class="legal-hero" aria-labelledby="a11y-heading">
+<section class="legal-hero hero--picture" aria-labelledby="a11y-heading">
+    <?php echo p1_hero_picture('project-06', 'Accessibility — Gray Tile & Remodeling, Bowdon, GA'); ?>
   <div class="container">
     <nav class="legal-breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a>

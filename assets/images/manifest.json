@@ -1,0 +1,115 @@
+{
+"bathroom-remodel": {
+"w": 480,
+"h": 640,
+"ext": ".jpg",
+"widths": []
+},
+"custom-tile-work": {
+"w": 1024,
+"h": 1024,
+"ext": ".jpg",
+"widths": [
+480,
+960,
+1024
+]
+},
+"kitchen-remodel": {
+"w": 1536,
+"h": 1024,
+"ext": ".jpg",
+"widths": [
+480,
+960,
+1536
+]
+},
+"project-01": {
+"w": 480,
+"h": 640,
+"ext": ".jpg",
+"widths": []
+},
+"project-05": {
+"w": 360,
+"h": 480,
+"ext": ".jpg",
+"widths": []
+},
+"project-06": {
+"w": 960,
+"h": 1280,
+"ext": ".jpg",
+"widths": [
+480,
+960
+]
+},
+"project-07": {
+"w": 1200,
+"h": 1600,
+"ext": ".jpg",
+"widths": [
+480,
+960,
+1536
+]
+},
+"project-08": {
+"w": 1050,
+"h": 1400,
+"ext": ".jpg",
+"widths": [
+480,
+960,
+1536
+]
+},
+"project-09": {
+"w": 360,
+"h": 480,
+"ext": ".jpg",
+"widths": []
+},
+"project-10": {
+"w": 960,
+"h": 1280,
+"ext": ".jpg",
+"widths": [
+480,
+960
+]
+},
+"project-11": {
+"w": 360,
+"h": 480,
+"ext": ".jpg",
+"widths": []
+},
+"project-12": {
+"w": 360,
+"h": 480,
+"ext": ".jpg",
+"widths": []
+},
+"project-15": {
+"w": 1024,
+"h": 1536,
+"ext": ".jpg",
+"widths": [
+480,
+960,
+1024
+]
+},
+"room-addition": {
+"w": 960,
+"h": 1280,
+"ext": ".jpg",
+"widths": [
+480,
+960
+]
+}
+}

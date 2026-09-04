@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo05' => '/assets/images/room-addition.jpg', 'photo06' => '/assets/images/project-08.jpg', 'gallery02' => '/assets/images/kitchen-remodel.jpg', 'gallery01' => '/assets/images/project-07.jpg', 'photo12' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Home Upgrades in Bowdon GA | Kitchen, Bath & Tile Updates';
 $pageDescription = 'Upgrade your Bowdon, GA home without a full remodel — tile backsplashes, countertops, flooring, and fixture updates from Gray Tile & Remodeling, serving all of Carroll County.';
 $canonicalUrl    = $siteUrl . '/services/home-upgrades/';
 $ogImage         = $clientPhotos['photo05'];
-$heroPreloadImage = $clientPhotos['photo05'];
+$heroPreloadImage = '/assets/images/custom-tile-work.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -29,6 +32,8 @@ $pageFaqs = [
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'service';
+$serviceSlug = 'home-upgrades';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -46,7 +51,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo05']; ?>');
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
@@ -289,8 +293,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="hu-hero" aria-label="Home Upgrades hero">
-    <div class="hero-content container">
+  <section class="hu-hero hero--picture hero--has-form" aria-label="Home Upgrades hero">
+    <?php echo p1_hero_picture('custom-tile-work', 'Home Upgrades in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Home Upgrades in Bowdon, GA — Done in Days, Not Weeks</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Not every improvement requires a full remodel. Tile backsplashes, bathroom floor replacement,
@@ -298,9 +304,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         them right the first time so you're not living with grout issues two years later.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get an Upgrade Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get an Upgrade Estimate</a>
         <a href="#upgrade-types" class="btn btn-outline-white btn-lg">See What We Upgrade</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -332,7 +345,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             Most Bowdon homeowners don't need a full kitchen or bathroom remodel — they need one thing done well. The original tile backsplash from 1994 that's dated the kitchen for years. The cracked bathroom floor tile that gets noticed every morning. The laminate countertop that doesn't belong in an otherwise nice kitchen. Gray Tile does targeted upgrades that address exactly what's bothering you — without requiring you to gut the room or live in construction for a month.
           </p>
           <p class="prose">
-            Targeted upgrades work because we have one specialty: tile and flooring. We're not a general contractor who does tile work on the side. Every upgrade we complete reflects 25 years of doing this specific type of work in West Georgia — from layout planning that avoids awkward cuts to grout selection that won't show every footprint in six months.
+            Targeted upgrades work because we have one specialty: tile and flooring. We're not a general contractor who does tile work on the side. Every upgrade we complete reflects years of doing this specific type of work in West Georgia — from layout planning that avoids awkward cuts to grout selection that won't show every footprint in six months.
           </p>
           <p class="prose">
             For homeowners in Bowdon and Carroll County who are thinking about selling in the next 2–5 years, targeted tile and flooring upgrades consistently deliver the highest return per dollar spent — far above kitchen cabinet painting, landscaping, or appliance replacement.
@@ -483,7 +496,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </div>
           <div>
             <h4>Tile Is Our Specialty — Not a Side Job</h4>
-            <p>Gray Tile isn't a general contractor who occasionally lays tile. Tile installation is what we've done for 25 years. Layout, pattern planning, waterproofing, grout selection — these are not afterthoughts.</p>
+            <p>Gray Tile isn't a general contractor who occasionally lays tile. Tile installation is what we've done for years. Layout, pattern planning, waterproofing, grout selection — these are not afterthoughts.</p>
           </div>
         </div>
         <div class="why-card" data-animate="fade-up">
@@ -617,7 +630,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['gallery02']; ?>" alt="Flooring services Bowdon Georgia tile and LVP" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Flooring Services</h3>
             <p class="service-card__desc">Custom tile showers, LVP, hardwood refinishing, and subfloor repair.</p>
             <ul><li>Custom tile showers</li><li>LVP installation</li><li>Hardwood refinishing</li></ul>
@@ -629,7 +642,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['gallery01']; ?>" alt="Full kitchen and bathroom remodeling Carroll County" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Remodeling Services</h3>
             <p class="service-card__desc">Full kitchen, bathroom, and whole-home remodeling in Carroll County.</p>
             <ul><li>Kitchen remodels</li><li>Bathroom renovations</li><li>Basement finishing</li></ul>
@@ -641,7 +654,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo12']; ?>" alt="Design-build remodeling one team Bowdon Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="pencil-ruler"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-pencil-ruler" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"/><path d="m8 6 2-2"/><path d="m18 16 2-2"/><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></div>
             <h3>Design-Build Remodeling</h3>
             <p class="service-card__desc">One team from design to installation — no gaps, no miscommunication.</p>
             <ul><li>Design through completion</li><li>Fixed-scope estimates</li><li>Faster timelines</li></ul>
@@ -679,7 +692,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

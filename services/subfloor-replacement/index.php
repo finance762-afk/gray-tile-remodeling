@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo09' => '/assets/images/project-15.jpg', 'photo10' => '/assets/images/room-addition.jpg', 'photo06' => '/assets/images/project-08.jpg', 'photo08' => '/assets/images/kitchen-remodel.jpg', 'photo16' => '/assets/images/project-06.jpg']);
 ?>
 <?php
 $pageTitle       = 'Subfloor Replacement in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Subfloor replacement and repair in Bowdon, GA — soft spots, water damage, rot, squeaking floors fixed. Foundation for tile and LVP. Carroll County. Free estimate.';
 $canonicalUrl    = $siteUrl . '/services/subfloor-replacement/';
 $ogImage         = $clientPhotos['photo09'];
-$heroPreloadImage = $clientPhotos['photo09'];
+$heroPreloadImage = '/assets/images/project-08.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -40,6 +43,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'subfloor-replacement';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -58,7 +63,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo09']; ?>');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -530,15 +534,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="sbf-hero" aria-label="Subfloor replacement hero">
-    <div class="sbf-hero-inner container">
+  <section class="sbf-hero hero--picture hero--has-form" aria-label="Subfloor replacement hero">
+    <?php echo p1_hero_picture('project-08', 'Subfloor Replacement in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form sbf-hero-inner container">
       <div data-animate="fade-up">
         <h1>Subfloor Replacement in Bowdon, GA</h1>
         <p class="hero-lead prose">
           Soft spots, squeaking, cracked tile — the subfloor under your floor is the problem. We fix it before new flooring goes down. $3–$7 per square foot for affected area. Carroll County same-week estimates.
         </p>
         <div class="hero-cta-row">
-          <a href="/contact/" class="btn btn-accent btn-lg">Get a Free Estimate</a>
+          <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a Free Estimate</a>
           <a href="tel:<?php echo htmlspecialchars($phone); ?>" class="btn btn-outline-white btn-lg"><?php echo htmlspecialchars(formatPhone($phone)); ?></a>
         </div>
       </div>
@@ -555,6 +560,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <li>Musty smell from floor vents</li>
         </ul>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -799,7 +811,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo06']; ?>" alt="Flooring installation in Bowdon Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Flooring Installation</h3>
             <p class="service-card__desc">New tile, LVP, and hardwood installed after subfloor is repaired — one team for both.</p>
             <ul>
@@ -816,7 +828,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="LVP luxury vinyl plank flooring Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="grid-2x2"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-grid-2x2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M3 12h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
             <h3>LVP Flooring</h3>
             <p class="service-card__desc">The best flooring choice after subfloor repair — waterproof, floats over concrete, no adhesive.</p>
             <ul>
@@ -833,7 +845,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo16']; ?>" alt="Framing contractor Carroll County Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hard-hat"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hard-hat" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" /> <path d="M14 6a6 6 0 0 1 6 6v3" /> <path d="M4 15v-3a6 6 0 0 1 6-6" /> <rect x="2" y="15" width="20" height="4" rx="1" /></svg></div>
             <h3>Framing Contractor</h3>
             <p class="service-card__desc">Structural framing and joist sistering when damage extends beyond the subfloor.</p>
             <ul>
@@ -885,7 +897,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

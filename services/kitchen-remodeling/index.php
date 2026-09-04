@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo01' => '/assets/images/kitchen-remodel.jpg', 'gallery01' => '/assets/images/project-15.jpg', 'photo02' => '/assets/images/project-12.jpg', 'photo10' => '/assets/images/project-11.jpg', 'photo08' => '/assets/images/kitchen-remodel.jpg']);
 ?>
 <?php
 $pageTitle       = 'Kitchen Remodeling in Bowdon, GA | Gray Tile & Remodeling';
-$pageDescription = 'Full kitchen remodels in Bowdon, GA — custom tile, cabinets, countertops & layout redesign. 25 years of West Georgia kitchen renovations. Free estimates, Carroll County.';
+$pageDescription = 'Full kitchen remodels in Bowdon, GA — custom tile, cabinets, countertops & layout redesign. West Georgia kitchen renovations. Free estimates, Carroll County.';
 $canonicalUrl    = $siteUrl . '/services/kitchen-remodeling/';
 $ogImage         = $clientPhotos['photo01'];
-$heroPreloadImage = $clientPhotos['photo01'];
+$heroPreloadImage = '/assets/images/kitchen-remodel.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -36,6 +39,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'kitchen-remodeling';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -784,8 +789,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
-  <section class="km-hero" style="background-image: url('<?php echo htmlspecialchars($clientPhotos['photo01']); ?>');" aria-label="Kitchen Remodeling hero">
-    <div class="km-hero-inner container">
+  <section class="km-hero hero--picture hero--has-form" aria-label="Kitchen Remodeling hero">
+    <?php echo p1_hero_picture('kitchen-remodel', 'Kitchen Remodeling Built for Real Life — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form km-hero-inner container">
       <div class="km-hero-content" data-animate="fade-up">
         <span class="km-eyebrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -796,15 +802,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           Kitchen ROI: 80% — Top Home Investment in Georgia
         </div>
-        <p class="km-hero-sub">Complete kitchen renovations in Bowdon, GA — from layout redesign and tile work to custom cabinetry and final trim. We've remodeled kitchens across Carroll County for <?php echo $yearsInBusiness; ?> years.</p>
+        <p class="km-hero-sub">Complete kitchen renovations in Bowdon, GA — from layout redesign and tile work to custom cabinetry and final trim. We've remodeled kitchens across Carroll County for years.</p>
         <div class="km-hero-actions">
-          <a href="/contact/" class="km-btn-primary">
+          <a href="/contact/" class="km-btn-primary hero-form-open" data-open-estimate>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
             Get a Free Estimate
           </a>
           <a href="tel:<?php echo preg_replace('/\D/','',$phone); ?>" class="km-btn-ghost">Call <?php echo htmlspecialchars($phone); ?></a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -843,7 +856,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </span>
             <span class="km-intro-meta-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              Licensed &amp; insured, GA
+              Bowdon, GA
             </span>
           </div>
           <p style="font-family: var(--font-body); font-size: 0.82rem; color: var(--color-text-light); margin-top: var(--space-md);">Last updated: April 2026</p>
@@ -1023,7 +1036,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="bath"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-bath" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></div>
             <h3>Bathroom Remodeling</h3>
             <p class="service-card__desc">Complete bathroom renovations from tile to fixtures throughout Bowdon, GA.</p>
             <ul>
@@ -1043,7 +1056,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="droplets"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-droplets" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg></div>
             <h3>Custom Tile Showers</h3>
             <p class="service-card__desc">Specialty tile shower builds with certified waterproofing systems.</p>
             <ul>
@@ -1063,7 +1076,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </picture>
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Flooring Services</h3>
             <p class="service-card__desc">Tile, LVP, and hardwood flooring for every room in your Bowdon home.</p>
             <ul>
@@ -1083,8 +1096,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <section class="km-closing" aria-label="Start your kitchen remodel">
     <div class="km-closing-inner" data-animate="fade-up">
       <span class="km-section-eyebrow" style="color: var(--color-accent);">Ready to Start?</span>
-      <h2>Your Kitchen.<br>Our <?php echo $yearsInBusiness; ?> Years.</h2>
-      <p>We've remodeled kitchens across Bowdon, Carrollton, Villa Rica, Bremen, and Carroll County since <?php echo $yearEstablished; ?>. Free on-site estimates. Written quotes. No project started until you've approved every line item.</p>
+      <h2>Your Kitchen.<br>Our Tile Crew.</h2>
+      <p>We've remodeled kitchens across Bowdon, Carrollton, Villa Rica, Bremen, and Carroll County . Free on-site estimates. Written quotes. No project started until you've approved every line item.</p>
       <a href="/contact/" class="km-btn-primary">Schedule a Free Estimate →</a>
     </div>
   </section>
@@ -1109,10 +1122,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   });
 }());
 </script>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

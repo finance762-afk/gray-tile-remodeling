@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo16' => '/assets/images/room-addition.jpg', 'photo17' => '/assets/images/project-08.jpg', 'photo09' => '/assets/images/kitchen-remodel.jpg', 'photo07' => '/assets/images/project-07.jpg', 'photo12' => '/assets/images/project-01.jpg']);
 ?>
 <?php
 $pageTitle       = 'Home Additions Bowdon GA | Room Additions & Expansions';
 $pageDescription = 'Expand your Bowdon home with professionally built additions — from room additions to second stories. Carroll County permits handled. Free estimates. Call (770) 555-0000.';
 $canonicalUrl    = $siteUrl . '/services/home-additions/';
 $ogImage         = $clientPhotos['photo16'];
-$heroPreloadImage = $clientPhotos['photo16'];
+$heroPreloadImage = '/assets/images/room-addition.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -30,6 +33,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'home-additions';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -48,7 +53,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo16']; ?>');
   background-size: cover;
   background-position: center 35%;
   background-repeat: no-repeat;
@@ -279,8 +283,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="hadd-hero" aria-label="Home Additions hero">
-    <div class="hero-content container">
+  <section class="hadd-hero hero--picture hero--has-form" aria-label="Home Additions hero">
+    <?php echo p1_hero_picture('room-addition', 'Home Additions in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form hero-content container">
+      <div class="hero-copy">
       <h1 data-animate="fade-up">Home Additions in Bowdon, GA</h1>
       <p class="hero-subhead" data-animate="fade-up">
         Expand your home the right way — from single-room additions to full second stories.
@@ -288,9 +294,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         Carroll County. No handoffs. No surprises.
       </p>
       <div class="hero-cta-group" data-animate="fade-up">
-        <a href="/contact/" class="btn btn-accent btn-lg">Get an Addition Estimate</a>
+        <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get an Addition Estimate</a>
         <a href="#addition-types" class="btn btn-outline-white btn-lg">See Addition Types</a>
       </div>
+    </div>
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -312,8 +325,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="hadd-cred-inner">
         <div class="hadd-cred-item">
-          <span class="cred-val">25</span>
-          <span class="cred-lbl">Years in Bowdon</span>
+          <span class="cred-val">GA</span>
+          <span class="cred-lbl">Based in Bowdon</span>
         </div>
         <div class="hadd-cred-sep" aria-hidden="true"></div>
         <div class="hadd-cred-item">
@@ -544,7 +557,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo09']; ?>" alt="Room additions Bowdon GA Gray Tile Remodeling" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="home"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-home" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg></div>
             <h3>Room Additions</h3>
             <p class="service-card__desc">Single-room expansion projects — bedrooms, offices, master suites, and family rooms throughout Carroll County.</p>
             <ul>
@@ -560,7 +573,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo07']; ?>" alt="Framing contractor Bowdon GA residential additions" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="hammer"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-hammer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /> <path d="m18 15 4-4" /> <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></svg></div>
             <h3>Framing Contractor</h3>
             <p class="service-card__desc">Tile-grade framing (L/360 deflection) for additions, structural modifications, and new construction in Bowdon.</p>
             <ul>
@@ -576,7 +589,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo12']; ?>" alt="Full home remodel Bowdon GA complete renovation" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="building-2"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-building-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg></div>
             <h3>Full Home Remodel</h3>
             <p class="service-card__desc">Whole-house transformation from layout redesign to finish tile — one crew, one contract, one timeline.</p>
             <ul>
@@ -617,7 +630,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>

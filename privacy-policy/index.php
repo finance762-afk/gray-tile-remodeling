@@ -18,7 +18,7 @@ $pageDescription = 'Privacy Policy for ' . $siteName . ' — how we collect, use
 $canonicalUrl    = $siteUrl . '/privacy-policy/';
 $currentPage     = 'legal';
 $ogImage         = $clientPhotos['photo03'];
-$heroPreloadImage = $clientPhotos['photo03'];
+$heroPreloadImage = '/assets/images/project-06.jpg';
 
 $schemaMarkup = json_encode([
     '@context' => 'https://schema.org',
@@ -42,6 +42,7 @@ $schemaMarkup = json_encode([
 ], JSON_UNESCAPED_SLASHES);
 
 // SEO: head.php outputs <link rel="canonical"> and application/ld+json schema for this page.
+$pageType = 'other';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -55,7 +56,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   align-items: flex-end;
   padding: var(--space-3xl) 0 var(--space-2xl);
   background-color: var(--color-primary-dark);
-  background-image: url('<?php echo htmlspecialchars($clientPhotos['photo03']); ?>');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -246,7 +246,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 </style>
 
 <!-- Hero -->
-<section class="legal-hero" aria-labelledby="privacy-heading">
+<section class="legal-hero hero--picture" aria-labelledby="privacy-heading">
+    <?php echo p1_hero_picture('project-06', 'Privacy Policy — Gray Tile & Remodeling, Bowdon, GA'); ?>
   <div class="container">
     <nav class="legal-breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a>

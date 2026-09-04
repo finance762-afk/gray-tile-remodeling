@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// v6.3 photo assignment by page subject (p1_photo_override) — body photos match what the page sells
+$clientPhotos = array_merge($clientPhotos, ['photo07' => '/assets/images/project-15.jpg', 'gallery03' => '/assets/images/room-addition.jpg', 'photo06' => '/assets/images/project-08.jpg', 'photo08' => '/assets/images/kitchen-remodel.jpg', 'photo15' => '/assets/images/project-06.jpg']);
 ?>
 <?php
 $pageTitle       = 'Sanded Finish Flooring in Bowdon, GA | Gray Tile & Remodeling';
 $pageDescription = 'Hardwood floor sanding and refinishing in Bowdon, GA — restore worn floors instead of replacing them. $2–$5/sq ft, 3–5 days. Carroll County. Free estimate.';
 $canonicalUrl    = $siteUrl . '/services/sanded-finish-flooring/';
 $ogImage         = $clientPhotos['photo07'];
-$heroPreloadImage = $clientPhotos['photo07'];
+$heroPreloadImage = '/assets/images/project-15.jpg';
 $currentPage     = 'services';
 
 $currentService = null;
@@ -40,6 +43,8 @@ $pageFaqs = [
 
 $schemaMarkup = $currentService ? generateServiceSchema($currentService) . "\n" . generateFAQSchema($pageFaqs) : generateFAQSchema($pageFaqs);
 
+$pageType = 'service';
+$serviceSlug = 'sanded-finish-flooring';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -58,7 +63,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background-image: url('<?php echo $clientPhotos['photo07']; ?>');
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
@@ -510,8 +514,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <main id="main-content">
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
-  <section class="sff-hero" aria-label="Sanded finish flooring hero">
-    <div class="sff-hero-inner container">
+  <section class="sff-hero hero--picture hero--has-form" aria-label="Sanded finish flooring hero">
+    <?php echo p1_hero_picture('project-15', 'Floor Sanding & Refinishing in Bowdon, GA — Gray Tile & Remodeling, Bowdon, GA'); ?>
+    <div class="hero-grid--form sff-hero-inner container">
       <div class="sff-hero-content" data-animate="fade-up">
         <h1>Floor Sanding &amp; Refinishing in Bowdon, GA</h1>
         <p class="hero-lead prose">
@@ -532,10 +537,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </div>
         </div>
         <div class="hero-cta-row">
-          <a href="/contact/" class="btn btn-accent btn-lg">Get a Free Estimate</a>
+          <a href="/contact/" class="btn btn-accent btn-lg hero-form-open" data-open-estimate>Get a Free Estimate</a>
           <a href="tel:<?php echo htmlspecialchars($phone); ?>" class="btn btn-outline-white btn-lg"><?php echo htmlspecialchars(formatPhone($phone)); ?></a>
         </div>
       </div>
+    
+      <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
+        <p class="hero-form-title" id="hero-form-title" role="heading" aria-level="2">Get a Free Estimate</p>
+        <p class="hero-form-tagline">No obligation. We reply within one business day.</p>
+        <?php $efPrefix = 'hero'; $efLocation = 'hero'; $efCompact = true;
+              include $_SERVER['DOCUMENT_ROOT'] . '/includes/estimate-form.php'; ?>
+      </aside>
     </div>
   </section>
 
@@ -739,7 +751,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo06']; ?>" alt="Professional flooring installation Bowdon Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="layers"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-layers" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3>Flooring Installation</h3>
             <p class="service-card__desc">New tile, LVP, and hardwood flooring installed — all materials, all rooms.</p>
             <ul>
@@ -756,7 +768,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo08']; ?>" alt="LVP flooring installation Carroll County Georgia" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="grid-2x2"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-grid-2x2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M3 12h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
             <h3>LVP Flooring</h3>
             <p class="service-card__desc">Luxury vinyl plank — waterproof, humidity-stable, and ready over concrete slabs.</p>
             <ul>
@@ -773,7 +785,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <img src="<?php echo $clientPhotos['photo15']; ?>" alt="Home upgrade services Gray Tile Bowdon GA" width="600" height="360" loading="lazy">
           </div>
           <div class="service-card__body">
-            <div class="service-card__icon"><i data-lucide="sparkles"></i></div>
+            <div class="service-card__icon"><svg class="lucide lucide-sparkles" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div>
             <h3>Home Upgrades</h3>
             <p class="service-card__desc">Targeted improvements that transform individual rooms in under a week.</p>
             <ul>
@@ -825,7 +837,6 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (answer) answer.classList.toggle('is-open', !expanded);
   });
 });
-if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
