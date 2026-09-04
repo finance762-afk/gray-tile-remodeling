@@ -303,7 +303,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="ofp-intro-copy" data-animate="fade-up">
           <span class="ofp-eyebrow">Open Floor Plans, Bowdon GA</span>
-          <h2 id="ofp-intro-heading">Remove the Wall. Keep the Structural Integrity. Get the Open Plan You Want.</h2>
+          <h2 id="ofp-intro-heading">Can You Remove a Wall and Keep Your Home's Structural Integrity?</h2>
           <p class="lead-para prose">
             A non-load-bearing wall removal between your kitchen and living room runs $3,000–$7,500 in Carroll County, all-in. A load-bearing wall removal with engineered beam costs $8,000–$22,000 depending on span. Both can be done in 2–6 weeks once permits are in hand.
           </p>
@@ -359,7 +359,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="ofp-editorial-inner">
         <div class="ofp-editorial-copy" data-animate="fade-up">
           <span class="ofp-eyebrow" style="background:rgba(var(--color-accent-rgb),0.2);color:var(--color-accent);">The Reality of Wall Removal</span>
-          <h2 id="ofp-editorial-heading">What Actually Happens When We Remove a Wall</h2>
+          <h2 id="ofp-editorial-heading">What Actually Happens When We Remove a Wall?</h2>
           <p>Every wall removal starts the same way: we look up. The load path in a house runs from the roof down through the floors to the foundation. A wall that's in the load path is carrying weight from above. Removing it without transferring that load to a properly designed beam and post system will cause the structure above it to settle — sometimes immediately, sometimes over months.</p>
           <blockquote class="ofp-pullquote">
             "Every load-bearing wall removal we do in Bowdon gets an engineer's stamp before a hammer swings. That stamp is your protection. It's also Carroll County's requirement."
@@ -417,7 +417,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="ofp-eyebrow">What's Included</span>
-        <h2 id="ofp-scope-heading" style="text-wrap:balance;">Complete Project Scope —<br><span class="ofp-accent">From Engineering to Final Paint</span></h2>
+        <h2 id="ofp-scope-heading" style="text-wrap:balance;">What Does the Full Scope Cover,<br><span class="ofp-accent">From Engineering to Final Paint</span>?</h2>
       </div>
       <div class="ofp-process-grid">
         <div class="ofp-step" data-animate="fade-up">
@@ -473,7 +473,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="ofp-eyebrow">Common Questions</span>
-        <h2 id="ofp-faq-heading" style="text-wrap:balance;">Open Floor Plan FAQ — <span class="ofp-accent">Carroll County, GA</span></h2>
+        <h2 id="ofp-faq-heading" style="text-wrap:balance;">What Do Carroll County Homeowners Ask About <span class="ofp-accent">Open Floor Plans</span>?</h2>
       </div>
       <div class="ofp-faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

@@ -337,7 +337,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="hu-intro-copy" data-animate="fade-up">
           <span class="eyebrow-label">Home Upgrades Bowdon, GA</span>
-          <h2 id="hu-intro-heading">Targeted Updates That Actually Move the Needle</h2>
+          <h2 id="hu-intro-heading">Which Targeted Home Updates Actually Move the Needle?</h2>
           <p class="lead-para prose">
             A tile backsplash in Bowdon costs $800–$2,500 installed. A bathroom floor replacement runs $1,500–$4,000. These are not trivial improvements — in Carroll County's resale market, they're often the difference between a home that sells quickly and one that sits.
           </p>
@@ -385,7 +385,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="eyebrow-label">What We Upgrade</span>
-        <h2 id="upgrade-types-heading" style="text-wrap:balance;">Six Upgrades That <span class="text-accent">Transform a Room</span></h2>
+        <h2 id="upgrade-types-heading" style="text-wrap:balance;">Which Six Upgrades <span class="text-accent">Transform a Room</span>, and What Do They Cost?</h2>
         <p style="color:var(--color-text-light);max-width:55ch;margin:0 auto;" class="prose-centered">With typical cost ranges and timelines so you can plan before you call.</p>
       </div>
       <div class="upgrade-types-grid">
@@ -533,7 +533,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);position:relative;z-index:1;" data-animate="fade-up">
         <span class="eyebrow-label">How It Works</span>
-        <h2 id="hu-process-heading" style="text-wrap:balance;">From Estimate to<span style="color:var(--color-accent)"> Finished Room</span></h2>
+        <h2 id="hu-process-heading" style="text-wrap:balance;">How Does an Upgrade Go from Estimate to<span style="color:var(--color-accent)"> Finished Room</span>?</h2>
       </div>
       <div class="process-steps">
         <div class="process-step" data-animate="fade-up">
@@ -591,7 +591,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="eyebrow-label">Common Questions</span>
-        <h2 id="hu-faq-heading" style="text-wrap:balance;">Home Upgrade FAQ — <span class="text-accent">Bowdon, GA</span></h2>
+        <h2 id="hu-faq-heading" style="text-wrap:balance;">What Do Bowdon Homeowners Ask About <span class="text-accent">Home Upgrades</span>?</h2>
       </div>
       <div class="faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

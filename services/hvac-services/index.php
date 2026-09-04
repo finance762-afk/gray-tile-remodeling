@@ -264,7 +264,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="hvac-intro-copy" data-animate="fade-up">
           <span class="hvac-eyebrow">HVAC for Remodels, Bowdon GA</span>
-          <h2 id="hvac-intro-heading">HVAC Sizing and Rough-In for Carroll County Additions — Planned Before Walls Close</h2>
+          <h2 id="hvac-intro-heading">Why Plan HVAC Sizing for a Carroll County Addition Before Walls Close?</h2>
           <p class="lead-para prose">
             Ductwork extension for a Carroll County room addition runs $1,800–$4,500. A mini-split for a single-room addition or garage conversion runs $2,800–$6,500 installed. Gray Tile includes HVAC scope in your initial estimate — not as an afterthought.
           </p>
@@ -322,7 +322,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="hvac-scope-header" data-animate="fade-up">
         <span class="hvac-eyebrow" style="background:rgba(var(--color-accent-rgb),0.2);color:var(--color-accent);">HVAC Options</span>
-        <h2 id="hvac-scope-heading">HVAC Scope for Remodels<br><span class="hvac-accent">and Additions in Carroll County</span></h2>
+        <h2 id="hvac-scope-heading">What HVAC Work Do Remodels<br><span class="hvac-accent">and Additions in Carroll County Need?</span></h2>
         <p>The right HVAC approach depends on whether you're adding space, reconfiguring existing space, or converting an unconditioned area. Here's what each path looks like.</p>
       </div>
       <div class="hvac-scope-grid">
@@ -383,7 +383,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="hvac-eyebrow">How It Works</span>
-        <h2 id="hvac-process-heading" style="text-wrap:balance;">HVAC Phase<br><span class="hvac-accent">Within Your Remodel</span></h2>
+        <h2 id="hvac-process-heading" style="text-wrap:balance;">When Does the HVAC Phase<br><span class="hvac-accent">Happen in Your Remodel?</span></h2>
       </div>
       <div class="hvac-process-grid">
         <div class="hvac-step" data-animate="fade-up">

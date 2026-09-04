@@ -1044,7 +1044,7 @@ details[open] .faq-question::after {
       <!-- Text Left -->
       <div class="story-text" data-animate="fade-up">
         <span class="eyebrow-label">Our Story</span>
-        <h2 id="story-heading">Built From the Ground Up<br>in <span class="text-accent">Bowdon, Georgia</span></h2>
+        <h2 id="story-heading">How Was Gray Tile Built From the Ground Up<br>in <span class="text-accent">Bowdon, Georgia?</span></h2>
 
         <p class="prose">
           Gray Tile &amp; Remodeling is based right here in Bowdon — a small Carroll County town with older housing stock, tight-knit neighborhoods, and homeowners who take pride in how their homes look and feel. From the start, our focus was tile: a discipline that demands patience, precision, and a genuine understanding of how water moves through a home. General contractors skip past it. We built our entire business around it.
@@ -1098,7 +1098,7 @@ details[open] .faq-question::after {
   <div class="container">
     <div class="section-heading-group" data-animate="fade-up">
       <span class="eyebrow-label">What Sets Us Apart</span>
-      <h2 id="diff-heading">Why Carroll County Homeowners<br>Choose Gray Tile</h2>
+      <h2 id="diff-heading">Why Do Carroll County Homeowners<br>Choose Gray Tile?</h2>
       <p class="section-sub prose-centered">Four things that separate precision craftsmanship from a standard remodeling bid.</p>
     </div>
 
@@ -1179,7 +1179,7 @@ details[open] .faq-question::after {
   <div class="container">
     <div class="section-heading-group" data-animate="fade-up">
       <span class="eyebrow-label">How We Work</span>
-      <h2 id="process-heading">Our 4-Step Approach to Every Project</h2>
+      <h2 id="process-heading">What Is Our 4-Step Approach to Every Project?</h2>
     </div>
 
     <div class="process-steps">
@@ -1216,7 +1216,7 @@ details[open] .faq-question::after {
       <div class="areas-copy" data-animate="fade-up">
         <div class="section-heading-group">
           <span class="eyebrow-label">Where We Work</span>
-          <h2 id="areas-heading">Serving Carroll County<br>and West Georgia</h2>
+          <h2 id="areas-heading">Where Do We Work in Carroll County<br>and West Georgia?</h2>
         </div>
         <p class="prose">
           Our primary home base is Bowdon, GA — where we've worked on hundreds of homes . From there, we serve the full Carroll County region and surrounding West Georgia communities within approximately 50 miles, with no travel surcharge for most primary service areas.

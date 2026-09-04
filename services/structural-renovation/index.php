@@ -260,7 +260,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="str-intro-copy" data-animate="fade-up">
           <span class="str-eyebrow">Structural Renovation Bowdon, GA</span>
-          <h2 id="str-intro-heading">When the Bones of Your Home Need to Change</h2>
+          <h2 id="str-intro-heading">When Do the Bones of Your Home Need to Change?</h2>
           <p class="lead-para">
             Structural renovation means modifying the load-bearing elements of your home —
             walls that carry floors and roofs, beams, foundations, and major openings.
@@ -348,7 +348,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="str-types-header" data-animate="fade-up">
         <span class="str-eyebrow">What We Handle</span>
-        <h2 id="str-types-heading">Types of Structural Renovation<br><span style="color:var(--color-accent);">in Carroll County Homes</span></h2>
+        <h2 id="str-types-heading">What Types of Structural Renovation<br><span style="color:var(--color-accent);">Do Carroll County Homes Need</span>?</h2>
       </div>
       <div class="str-types-grid">
         <div class="str-type-card" data-animate="fade-up">
@@ -400,7 +400,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="str-eyebrow">Our Process</span>
-        <h2 id="str-process-heading" style="text-wrap:balance;">How We Handle Structural Work<br><span class="str-text-accent">in Bowdon, GA</span></h2>
+        <h2 id="str-process-heading" style="text-wrap:balance;">How Do We Handle Structural Work<br><span class="str-text-accent">in Bowdon, GA</span>?</h2>
       </div>
       <div class="str-process-steps">
         <div class="str-process-step" data-animate="fade-up">
@@ -458,7 +458,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="str-eyebrow">Common Questions</span>
-        <h2 id="str-faq-heading" style="text-wrap:balance;">Structural Renovation FAQ — <span class="str-text-accent">Carroll County, GA</span></h2>
+        <h2 id="str-faq-heading" style="text-wrap:balance;">What Do <span class="str-text-accent">Carroll County</span> Homeowners Ask About Structural Renovation?</h2>
       </div>
       <div class="str-faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

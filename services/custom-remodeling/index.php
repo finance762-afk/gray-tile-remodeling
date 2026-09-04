@@ -252,7 +252,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="cust-intro-copy" data-animate="fade-up">
           <span class="cust-eyebrow">Custom Remodeling Bowdon, GA</span>
-          <h2 id="cust-intro-heading">When a Standard Renovation Isn't Enough</h2>
+          <h2 id="cust-intro-heading">When Isn't a Standard Renovation Enough?</h2>
           <p class="lead-para">
             Custom remodeling starts with what you actually want, not what a contractor has in their
             standard package. Gray Tile works from your vision — specific tile patterns, unusual material
@@ -314,7 +314,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="cust-compare-header" data-animate="fade-up">
         <span class="cust-eyebrow">The Real Difference</span>
-        <h2 id="cust-compare-heading">Standard Remodeling vs. Custom Remodeling<br><span style="color:var(--color-accent);">What Actually Changes</span></h2>
+        <h2 id="cust-compare-heading">Standard vs. Custom Remodeling:<br><span style="color:var(--color-accent);">What Actually Changes</span>?</h2>
       </div>
       <div class="cust-compare-cols">
         <div class="cust-col-standard" data-animate="fade-up">
@@ -382,7 +382,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="cust-eyebrow">Our Process</span>
-        <h2 id="cust-process-heading" style="text-wrap:balance;">How Custom Remodeling Works<br><span class="cust-text-accent">in Carroll County</span></h2>
+        <h2 id="cust-process-heading" style="text-wrap:balance;">How Does Custom Remodeling Work<br><span class="cust-text-accent">in Carroll County</span>?</h2>
       </div>
       <div class="cust-process-steps">
         <div class="cust-process-step" data-animate="fade-up">
@@ -439,7 +439,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="cust-eyebrow">Common Questions</span>
-        <h2 id="cust-faq-heading" style="text-wrap:balance;">Custom Remodeling FAQ — <span class="cust-text-accent">Bowdon &amp; Carroll County</span></h2>
+        <h2 id="cust-faq-heading" style="text-wrap:balance;">What Do <span class="cust-text-accent">Bowdon &amp; Carroll County</span> Homeowners Ask About Custom Remodeling?</h2>
       </div>
       <div class="cust-faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

@@ -263,7 +263,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="ra-intro-copy" data-animate="fade-up">
           <span class="ra-eyebrow">Room Additions Bowdon, GA</span>
-          <h2 id="ra-intro-heading">Expand Your Home Without Leaving Carroll County</h2>
+          <h2 id="ra-intro-heading">How Can You Expand Your Home Without Leaving Carroll County?</h2>
           <p class="lead-para">
             A room addition adds permanent square footage to your home — typically $40,000–$120,000
             in the Bowdon area depending on type, size, and finish level. Most projects take 8–16 weeks
@@ -349,7 +349,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="ra-types-header" data-animate="fade-up">
         <span class="ra-eyebrow">What We Build</span>
-        <h2 id="ra-types-heading">Four Types of Room Additions<br><span class="ra-text-accent" style="color:var(--color-accent);">for Bowdon-Area Homes</span></h2>
+        <h2 id="ra-types-heading">Which Types of Room Additions Work<br><span class="ra-text-accent" style="color:var(--color-accent);">for Bowdon-Area Homes</span>?</h2>
       </div>
       <div class="ra-types-grid">
         <div class="ra-type-card" data-animate="fade-up">
@@ -401,7 +401,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="ra-eyebrow">Our Process</span>
-        <h2 id="ra-process-heading" style="text-wrap:balance;">How We Build Your Addition<br><span class="ra-text-accent">in Carroll County</span></h2>
+        <h2 id="ra-process-heading" style="text-wrap:balance;">How Do We Build Your Addition<br><span class="ra-text-accent">in Carroll County</span>?</h2>
       </div>
       <div class="ra-process-steps">
         <div class="ra-process-step" data-animate="fade-up">
@@ -458,7 +458,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="ra-eyebrow">Common Questions</span>
-        <h2 id="ra-faq-heading" style="text-wrap:balance;">Room Addition FAQ — <span class="ra-text-accent">Bowdon &amp; Carroll County</span></h2>
+        <h2 id="ra-faq-heading" style="text-wrap:balance;">What Do <span class="ra-text-accent">Bowdon &amp; Carroll County</span> Homeowners Ask About Room Additions?</h2>
       </div>
       <div class="ra-faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

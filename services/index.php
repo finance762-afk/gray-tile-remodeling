@@ -766,7 +766,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="section-header-centered" data-animate="fade-up">
         <span class="eyebrow-label">Full Catalog</span>
-        <h2 class="section-title-text">All 25 Services — <span class="text-accent">Organized by Category</span></h2>
+        <h2 class="section-title-text">Which of Our 25 Services <span class="text-accent">Does Your Project Need?</span></h2>
         <p class="section-subtitle-text prose-centered">
           Every service Gray Tile offers in Bowdon, Carroll County, and surrounding West Georgia communities.
         </p>
@@ -844,7 +844,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="section-header-centered" data-animate="fade-up">
         <span class="eyebrow-label">The Difference</span>
-        <h2 class="section-title-text">Why Bowdon Homeowners <span class="text-accent">Choose Gray Tile</span></h2>
+        <h2 class="section-title-text">Why Do Bowdon Homeowners <span class="text-accent">Choose Gray Tile?</span></h2>
         <p class="section-subtitle-text prose-centered">
           years in West Georgia teaches you what works — and what local homeowners
           actually need from a remodeling contractor.
@@ -920,7 +920,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="section-header-centered" data-animate="fade-up">
         <span class="eyebrow-label">Common Questions</span>
-        <h2 class="section-title-text" id="faq-heading">Answers About Our <span class="text-accent">Services</span></h2>
+        <h2 class="section-title-text" id="faq-heading">What Do Bowdon Homeowners Ask About Our <span class="text-accent">Services?</span></h2>
       </div>
 
       <div class="faq-list" role="list">

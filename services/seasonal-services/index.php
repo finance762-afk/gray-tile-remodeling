@@ -936,7 +936,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="ss-integration-content" data-animate="fade-up">
           <span class="eyebrow-label">One Contractor Advantage</span>
-          <h2 id="integration-heading">Why Splitting Trades<br>Costs More Than <span class="text-accent">It Saves</span></h2>
+          <h2 id="integration-heading">Why Does Splitting Trades<br>Cost More Than <span class="text-accent">It Saves?</span></h2>
           <p>The logic of hiring separate plumbers, electricians, and HVAC contractors seems sound — competition creates better pricing. In practice, when three trades work the same space, each one optimizes for their own schedule, not yours. The plumber can't open the wall until the electrician is done, and the HVAC tech reschedules when neither is ready.</p>
           <p>We've completed over 200 remodeling projects in Bowdon and Carroll County where at least two mechanical trades were involved. Projects handled by a single crew close out an average of 11 days faster than comparable projects where trades were managed separately. That's 11 fewer days you're living around a construction zone.</p>
           <ul class="ss-benefits-list">
@@ -981,7 +981,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div class="ss-electrical-content" data-animate="fade-up">
           <span class="eyebrow-label">Primary Keyword Service</span>
           <h2 id="electrical-heading">
-            <span class="text-gradient">Electrical Services</span><br>Bowdon, GA — Code-Ready Work
+            What Makes <span class="text-gradient">Electrical Services</span><br>in Bowdon, GA Code-Ready?
           </h2>
           <p>Electrical services in Bowdon fall under Carroll County Building &amp; Permitting's jurisdiction and must comply with the most recently adopted version of the National Electrical Code (NEC). Georgia adopts the NEC on a rolling schedule — work permitted in 2025 and 2026 must meet 2023 NEC requirements, which include updated AFCI protection requirements in living areas and updated GFCI requirements in kitchens and bathrooms.</p>
           <p>Many electrical contractors in West Georgia still work from older code versions unless the inspector catches it at final. We keep our crew current on adopted code cycles because it's the only way to pass Carroll County inspections on the first attempt. A failed electrical inspection delays your project by at least a week and requires a re-inspection fee.</p>
@@ -1031,7 +1031,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="section-title" data-animate="fade-up">
         <span class="eyebrow-label">How It Works</span>
-        <h2 id="ss-process-heading">Mechanical Integration in <span class="text-accent">Four Phases</span></h2>
+        <h2 id="ss-process-heading">How Does Mechanical Integration Work in <span class="text-accent">Four Phases?</span></h2>
         <p class="prose prose-centered">Each mechanical trade is sequenced with your build phases so inspections happen before walls close and no trade waits on another.</p>
       </div>
       <div class="ss-process-steps">

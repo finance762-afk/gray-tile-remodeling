@@ -822,7 +822,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="fs-section-title" data-animate="fade-up">
         <span class="fs-section-eyebrow eyebrow-label">What We Do</span>
-        <h2>6 Services. <span class="text-accent">One Standard.</span></h2>
+        <h2>What Flooring Services Do We Offer in <span class="text-accent">West Georgia</span>?</h2>
         <span class="fs-section-subtitle-text">From subfloor replacement to custom tile showers — every layer of your floor done right.</span>
         <p class="prose prose-centered">West Georgia homes built before 2000 have a specific set of flooring challenges: clay soil movement, seasonal moisture through slabs, and subfloors that were designed for carpet and haven't been upgraded for hard surface materials. We assess what you have before we recommend what you need.</p>
       </div>
@@ -1015,7 +1015,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </picture>
         </div>
         <div class="fs-signature-content">
-          <h2>Tile Work That<br>Holds in <span class="text-accent">Georgia's Humidity</span></h2>
+          <h2>How Does Tile Work Hold Up in<br><span class="text-accent">Georgia's Humidity</span>?</h2>
           <p>We've repaired failed tile showers installed by other contractors. The failure mode is almost always the same: no certified waterproofing membrane behind the tile, grout joints left unsealed, or inadequate slope to the drain. A tile shower is only as good as what's behind the tile.</p>
           <p>Every custom shower we build uses Schluter KERDI waterproofing membrane or equivalent — a bonded system that's been third-party tested for wet-area applications. We don't use sheet plastic or painted-on waterproofing as a cost-cutting measure.</p>
           <div class="fs-stats-grid">
@@ -1106,7 +1106,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="fs-section-title" data-animate="fade-up">
         <span class="fs-section-eyebrow">How It Works</span>
-        <h2 id="fs-process-heading">From Subfloor Check to<br><span class="text-accent">Final Grout Seal</span></h2>
+        <h2 id="fs-process-heading">How Does a Flooring Project Go from<br><span class="text-accent">Subfloor Check to Grout Seal</span>?</h2>
         <p class="prose prose-centered">Every flooring project follows a four-step sequence that eliminates the mid-project surprises that turn simple floor jobs into expensive callbacks.</p>
       </div>
       <div class="fs-process-steps">
@@ -1142,7 +1142,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="fs-section-title" data-animate="fade-up">
         <span class="fs-section-eyebrow">Common Questions</span>
-        <h2 id="fs-faq-heading">Flooring in <span class="text-accent">Bowdon &amp; Carroll County — Answered</span></h2>
+        <h2 id="fs-faq-heading">What Do <span class="text-accent">Bowdon &amp; Carroll County</span> Homeowners Ask About Flooring?</h2>
       </div>
       <div class="fs-faq-list" data-animate="fade-up">
         <?php foreach ($pageFaqs as $i => $faq): ?>

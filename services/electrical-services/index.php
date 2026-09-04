@@ -257,7 +257,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="elc-intro-copy" data-animate="fade-up">
           <span class="elc-eyebrow">Remodel Electrical, Bowdon GA</span>
-          <h2 id="elc-intro-heading">Electrical Rough-In Sequenced with Your Framing — Not After</h2>
+          <h2 id="elc-intro-heading">Why Should Electrical Rough-In Be Sequenced with Your Framing?</h2>
           <p class="lead-para prose">
             Bathroom electrical rough-in in Carroll County runs $800–$2,200. Kitchen electrical — dedicated circuits for appliances plus countertop outlets — runs $1,800–$4,500. Panel upgrades add $1,500–$3,500. Every item is scoped before demo begins.
           </p>
@@ -308,7 +308,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="elc-scope-header" data-animate="fade-up">
         <span class="elc-eyebrow" style="background:rgba(var(--color-accent-rgb),0.2);color:var(--color-accent);">Electrical Scope</span>
-        <h2 id="elc-scope-heading">What We Handle Electrically<br><span class="elc-accent">During Your Remodel</span></h2>
+        <h2 id="elc-scope-heading">Which Electrical Work Happens<br><span class="elc-accent">During Your Remodel?</span></h2>
         <p>From circuit rough-in to panel upgrades — here's the electrical work we include as part of remodeling scope in Bowdon and Carroll County.</p>
       </div>
       <div class="elc-scope-grid">
@@ -377,7 +377,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="elc-eyebrow">How It Works</span>
-        <h2 id="elc-process-heading" style="text-wrap:balance;">Electrical Phase<br><span class="elc-accent">Within Your Remodel</span></h2>
+        <h2 id="elc-process-heading" style="text-wrap:balance;">When Does the Electrical Phase<br><span class="elc-accent">Happen in Your Remodel?</span></h2>
       </div>
       <div class="elc-process-grid">
         <div class="elc-step" data-animate="fade-up">

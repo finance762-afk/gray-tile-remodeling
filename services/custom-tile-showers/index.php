@@ -642,7 +642,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="cts-intro-grid">
         <div class="cts-intro-copy" data-animate="fade-up">
           <span class="eyebrow-label">Tile Shower Specialists</span>
-          <h2>Built for Georgia's Climate. <span class="text-accent">Finished to Last.</span></h2>
+          <h2>How Do We Build a Tile Shower for <span class="text-accent">Georgia's Climate</span>?</h2>
           <p class="prose">
             A custom tile shower in a Bowdon home faces real challenges: 100-degree summers, high humidity from June through September, and the freeze-thaw cycles West Georgia gets in January. We build every shower to handle all of it — waterproofing membrane, premium-grade grout, 100% silicone at every joint change. No shortcuts in the layers you can't see.
           </p>
@@ -692,7 +692,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="cts-types-header" data-animate="fade-up">
         <span class="eyebrow-label">What We Build</span>
-        <h2>Four Shower Types. <span class="text-accent">Every Spec Covered.</span></h2>
+        <h2>What Types of <span class="text-accent">Custom Tile Showers</span> Do We Install?</h2>
         <p class="section-subtitle prose-centered">From a simple tub surround refresh to a full walk-in steam system — here's what each type costs and what's included.</p>
       </div>
       <div class="cts-types-grid">
@@ -773,7 +773,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="cts-process-header" data-animate="fade-up">
         <span class="eyebrow-label" style="display:inline-block;font-family:var(--font-heading);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-accent);background:rgba(var(--color-accent-rgb),0.1);padding:var(--space-xs) var(--space-md);border-radius:var(--radius-full);margin-bottom:var(--space-md);">How We Work</span>
-        <h2>From Demo to Done — <span class="text-accent">4 Steps</span></h2>
+        <h2>How Does a Shower Install Go from <span class="text-accent">Demo to Done</span>?</h2>
         <p class="prose-centered" style="color:var(--color-text-light);">A clear process means no surprises mid-project. Here's exactly what happens from the day we start to the day we hand you the keys.</p>
       </div>
       <div class="cts-steps">
@@ -839,7 +839,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="cts-faq-header" data-animate="fade-up">
         <span class="eyebrow-label" style="display:inline-block;font-family:var(--font-heading);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-accent);background:rgba(var(--color-accent-rgb),0.1);padding:var(--space-xs) var(--space-md);border-radius:var(--radius-full);margin-bottom:var(--space-md);">Common Questions</span>
-        <h2 id="cts-faq-heading">Shower Questions — <span class="text-accent">Answered Directly</span></h2>
+        <h2 id="cts-faq-heading">What Do Bowdon Homeowners Ask About <span class="text-accent">Tile Showers</span>?</h2>
       </div>
       <div class="cts-faq-list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

@@ -1095,7 +1095,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div class="rs-featured-content" data-animate="fade-up">
           <span class="eyebrow-label">Specialty Service</span>
           <h2 id="basement-kitchen-heading">
-            <span class="text-gradient">Basement Kitchen Remodeling</span><br>Bowdon, GA
+            What Does <span class="text-gradient">Basement Kitchen Remodeling</span><br>in Bowdon, GA Require?
           </h2>
           <div class="prose">
             <p>Carroll County homes built in the 1970s through the 1990s often have large unfinished basements that sit unused because owners aren't sure how to handle the moisture situation. A basement kitchen in Bowdon is entirely achievable — but only when the tile selection and waterproofing approach account for Georgia's humidity cycles. We've completed over 40 basement kitchen installations in West Georgia, and the consistent lesson is that the sub-slab moisture barrier matters more than the tile itself.</p>
@@ -1122,7 +1122,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="section-title" data-animate="fade-up">
         <span class="eyebrow-label">Why It Matters</span>
-        <h2 id="why-heading">What Separates a Tile-First Crew<br>from a <span class="text-accent">First-Year Crew</span></h2>
+        <h2 id="why-heading">What Separates a Tile-First Crew<br>from a <span class="text-accent">First-Year Crew?</span></h2>
         <p class="prose prose-centered">Most remodeling callbacks are caused by skipped waterproofing, wrong tile adhesive for Georgia clay soils, or subcontractors who don't coordinate. We eliminate those failure points by keeping everything in-house.</p>
       </div>
       <div class="rs-why-grid">
@@ -1180,7 +1180,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="section-title" data-animate="fade-up">
         <span class="eyebrow-label">How It Works</span>
-        <h2 id="process-heading">From First Call to <span class="text-accent">Final Walkthrough</span></h2>
+        <h2 id="process-heading">How Does a Remodel Go From First Call to <span class="text-accent">Final Walkthrough?</span></h2>
         <p class="prose prose-centered">Every remodeling project follows the same four-phase process. It removes the uncertainty that makes home renovation stressful.</p>
       </div>
       <div class="rs-process-steps">
@@ -1216,7 +1216,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="section-title" data-animate="fade-up">
         <span class="eyebrow-label">Common Questions</span>
-        <h2 id="faq-heading">Remodeling in <span class="text-accent">Bowdon & Carroll County</span> — Answered</h2>
+        <h2 id="faq-heading">What Do Homeowners Ask About Remodeling in <span class="text-accent">Bowdon &amp; Carroll County?</span></h2>
       </div>
       <div class="rs-faq-list" data-animate="fade-up">
         <?php foreach ($pageFaqs as $i => $faq): ?>

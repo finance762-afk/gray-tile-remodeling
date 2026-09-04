@@ -589,7 +589,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="sbf-intro-grid">
         <div class="sbf-intro-copy" data-animate="fade-up">
           <span class="sbf-eyebrow">Foundation for Every Floor</span>
-          <h2>The Floor You See Is Only as Good as <span class="text-accent">What's Underneath</span></h2>
+          <h2>What Happens to Your Floor When the <span class="text-accent">Subfloor Fails</span>?</h2>
           <p class="prose">
             Most flooring failures in Bowdon homes start underground — not from the flooring material itself, but from a subfloor that's soft from moisture damage, uneven from settling, or structurally compromised from a toilet seal or sink leak that went unnoticed for months.
           </p>
@@ -625,7 +625,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="sbf-signs-header" data-animate="fade-up">
         <span class="sbf-eyebrow">Problem Diagnosis</span>
-        <h2>5 Signs Your Subfloor <span class="text-accent">Needs Replacing</span></h2>
+        <h2>What Are the 5 Signs Your Subfloor <span class="text-accent">Needs Replacing</span>?</h2>
         <p class="prose-centered">Bowdon homes most often develop subfloor problems from plumbing leaks, toilet seal failures, and the vapor that rises from Carroll County's clay soil through slab foundations. Here's what to look for.</p>
       </div>
       <div class="sbf-signs-grid">
@@ -705,7 +705,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="sbf-process-header" data-animate="fade-up">
         <span class="sbf-eyebrow">How We Work</span>
-        <h2>Subfloor Replacement — <span class="text-accent">Step by Step</span></h2>
+        <h2>How Does Subfloor Replacement Work <span class="text-accent">Step by Step</span>?</h2>
         <p class="prose-centered" style="color:var(--color-text-light);">From flooring removal to new subfloor installation — a process that sets up your new floor to perform for decades.</p>
       </div>
       <div class="sbf-steps">
@@ -771,7 +771,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="sbf-faq-header" data-animate="fade-up">
         <span class="sbf-eyebrow">Common Questions</span>
-        <h2 id="sbf-faq-heading">Subfloor Questions — <span class="text-accent">Direct Answers</span></h2>
+        <h2 id="sbf-faq-heading">What Do Carroll County Homeowners Ask About <span class="text-accent">Subfloors</span>?</h2>
       </div>
       <div class="sbf-faq-list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

@@ -403,7 +403,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="bsf-intro-content" data-animate="fade-up">
           <span class="bsf-section-eyebrow">Basement Finishing in Bowdon, GA</span>
-          <h2 id="bsf-intro-heading">$25–$50 per sq ft.<br><span class="bsf-accent">Moisture-Managed from Day One.</span></h2>
+          <h2 id="bsf-intro-heading">How Much Does Basement Finishing<br><span class="bsf-accent">Cost in Bowdon, GA</span>?</h2>
           <p>Basement finishing in Bowdon and Carroll County runs $25–$50 per square foot for a complete finish. A 600 sq ft basement runs $15,000–$30,000. A 1,200 sq ft basement with a full bathroom and wet bar runs $45,000–$65,000. Every estimate we write breaks down the scope line by line — no lump sums.</p>
           <p>Carroll County homes built before 1990 have basements that weren't designed for habitable use — raw concrete block, drain tile that may or may not be functional, and slab moisture that will destroy hardwood or carpet within a few years. Before we frame a single wall, we assess moisture and drainage conditions. Georgia's clay soil holds water differently than other states and that affects every material decision.</p>
           <p>A completed basement finish in Bowdon adds 40–75% more livable square footage at a cost-per-square-foot far lower than a home addition. It's the highest-ROI improvement available for homes that have unfinished space below grade.</p>
@@ -446,7 +446,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="bsf-scope-header" data-animate="fade-up">
         <span class="bsf-section-eyebrow">What's Included</span>
-        <h2 id="bsf-scope-heading">What a Finished Basement<br><span class="bsf-accent">Actually Includes</span></h2>
+        <h2 id="bsf-scope-heading">What Does a Finished Basement<br><span class="bsf-accent">Actually Include</span>?</h2>
         <p>A complete basement finish is more than framing and drywall. Here's every layer we address in a Carroll County basement project — and why each one matters in Georgia's climate.</p>
       </div>
       <div class="bsf-scope-grid" data-animate="fade-up">
@@ -511,7 +511,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="bsf-process-header" data-animate="fade-up">
         <span class="bsf-section-eyebrow">How It Works</span>
-        <h2 id="bsf-process-heading">Moisture Assessment to<br><span class="bsf-accent">Final Certificate</span></h2>
+        <h2 id="bsf-process-heading">How Do We Take a Basement from<br><span class="bsf-accent">Moisture Assessment to Final Certificate</span>?</h2>
         <p class="prose prose-centered">Basement finishing has a specific sequence that prevents expensive rework. Every step exists because skipping it created a problem on a past Georgia project.</p>
       </div>
       <div class="bsf-steps" data-animate="fade-up">
@@ -565,7 +565,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="bsf-faq-header" data-animate="fade-up">
         <span class="bsf-section-eyebrow">Common Questions</span>
-        <h2 id="bsf-faq-heading">Basement Finishing in Georgia —<br><span class="bsf-accent">Answered</span></h2>
+        <h2 id="bsf-faq-heading">What Do Georgia Homeowners Ask About<br><span class="bsf-accent">Basement Finishing</span>?</h2>
       </div>
       <div class="bsf-faq-list" data-animate="fade-up">
         <?php foreach ($pageFaqs as $i => $faq): ?>

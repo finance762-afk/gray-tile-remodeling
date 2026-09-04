@@ -623,7 +623,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="bmr-intro-content" data-animate="fade-up">
           <span class="bmr-section-eyebrow">Bathroom Remodeling in Bowdon, GA</span>
-          <h2 id="bmr-intro-heading">$8,500–$35,000.<br><span class="bmr-accent">2–4 Weeks. Waterproof.</span></h2>
+          <h2 id="bmr-intro-heading">How Much Does a <span class="bmr-accent">Bathroom Remodel</span> Cost in Bowdon, GA?</h2>
           <p>Bathroom remodels in Bowdon and Carroll County run $8,500–$35,000 depending on scope. A half-bath cosmetic refresh starts around $8,500. A full master bath gut-and-rebuild with custom tile shower, double vanity, and heated floor runs $22,000–$35,000 for most homes. We write itemized quotes before any work starts.</p>
           <p>Georgia's humid summers create specific failure modes in bathrooms — grout that cracks, caulk that molds, and tile that pops off walls when waterproofing was skipped or done wrong. Our bathroom work starts with a substrate assessment because what's behind the tile is as important as the tile itself.</p>
           <p>Every bathroom remodel includes demo and haul-off, waterproofing where appropriate, tile installation, vanity and fixture work, and final seal. We pull Carroll County permits for any plumbing or structural changes.</p>
@@ -666,7 +666,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="bmr-types-header" data-animate="fade-up">
         <span class="bmr-section-eyebrow">All Bathroom Types</span>
-        <h2 id="bmr-types-heading">Every Bathroom We Remodel —<br><span class="bmr-accent">From Half-Bath to Master Suite</span></h2>
+        <h2 id="bmr-types-heading">Which Bathrooms Can We Remodel,<br><span class="bmr-accent">From Half-Bath to Master Suite</span>?</h2>
         <p>Bowdon homes range from 1960s ranch houses with a single full bath to newer builds with master suite layouts. We remodel all configurations — here's what each scope typically looks like.</p>
       </div>
       <div class="bmr-types-grid" data-animate="fade-up">
@@ -719,7 +719,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="bmr-process-header" data-animate="fade-up">
         <span class="bmr-section-eyebrow">How It Works</span>
-        <h2 id="bmr-process-heading">Estimate to<br><span class="bmr-accent">Grout-Sealed Finish</span></h2>
+        <h2 id="bmr-process-heading">How Does a Bathroom Remodel Go from<br><span class="bmr-accent">Estimate to Grout-Sealed Finish</span>?</h2>
         <p class="prose prose-centered">Every bathroom remodel follows four steps that keep waterproofing and finish work in the right sequence — skipping any step is how bathrooms fail in 5 years.</p>
       </div>
       <div class="bmr-steps" data-animate="fade-up">
@@ -768,7 +768,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="bmr-faq-header" data-animate="fade-up">
         <span class="bmr-section-eyebrow">Common Questions</span>
-        <h2 id="bmr-faq-heading">Bathroom Remodeling in<br><span class="bmr-accent">Carroll County — Answered</span></h2>
+        <h2 id="bmr-faq-heading">What Do Carroll County Homeowners Ask About<br><span class="bmr-accent">Bathroom Remodeling</span>?</h2>
       </div>
       <div class="bmr-faq-list" data-animate="fade-up">
         <?php foreach ($pageFaqs as $i => $faq): ?>

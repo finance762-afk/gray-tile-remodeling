@@ -203,7 +203,8 @@ function p1_picture(string $keyOrPath, string $alt, array $opts = []): string {
     $sizes = $opts['sizes'] ?? '100vw';
     $loading = $opts['loading'] ?? 'lazy';
     $w = (int)($opts['width'] ?? ($m['w'] ?? 0)); $h = (int)($opts['height'] ?? ($m['h'] ?? 0));
-    $dims = ($w && $h) ? ' width="' . $w . '" height="' . $h . '"' : '';
+    if (!$w || !$h) { $gi = @getimagesize($_SERVER['DOCUMENT_ROOT'] . $src); if ($gi) { $w = $w ?: $gi[0]; $h = $h ?: $gi[1]; } }
+    $dims = ' width="' . ($w ?: 800) . '" height="' . ($h ?: 600) . '"';
     $extra = (!empty($opts['fetchpriority']) ? ' fetchpriority="' . $opts['fetchpriority'] . '"' : '') . (!empty($opts['imgclass']) ? ' class="' . htmlspecialchars($opts['imgclass']) . '"' : '');
     $out = '<picture' . (!empty($opts['class']) ? ' class="' . htmlspecialchars($opts['class']) . '"' : '') . '>';
     if ($m && !empty($m['widths'])) {
@@ -213,7 +214,7 @@ function p1_picture(string $keyOrPath, string $alt, array $opts = []): string {
             $out .= '<source type="image/' . $fmt . '" srcset="' . implode(', ', $set) . '" sizes="' . htmlspecialchars($sizes) . '">';
         }
     }
-    $out .= '<img src="' . htmlspecialchars($src) . '" alt="' . htmlspecialchars($alt) . '"' . $dims . ' loading="' . ($loading === 'lazy' ? 'lazy' : 'eager') . '" decoding="async"' . $extra . '>';
+    $out .= '<img src="' . htmlspecialchars($src) . '" alt="' . htmlspecialchars($alt) . '" width="' . ($w ?: 800) . '" height="' . ($h ?: 600) . '" loading="' . ($loading === 'lazy' ? 'lazy' : 'eager') . '" decoding="async"' . $extra . '>';
     return $out . '</picture>';
 }
 /** Full-bleed hero background as a real <picture> (LCP-safe: eager + fetchpriority=high, never a CSS background). */

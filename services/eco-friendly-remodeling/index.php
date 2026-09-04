@@ -275,7 +275,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="eco-intro-copy" data-animate="fade-up">
           <span class="eco-eyebrow">Eco-Friendly Remodeling Bowdon, GA</span>
-          <h2 id="eco-intro-heading">Renovations That Pay Back in Lower Bills and Healthier Air</h2>
+          <h2 id="eco-intro-heading">How Does Eco-Friendly Remodeling Pay Back Carroll County Homeowners?</h2>
           <p class="lead-para">
             Eco-friendly remodeling in West Georgia means making decisions appropriate for
             our hot-humid climate — better insulation and air sealing, low-VOC materials
@@ -336,7 +336,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="eco-options-header" data-animate="fade-up">
         <span class="eco-eyebrow">What We Offer</span>
-        <h2 id="eco-options-heading">5 Green Remodeling Options<br><span class="eco-text-accent">for Carroll County Homes</span></h2>
+        <h2 id="eco-options-heading">Which Green Remodeling Options<br><span class="eco-text-accent">Work Best for Carroll County Homes?</span></h2>
       </div>
       <div class="eco-options-grid">
         <div class="eco-option-card" data-animate="fade-up">
@@ -397,7 +397,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="eco-climate-inner">
         <div class="eco-climate-copy" data-animate="fade-up">
           <span class="eco-eyebrow">Georgia Climate Context</span>
-          <h2 id="eco-climate-heading">Why Green Remodeling Matters More in Carroll County Than Most of the Country</h2>
+          <h2 id="eco-climate-heading">Why Does Green Remodeling Matter More in Carroll County's Climate?</h2>
           <p>Georgia sits in IECC Climate Zone 3 — hot-humid. Summers run 5–6 months. Average cooling degree days in Carroll County exceed 2,000 annually. Homes here have HVAC systems that work hard for a long time every year.</p>
           <blockquote class="pullquote">
             "In Georgia, every R-value you add to your attic saves money every summer for the life of the home. Green remodeling in the South isn't idealism — it's practical math."
@@ -440,7 +440,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="eco-eyebrow">Our Process</span>
-        <h2 id="eco-process-heading" style="text-wrap:balance;">How We Build Eco-Friendly<br><span class="eco-text-accent">Renovations in Bowdon</span></h2>
+        <h2 id="eco-process-heading" style="text-wrap:balance;">How Do We Build Eco-Friendly<br><span class="eco-text-accent">Renovations in Bowdon?</span></h2>
       </div>
       <div class="eco-process-steps">
         <div class="eco-process-step" data-animate="fade-up">

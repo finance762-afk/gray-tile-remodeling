@@ -841,7 +841,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="km-intro-content" data-animate="fade-up">
           <span class="km-section-eyebrow">Kitchen Remodeling in Bowdon, GA</span>
-          <h2 id="km-intro-heading">$18K–$75K. <span class="km-accent">4–8 Weeks.</span> Done Right.</h2>
+          <h2 id="km-intro-heading">How Much Does a <span class="km-accent">Kitchen Remodel</span> Cost in Bowdon, GA?</h2>
           <p>A kitchen remodel in Bowdon typically costs $18,000–$75,000 depending on scope. A cosmetic refresh — new tile backsplash, countertops, hardware, and paint — runs on the lower end. A full gut-and-rebuild with layout changes, new cabinetry, and plumbing moves sits at the upper end. We give you an itemized written estimate before any demo begins.</p>
           <p>Most kitchens in Carroll County homes built before 2000 weren't designed for modern cooking habits — narrow galley layouts, inadequate outlet count, and surfaces that show every scratch. We redesign around how you actually use the kitchen, not around what was easiest to build in 1985.</p>
           <p>Our kitchen work includes tile backsplash and flooring, cabinet installation, countertop fabrication and install, lighting updates, and plumbing fixture swaps. Structural changes — moving walls, relocating the sink — require Carroll County permits, which we handle as part of the project.</p>
@@ -884,7 +884,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="km-showcase-header" data-animate="fade-up">
         <span class="km-section-eyebrow">What's Included</span>
-        <h2 id="km-showcase-heading">A Full Kitchen Remodel<br><span class="km-accent">Isn't Just Countertops</span></h2>
+        <h2 id="km-showcase-heading">What Does a <span class="km-accent">Full Kitchen Remodel</span> Actually Include?</h2>
         <p>Most homeowners underestimate scope because they're focused on visible finishes. Here's what a complete Bowdon kitchen remodel actually includes — and why every layer matters.</p>
       </div>
       <div class="km-showcase-panel" data-animate="fade-up">
@@ -944,7 +944,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="km-process-header" data-animate="fade-up">
         <span class="km-section-eyebrow">How It Works</span>
-        <h2 id="km-process-heading">From First Call to<br><span class="km-accent">Final Walkthrough</span></h2>
+        <h2 id="km-process-heading">How Does a Kitchen Remodel Go from<br><span class="km-accent">First Call to Final Walkthrough</span>?</h2>
         <p class="prose prose-centered">We've refined this process across hundreds of Carroll County kitchens. Every step exists because skipping it created a problem on a past project.</p>
       </div>
       <div class="km-steps-grid" data-animate="fade-up">
@@ -998,7 +998,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="km-faq-header" data-animate="fade-up">
         <span class="km-section-eyebrow">Common Questions</span>
-        <h2 id="km-faq-heading">Kitchen Remodeling in Bowdon — <span class="km-accent">Answered</span></h2>
+        <h2 id="km-faq-heading">What Do Bowdon Homeowners Ask About <span class="km-accent">Kitchen Remodeling</span>?</h2>
       </div>
       <div class="km-faq-list" data-animate="fade-up">
         <?php foreach ($pageFaqs as $i => $faq): ?>

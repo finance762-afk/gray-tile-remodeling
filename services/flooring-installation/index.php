@@ -549,7 +549,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="flri-intro-grid">
         <div class="flri-intro-copy" data-animate="fade-up">
           <span class="flri-eyebrow">Flooring Installation</span>
-          <h2>The Right Floor for <span class="text-accent">Georgia's Climate</span></h2>
+          <h2>Which Floor Handles <span class="text-accent">Georgia's Climate</span> Best?</h2>
           <p class="prose">
             Georgia floors take a beating: 90% summer humidity, air-conditioned winters, slab foundations in most Bowdon homes that draw moisture year-round. The wrong flooring choice in West Georgia shows up as warped boards, cracked tile, or popping adhesive within 2 years. We've seen every failure mode.
           </p>
@@ -736,7 +736,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="flri-process-header" data-animate="fade-up">
         <span class="flri-eyebrow">How We Work</span>
-        <h2>Four Steps from <span class="text-accent">Subfloor to Finished Floor</span></h2>
+        <h2>How Does Installation Go from <span class="text-accent">Subfloor to Finished Floor</span>?</h2>
         <p class="prose-centered" style="color:var(--color-text-light);">Every installation — tile, LVP, or hardwood — follows the same disciplined process. The prep work is what makes the finish last.</p>
       </div>
       <div class="flri-steps">
@@ -802,7 +802,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="flri-faq-header" data-animate="fade-up">
         <span class="flri-eyebrow">Common Questions</span>
-        <h2 id="flri-faq-heading">Flooring Questions — <span class="text-accent">Straight Answers</span></h2>
+        <h2 id="flri-faq-heading">What Do Bowdon Homeowners Ask About <span class="text-accent">New Flooring</span>?</h2>
       </div>
       <div class="flri-faq-list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

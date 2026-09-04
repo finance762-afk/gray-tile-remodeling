@@ -252,7 +252,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="fhr-intro-copy" data-animate="fade-up">
           <span class="fhr-eyebrow">Full Home Remodel Bowdon, GA</span>
-          <h2 id="fhr-intro-heading">One Team Handles Every Room — No Contractor Juggling</h2>
+          <h2 id="fhr-intro-heading">Why Should One Team Handle Every Room of Your Remodel?</h2>
           <p class="lead-para">
             A full home remodel means every surface in your house is updated under one contract.
             Gray Tile manages kitchen, bathrooms, flooring, framing, tile, HVAC, electrical,
@@ -339,7 +339,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="fhr-scope-inner">
         <div class="fhr-scope-copy" data-animate="fade-up">
           <span class="fhr-eyebrow">What Full Home Really Means</span>
-          <h2 id="fhr-scope-heading">What "Full Home Remodel" Covers — and What It Doesn't</h2>
+          <h2 id="fhr-scope-heading">What Does a "Full Home Remodel" Cover — and What Doesn't It?</h2>
           <p>Full home remodel is a term contractors use loosely. Here's what Gray Tile means by it: every interior surface is touched, every mechanical system is evaluated, and nothing is left half-done.</p>
           <blockquote class="pullquote">
             "The scope of a full remodel isn't a package — it's determined by what your specific house needs. We walk every room before we write a single line of estimate."
@@ -416,7 +416,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="fhr-eyebrow">Our Process</span>
-        <h2 id="fhr-process-heading" style="text-wrap:balance;">How We Run a Whole-House<br><span class="fhr-text-accent">Renovation in Bowdon</span></h2>
+        <h2 id="fhr-process-heading" style="text-wrap:balance;">How Do We Run a Whole-House<br><span class="fhr-text-accent">Renovation in Bowdon</span>?</h2>
       </div>
       <div class="fhr-process-steps">
         <div class="fhr-process-step" data-animate="fade-up">
@@ -473,7 +473,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="fhr-eyebrow">Common Questions</span>
-        <h2 id="fhr-faq-heading" style="text-wrap:balance;">Full Home Remodel FAQ — <span class="fhr-text-accent">Carroll County, GA</span></h2>
+        <h2 id="fhr-faq-heading" style="text-wrap:balance;">What Do <span class="fhr-text-accent">Carroll County, GA</span> Homeowners Ask About Full Home Remodels?</h2>
       </div>
       <div class="fhr-faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

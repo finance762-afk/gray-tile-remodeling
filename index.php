@@ -911,7 +911,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <section class="hp-mid-cta" aria-label="Schedule your free estimate">
   <div class="container">
     <div data-animate>
-      <h2>Your Remodel Shouldn't Wait<br>for the Right Contractor</h2>
+      <h2>Still Waiting on the Right<br>Contractor for Your Remodel?</h2>
       <p class="cta-lead">Gray Tile &amp; Remodeling brings years of specialized tile and remodeling expertise to every project in Carroll County. We show up, we communicate, and we finish what we start — on time and on budget.</p>
       <div class="hp-cta-actions">
         <?php if ($phone): ?>
@@ -952,7 +952,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="hp-about-text" data-animate>
 
         <span class="eyebrow-label">About Us</span>
-        <h2>Bowdon's Dedicated<br><span class="text-accent">Tile Specialists</span></h2>
+        <h2>Who Are Bowdon's Dedicated<br><span class="text-accent">Tile Specialists?</span></h2>
 
         <p>At Gray Tile &amp; Remodeling, we do one thing and we do it exceptionally well — tile installation and full-scope remodeling for homes throughout Carroll County and West Georgia. We're not a general contractor trying to be everything to everyone. We're tile specialists who've spent years perfecting the craft.</p>
 
@@ -1056,7 +1056,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
     <div class="section-title" data-animate>
       <span class="eyebrow-label">FAQ</span>
-      <h2>Answers Before<br>You Even Ask</h2>
+      <h2>What Do Bowdon Homeowners Ask<br>Before Hiring a Tile Contractor?</h2>
       <span class="section-subtitle">The questions Bowdon homeowners ask us most — answered directly, no fluff.</span>
     </div>
 

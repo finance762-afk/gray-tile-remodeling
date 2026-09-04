@@ -377,7 +377,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="bkr-intro-content" data-animate="fade-up">
           <span class="bkr-section-eyebrow">Basement Kitchen Remodeling in Bowdon, GA</span>
-          <h2 id="bkr-intro-heading">$18K–$55K.<br><span class="bkr-accent">Plumbing, Tile & Permits Included.</span></h2>
+          <h2 id="bkr-intro-heading">How Much Does a Basement Kitchen<br><span class="bkr-accent">Cost in Bowdon, GA</span>?</h2>
           <p>A basement kitchen in Bowdon and Carroll County runs $18,000–$55,000 depending on scope. A secondary kitchenette — sink, mini-fridge, microwave, limited cabinetry — runs $18,000–$28,000. A full second kitchen with range, dishwasher, and a full run of cabinetry runs $35,000–$55,000. We provide itemized written quotes before any work starts.</p>
           <p>The most common question we get before quoting a basement kitchen is drainage. A sink below grade can't rely on gravity to reach a drain stack that exits above the slab — this is the case in most Carroll County homes. When it applies, we install a sewage ejector pump system in a buried pit. It's a standard solution and fully concealed in finish work. We assess existing plumbing conditions during the on-site estimate and include the correct approach in the quote.</p>
           <p>Carroll County requires plumbing and electrical permits for any new basement kitchen work. We handle applications, coordinate with county inspectors at each required stage, and document everything in your permit file.</p>
@@ -429,7 +429,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="bkr-editorial-content">
           <span class="bkr-section-eyebrow">Why It Adds Value</span>
-          <h2 id="bkr-editorial-heading">A Basement Kitchen<br><span class="bkr-accent">Changes How the House Functions</span></h2>
+          <h2 id="bkr-editorial-heading">How Does a Basement Kitchen<br><span class="bkr-accent">Change How the House Functions</span>?</h2>
           <blockquote class="bkr-pullquote">
             <p>"A second kitchen doesn't just add square footage — it adds a use case the house didn't have before."</p>
           </blockquote>
@@ -472,7 +472,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="bkr-process-header" data-animate="fade-up">
         <span class="bkr-section-eyebrow">How It Works</span>
-        <h2 id="bkr-process-heading">Plumbing Assessment to<br><span class="bkr-accent">Final Punch List</span></h2>
+        <h2 id="bkr-process-heading">How Does a Basement Kitchen Go from<br><span class="bkr-accent">Plumbing Assessment to Punch List</span>?</h2>
         <p class="prose prose-centered">Basement kitchens require a specific sequence — plumbing rough-in before any framing is closed, electrical before drywall. Here's the order we follow on every project.</p>
       </div>
       <div class="bkr-steps" data-animate="fade-up">
@@ -521,7 +521,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="bkr-faq-header" data-animate="fade-up">
         <span class="bkr-section-eyebrow">Common Questions</span>
-        <h2 id="bkr-faq-heading">Basement Kitchen in Carroll County —<br><span class="bkr-accent">Answered</span></h2>
+        <h2 id="bkr-faq-heading">What Do Carroll County Homeowners Ask<br><span class="bkr-accent">About Basement Kitchens</span>?</h2>
       </div>
       <div class="bkr-faq-list" data-animate="fade-up">
         <?php foreach ($pageFaqs as $i => $faq): ?>

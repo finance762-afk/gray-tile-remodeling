@@ -512,7 +512,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="lvp-intro-grid">
         <div class="lvp-intro-copy" data-animate="fade-up">
           <span class="lvp-eyebrow">Luxury Vinyl Plank</span>
-          <h2>Built for Georgia Homes. <span class="text-accent">Priced for Real Budgets.</span></h2>
+          <h2>Why Is LVP the Right Fit for <span class="text-accent">Georgia Homes and Real Budgets</span>?</h2>
           <p class="prose">
             LVP has replaced hardwood as the go-to flooring in Carroll County for a simple reason: it performs better in Georgia's conditions. Humidity between 60–90% from May through September, slab foundations in most Bowdon homes, and homeowners who want a floor that requires nothing more than a wet mop to maintain.
           </p>
@@ -547,7 +547,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="lvp-why-header" data-animate="fade-up">
         <span class="lvp-eyebrow">Georgia-Specific</span>
-        <h2>Why LVP Outperforms Every Other Flooring <span class="text-accent">in Georgia's Climate</span></h2>
+        <h2>Why Does LVP Outperform Other Flooring <span class="text-accent">in Georgia's Climate</span>?</h2>
         <p class="prose-centered">Four reasons West Georgia homeowners choose LVP — each one directly connected to the conditions your floors face year-round.</p>
       </div>
       <div class="lvp-reasons-grid">
@@ -612,7 +612,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="lvp-process-header" data-animate="fade-up">
         <span class="lvp-eyebrow">How We Work</span>
-        <h2>LVP Installation — <span class="text-accent">4 Steps, No Surprises</span></h2>
+        <h2>What Are the 4 Steps of an <span class="text-accent">LVP Installation</span>?</h2>
         <p class="prose-centered" style="color:var(--color-text-light);">From subfloor inspection to finished room — here's exactly how an LVP install goes in your Bowdon home.</p>
       </div>
       <div class="lvp-steps">
@@ -678,7 +678,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="lvp-faq-header" data-animate="fade-up">
         <span class="lvp-eyebrow">Common Questions</span>
-        <h2 id="lvp-faq-heading">LVP Flooring Questions — <span class="text-accent">Honest Answers</span></h2>
+        <h2 id="lvp-faq-heading">What Do Bowdon Homeowners Ask About <span class="text-accent">LVP Flooring</span>?</h2>
       </div>
       <div class="lvp-faq-list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

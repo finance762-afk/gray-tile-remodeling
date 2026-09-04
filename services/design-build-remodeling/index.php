@@ -543,7 +543,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="answer-first-copy" data-animate="fade-up">
           <span class="eyebrow-label">Design-Build in Bowdon, GA</span>
-          <h2 id="db-intro-heading">Your Kitchen or Bathroom Project — Delivered by One Team</h2>
+          <h2 id="db-intro-heading">What Does Design-Build Remodeling Mean for a Bowdon Homeowner?</h2>
           <p class="lead-paragraph prose">
             Design-build remodeling means Gray Tile handles both the design phase and the construction phase of your project. In Bowdon, that eliminates the biggest source of budget overruns — the gap between what a designer specifies and what a contractor can realistically build for the quoted price.
           </p>
@@ -591,7 +591,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="eyebrow-label">Why Gray Tile</span>
-        <h2 id="why-db-heading" style="text-wrap:balance;">Four Reasons to Choose Design-Build<br><span class="text-accent">for Your Bowdon Remodel</span></h2>
+        <h2 id="why-db-heading" style="text-wrap:balance;">Why Choose Design-Build<br><span class="text-accent">for Your Bowdon Remodel?</span></h2>
       </div>
 
       <div class="why-choose-grid">
@@ -650,7 +650,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);position:relative;z-index:1;" data-animate="fade-up">
         <span class="eyebrow-label">Our Process</span>
-        <h2 id="process-heading" style="text-wrap:balance;">How Design-Build Works<br><span style="color:var(--color-accent)">in Bowdon, GA</span></h2>
+        <h2 id="process-heading" style="text-wrap:balance;">How Does Design-Build Work<br><span style="color:var(--color-accent)">in Bowdon, GA?</span></h2>
       </div>
 
       <div class="process-steps">

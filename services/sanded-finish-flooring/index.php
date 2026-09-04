@@ -570,7 +570,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="sff-intro-grid">
         <div class="sff-intro-copy" data-animate="fade-up">
           <span class="sff-eyebrow">Restore vs Replace</span>
-          <h2>Your Floors Aren't Worn Out. <span class="text-accent">They're Waiting to Be Restored.</span></h2>
+          <h2>Are Your Floors Worn Out, or Just <span class="text-accent">Waiting to Be Restored</span>?</h2>
           <p class="prose">
             New hardwood flooring runs $7–$14 per square foot installed. Refinishing the floors you already have costs $2–$5 per square foot and delivers the same result — smooth, freshly finished wood with the stain color and sheen you choose. Most Bowdon homeowners never replace floors that can be refinished.
           </p>
@@ -612,7 +612,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="sff-editorial-head" data-animate="fade-up">
         <span class="sff-eyebrow">The Process</span>
-        <h2>How Sand-and-Refinish <span class="text-accent">Works</span></h2>
+        <h2>How Does Sand-and-Refinish <span class="text-accent">Work in Your Home</span>?</h2>
         <p class="prose-centered">Four steps from worn boards to a floor that looks new. Here's what happens in your home.</p>
       </div>
       <div class="sff-process-editorial">
@@ -711,7 +711,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="sff-faq-header" data-animate="fade-up">
         <span class="sff-eyebrow">Common Questions</span>
-        <h2 id="sff-faq-heading">Floor Refinishing Questions — <span class="text-accent">Answered Directly</span></h2>
+        <h2 id="sff-faq-heading">What Do Bowdon Homeowners Ask About <span class="text-accent">Floor Refinishing</span>?</h2>
       </div>
       <div class="sff-faq-list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

@@ -289,7 +289,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="gc-intro-copy" data-animate="fade-up">
           <span class="eyebrow-label">Garage Conversion Bowdon, GA</span>
-          <h2 id="gc-intro-heading">Add Livable Square Footage Without Building an Addition</h2>
+          <h2 id="gc-intro-heading">How Do You Add Livable Square Footage Without Building an Addition?</h2>
           <p class="lead-para prose">
             A garage conversion in Bowdon typically costs $15,000–$65,000 depending on scope — significantly less than a full room addition at $40,000–$120,000 for equivalent square footage. You already have the foundation, the walls, and the roof. The remaining work is insulation, flooring, drywall, electrical, and HVAC connection.
           </p>
@@ -337,7 +337,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;position:relative;z-index:1;" data-animate="fade-up">
         <span class="eyebrow-label">Scope of Work</span>
-        <h2 id="gc-included-heading" style="text-wrap:balance;">Everything Gray Tile Handles<br><span style="color:var(--color-accent)">in Your Garage Conversion</span></h2>
+        <h2 id="gc-included-heading" style="text-wrap:balance;">What Does Gray Tile Handle<br><span style="color:var(--color-accent)">in Your Garage Conversion</span>?</h2>
         <p class="section-sub prose-centered">Every conversion is different, but these four areas are core to every project we complete in Carroll County.</p>
       </div>
       <div class="included-grid">
@@ -397,7 +397,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="eyebrow-label">How It Works</span>
-        <h2 id="gc-process-heading" style="text-wrap:balance;">Garage Conversion Process in<span class="text-accent"> Bowdon</span></h2>
+        <h2 id="gc-process-heading" style="text-wrap:balance;">How Does the Garage Conversion Process Work in<span class="text-accent"> Bowdon</span>?</h2>
       </div>
       <div class="process-steps">
         <div class="process-step" data-animate="fade-up">
@@ -454,7 +454,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="eyebrow-label">Common Questions</span>
-        <h2 id="gc-faq-heading" style="text-wrap:balance;">Garage Conversion FAQ — <span class="text-accent">Bowdon, GA</span></h2>
+        <h2 id="gc-faq-heading" style="text-wrap:balance;">What Do Bowdon Homeowners Ask About <span class="text-accent">Garage Conversions</span>?</h2>
       </div>
       <div class="faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

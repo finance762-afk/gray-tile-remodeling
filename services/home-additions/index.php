@@ -354,7 +354,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="hadd-intro-copy" data-animate="fade-up">
           <span class="hadd-eyebrow">Home Additions Bowdon, GA</span>
-          <h2 id="hadd-intro-heading">Add Space Without Moving — From $80K in Carroll County</h2>
+          <h2 id="hadd-intro-heading">How Do You Add Space Without Moving — From $80K in Carroll County?</h2>
           <p class="lead-para prose">
             A home addition in Bowdon typically costs $80–$200 per square foot and takes 8–14 weeks from permit approval. That's less than the price gap between your current home and a larger one in Carroll County — and you keep your mortgage, your yard, and your neighbors.
           </p>
@@ -409,7 +409,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="hadd-types-header" data-animate="fade-up">
         <span class="hadd-eyebrow" style="background:rgba(var(--color-accent-rgb),0.2);color:var(--color-accent);">Addition Types</span>
-        <h2 id="hadd-types-heading">Four Ways to Expand<br><span class="hadd-text-accent">Your Carroll County Home</span></h2>
+        <h2 id="hadd-types-heading">What Are the Four Ways to Expand<br><span class="hadd-text-accent">Your Carroll County Home</span>?</h2>
         <p style="color:rgba(255,255,255,0.75);max-width:58ch;margin:var(--space-md) auto 0;font-size:1rem;line-height:1.7;">Each addition type has different structural requirements, permit complexity, and cost ranges. Here's what we build and what to expect.</p>
       </div>
       <div class="hadd-types-grid">
@@ -462,7 +462,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="hadd-eyebrow">How It Works</span>
-        <h2 id="hadd-process-heading" style="text-wrap:balance;">Our Addition Process<br><span class="hadd-text-accent">Start to Finished Space</span></h2>
+        <h2 id="hadd-process-heading" style="text-wrap:balance;">How Does Our Addition Process Go<br><span class="hadd-text-accent">from Start to Finished Space</span>?</h2>
       </div>
       <div class="hadd-process-grid">
         <div class="hadd-process-step" data-animate="fade-up">
@@ -518,7 +518,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="hadd-eyebrow">Common Questions</span>
-        <h2 id="hadd-faq-heading" style="text-wrap:balance;">Home Additions FAQ — <span class="hadd-text-accent">Carroll County, GA</span></h2>
+        <h2 id="hadd-faq-heading" style="text-wrap:balance;">What Do Carroll County Homeowners Ask About <span class="hadd-text-accent">Home Additions</span>?</h2>
       </div>
       <div class="hadd-faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

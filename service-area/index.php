@@ -935,7 +935,7 @@ details[open] .faq-question::after {
 
       <div class="area-intro-text" data-animate="fade-up">
         <span class="eyebrow-label">Our Coverage</span>
-        <h2 id="area-intro-heading">~50 Miles From Bowdon.<br><span class="text-accent">All of Carroll County Covered.</span></h2>
+        <h2 id="area-intro-heading">How Far From Bowdon Does Gray Tile Travel<br><span class="text-accent">Across Carroll County?</span></h2>
         <p class="prose">
           Gray Tile &amp; Remodeling serves homeowners within approximately 50 miles of Bowdon, GA — covering Carroll County and the wider West Georgia region including Carrollton, Villa Rica, Bremen, Temple, Whitesburg, Roopville, Tallapoosa, Cedartown, Dallas, and Hiram. If you're in the area and searching for tile installation or remodeling near me, we are almost certainly able to help.
         </p>
@@ -986,7 +986,7 @@ details[open] .faq-question::after {
       <!-- Content -->
       <div class="bowdon-content" data-animate="fade-up">
         <span class="eyebrow-label">Hometown Base</span>
-        <h2 id="bowdon-heading">Bowdon, Georgia —<br>Where We Call Home</h2>
+        <h2 id="bowdon-heading">Why Is Bowdon, Georgia<br>the Place We Call Home?</h2>
         <p class="prose-dark">
           Bowdon sits roughly 60 miles west of Atlanta in Carroll County — a small, tight-knit community that's grown steadily as Atlantans look for more space and lower costs. The housing stock ranges from older mid-century ranch-style homes to newer construction in growing subdivisions. We've worked on nearly all of them.
         </p>
@@ -1016,7 +1016,7 @@ details[open] .faq-question::after {
   <div class="container">
     <div class="section-heading-group" data-animate="fade-up">
       <span class="eyebrow-label">Where We Serve</span>
-      <h2 id="areas-grid-heading">West Georgia Communities We Cover</h2>
+      <h2 id="areas-grid-heading">Which West Georgia Communities Do We Cover?</h2>
       <p class="section-sub">Our service extends beyond Bowdon to the full Carroll County region and surrounding West Georgia communities.</p>
     </div>
 
@@ -1137,7 +1137,7 @@ details[open] .faq-question::after {
 
       <div class="local-matters-text" data-animate="fade-up">
         <span class="eyebrow-label">The Local Difference</span>
-        <h2 id="local-matters-heading">Why a Local Carroll County Contractor Outperforms a Larger Firm</h2>
+        <h2 id="local-matters-heading">Why Does a Local Carroll County Contractor Outperform a Larger Firm?</h2>
         <p class="prose">
           Large regional contractors cover Atlanta and its suburbs by dispatching crews from a central hub — often adding 45–90 minutes of windshield time each way to a project in Bowdon or Carrollton. That travel time doesn't disappear. It shows up in your bid as a travel premium, in delayed response times when issues arise, and in the difference between a supervisor who's driven 60 miles to check your project versus one who lives in the same community.
         </p>

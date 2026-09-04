@@ -334,7 +334,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="fr-intro-copy" data-animate="fade-up">
           <span class="eyebrow-label">Framing Contractor Bowdon, GA</span>
-          <h2 id="fr-intro-heading">Residential Framing Built to Carry Tile — Not Just Code</h2>
+          <h2 id="fr-intro-heading">Why Should Residential Framing Be Built to Carry Tile, Not Just Code?</h2>
           <p class="lead-para prose">
             Gray Tile does its own framing because we've seen what happens when tile gets installed on frames built by someone else: cracked grout lines at 18 months, delaminated tile at 3 years, and homeowners wondering what went wrong. The answer is almost always deflection — the framing moved, and the tile couldn't.
           </p>
@@ -383,7 +383,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="framing-matters-inner">
         <div class="framing-matters-copy" data-animate="fade-up">
           <span class="eyebrow-label" style="background:rgba(var(--color-accent-rgb),0.2);color:var(--color-accent);">The Standard That Matters</span>
-          <h2 id="framing-matters-heading">Why Tile Installations Fail — and How Framing Prevents It</h2>
+          <h2 id="framing-matters-heading">Why Do Tile Installations Fail, and How Does Framing Prevent It?</h2>
           <p>Tile is ceramic or stone. It does not flex. The structure beneath it does — every time someone walks across the floor, every time temperature changes cause expansion and contraction, every time a load shifts. When a floor frame moves more than tile can accommodate, the tile breaks at the weakest point: the grout lines and the bond between tile and substrate.</p>
           <blockquote class="pullquote">
             "We frame floors to L/360. Most contractors frame to L/240. That difference is what separates tile installations that last 25 years from ones that crack at 18 months."
@@ -427,7 +427,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="eyebrow-label">Why Gray Tile</span>
-        <h2 id="why-fr-heading" style="text-wrap:balance;">Four Reasons to Choose Gray Tile<br><span class="text-accent">for Framing in Carroll County</span></h2>
+        <h2 id="why-fr-heading" style="text-wrap:balance;">Why Choose Gray Tile<br><span class="text-accent">for Framing in Carroll County?</span></h2>
       </div>
       <div class="why-grid">
         <div class="why-card" data-animate="fade-up">
@@ -482,7 +482,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="eyebrow-label">Our Process</span>
-        <h2 id="fr-process-heading" style="text-wrap:balance;">How We Frame Projects<br><span class="text-accent">in Bowdon, GA</span></h2>
+        <h2 id="fr-process-heading" style="text-wrap:balance;">How Do We Frame Projects<br><span class="text-accent">in Bowdon, GA?</span></h2>
       </div>
       <div class="process-steps">
         <div class="process-step" data-animate="fade-up">

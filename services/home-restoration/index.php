@@ -340,7 +340,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="hr-intro-copy" data-animate="fade-up">
           <span class="eyebrow-label">Home Restoration Bowdon, GA</span>
-          <h2 id="hr-intro-heading">Restoring Carroll County Homes — Original Character, Modern Standards</h2>
+          <h2 id="hr-intro-heading">Can a Carroll County Home Keep Its Character and Meet Modern Standards?</h2>
           <p class="lead-para prose">
             Older Bowdon homes restore differently from standard remodels. Gray Tile works with Carroll County's pre-1980 housing stock — matching original tile profiles, refinishing period hardwood, and navigating the structural realities of homes that have settled and shifted over decades.
           </p>
@@ -388,7 +388,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="eyebrow-label">Why Gray Tile</span>
-        <h2 id="why-hr-heading" style="text-wrap:balance;">Four Reasons Bowdon Homeowners<br><span class="text-accent">Trust Gray Tile for Restoration</span></h2>
+        <h2 id="why-hr-heading" style="text-wrap:balance;">Why Do Bowdon Homeowners<br><span class="text-accent">Trust Gray Tile for Restoration</span>?</h2>
       </div>
 
       <div class="why-grid">
@@ -447,7 +447,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);position:relative;z-index:1;" data-animate="fade-up">
         <span class="eyebrow-label">Our Process</span>
-        <h2 id="process-heading" style="text-wrap:balance;">How We Restore<br><span style="color:var(--color-accent)">Bowdon-Area Homes</span></h2>
+        <h2 id="process-heading" style="text-wrap:balance;">How Do We Restore<br><span style="color:var(--color-accent)">Bowdon-Area Homes</span>?</h2>
       </div>
       <div class="process-steps">
         <div class="process-step" data-animate="fade-up">
@@ -507,7 +507,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;" data-animate="fade-up">
         <span class="eyebrow-label">Common Questions</span>
-        <h2 id="hr-faq-heading" style="text-wrap:balance;">Home Restoration FAQ — <span class="text-accent">Carroll County, GA</span></h2>
+        <h2 id="hr-faq-heading" style="text-wrap:balance;">What Do Carroll County Homeowners Ask About <span class="text-accent">Home Restoration</span>?</h2>
       </div>
       <div class="faq-list" role="list">
         <?php foreach ($pageFaqs as $idx => $faq): ?>

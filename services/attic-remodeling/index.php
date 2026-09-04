@@ -365,7 +365,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="atr-intro-content" data-animate="fade-up">
           <span class="atr-section-eyebrow">Attic Remodeling in Bowdon, GA</span>
-          <h2 id="atr-intro-heading">$35K–$75K.<br><span class="atr-accent">400–800 sq ft Added.</span></h2>
+          <h2 id="atr-intro-heading">How Much Does an Attic Remodel<br><span class="atr-accent">Cost in Bowdon, GA</span>?</h2>
           <p>Attic remodels in Bowdon and Carroll County run $35,000–$75,000 depending on scope and structural condition. A home office or bonus room conversion with HVAC extension, insulation, drywall, and flooring runs $35,000–$45,000. Adding a legal bedroom — which requires an egress window, closet, and code compliance — runs $50,000–$65,000. A full suite with bathroom runs $65,000–$75,000.</p>
           <p>Before we quote any attic project, we assess two things first: whether the floor structure can carry habitable loads, and whether the attic has enough headroom for the intended use. Most Carroll County attics have 7–9 feet at the peak with usable floor area of 400–800 sq ft depending on the home's footprint and pitch. We design around the shape of the space rather than against it.</p>
           <p>Georgia's summers make insulation the most important decision in an attic conversion. A spray foam conditioned attic runs significantly cooler than one with batt insulation — the difference between a room that's comfortable in August and one that's unusable. We specify the right insulation approach for the intended use before anything else is decided.</p>
@@ -408,7 +408,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="atr-uses-header" data-animate="fade-up">
         <span class="atr-section-eyebrow">What We Build</span>
-        <h2 id="atr-uses-heading">Four Ways Bowdon Homeowners<br><span class="atr-accent">Use Their Attic Conversion</span></h2>
+        <h2 id="atr-uses-heading">How Do Bowdon Homeowners<br><span class="atr-accent">Use Their Attic Conversion</span>?</h2>
         <p>The right use depends on your home's attic geometry, structural condition, and your household's needs. Here's how each configuration differs in scope and cost.</p>
       </div>
       <div class="atr-uses-grid" data-animate="fade-up">
@@ -473,7 +473,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="atr-process-header" data-animate="fade-up">
         <span class="atr-section-eyebrow">How It Works</span>
-        <h2 id="atr-process-heading">Structural Check to<br><span class="atr-accent">Finished Space</span></h2>
+        <h2 id="atr-process-heading">How Does an Attic Remodel Go from<br><span class="atr-accent">Structural Check to Finished Space</span>?</h2>
         <p class="prose prose-centered">Attic conversions require structural and thermal assessments before design work begins. Here's the sequence that keeps projects on schedule and on budget in Carroll County.</p>
       </div>
       <div class="atr-steps" data-animate="fade-up">
@@ -527,7 +527,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="atr-faq-header" data-animate="fade-up">
         <span class="atr-section-eyebrow">Common Questions</span>
-        <h2 id="atr-faq-heading">Attic Remodeling in Georgia —<br><span class="atr-accent">Answered</span></h2>
+        <h2 id="atr-faq-heading">What Do Georgia Homeowners Ask About<br><span class="atr-accent">Attic Remodeling</span>?</h2>
       </div>
       <div class="atr-faq-list" data-animate="fade-up">
         <?php foreach ($pageFaqs as $i => $faq): ?>

@@ -263,7 +263,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div class="plm-intro-copy" data-animate="fade-up">
           <span class="plm-eyebrow">Remodel Plumbing, Bowdon GA</span>
-          <h2 id="plm-intro-heading">Plumbing Rough-In Built Into Your Remodel — Not Tacked On</h2>
+          <h2 id="plm-intro-heading">Why Is Plumbing Rough-In Built Into Your Remodel, Not Tacked On?</h2>
           <p class="lead-para prose">
             Bathroom rough-in plumbing in Carroll County runs $2,500–$5,500 for a standard configuration. Moving drain lines or adding a basement kitchen adds $1,500–$4,000. Gray Tile scopes every plumbing phase upfront so there are no mid-project cost surprises.
           </p>
@@ -318,7 +318,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div class="plm-scope-header" data-animate="fade-up">
         <span class="plm-eyebrow" style="background:rgba(var(--color-accent-rgb),0.2);color:var(--color-accent);">What We Handle</span>
-        <h2 id="plm-scope-heading">Plumbing Scope During a Remodel</h2>
+        <h2 id="plm-scope-heading">Which Plumbing Work Happens During a Remodel?</h2>
         <p>From rough-in for new bathrooms to moving waste lines in an open floor plan — here's what plumbing work looks like integrated into a Gray Tile remodel.</p>
       </div>
       <div class="plm-scope-grid">
@@ -379,7 +379,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="container">
       <div style="text-align:center;margin-bottom:var(--space-lg);" data-animate="fade-up">
         <span class="plm-eyebrow">How It Works</span>
-        <h2 id="plm-process-heading" style="text-wrap:balance;">Plumbing Phase<br><span class="plm-accent">Within Your Remodel</span></h2>
+        <h2 id="plm-process-heading" style="text-wrap:balance;">When Does the Plumbing Phase<br><span class="plm-accent">Happen in Your Remodel?</span></h2>
       </div>
       <div class="plm-process-grid">
         <div class="plm-step" data-animate="fade-up">
